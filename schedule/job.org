@@ -2,5 +2,15 @@
 
   Records every day work plan
 
-** TODO review 490 commit                                               :job:
-   DEADLINE: <2019-08-19 一>
+** DONE review 490 commit                                               :job:
+   CLOSED: [2019-08-19 一 18:07] DEADLINE: <2019-08-20 二>
+
+** IN-PROGRESS read dwolla document                                     :job:
+   DEADLINE: <2019-08-20 二>
+
+   - [[https://developers.dwolla.com/resources/bank-transfer-workflow/processing-times.html][process]]
+   - [[https://developers.dwolla.com/guides/][guides]]
+   - [[https://developers.dwolla.com/resources/][api basic]]
+   - [[https://docs.dwolla.com/#introduction][api docs]]
+
+
