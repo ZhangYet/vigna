@@ -1,0 +1,6 @@
+* job
+
+  Records every day work plan
+
+** TODO review 490 commit                                               :job:
+   DEADLINE: <2019-08-19 一>

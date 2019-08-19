@@ -1,0 +1,16 @@
+* Algorithms
+
+  [[http://jeffe.cs.illinois.edu/teaching/algorithms/][The page of the book]]
+
+
+** reading plan  
+
+*** TODO [[http://jeffe.cs.illinois.edu/teaching/algorithms/book/06-dfs.pdf][Depth-first search]]                                         :reading:
+    DEADLINE: <2019-08-21 三>
+
+*** TODO [[http://jeffe.cs.illinois.edu/teaching/algorithms/book/07-mst.pdf][Minimum spanning trees]]                                     :reading:
+    DEADLINE: <2019-08-22 四>
+
+
+
+
