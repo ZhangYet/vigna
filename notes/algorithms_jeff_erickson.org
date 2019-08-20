@@ -5,12 +5,29 @@
 
 ** reading plan  
 
-*** TODO [[http://jeffe.cs.illinois.edu/teaching/algorithms/book/06-dfs.pdf][Depth-first search]]                                         :reading:
-    DEADLINE: <2019-08-21 三>
+*** DONE [[http://jeffe.cs.illinois.edu/teaching/algorithms/book/06-dfs.pdf][Depth-first search]]                                         :reading:
+    CLOSED: [2019-08-20 二 23:50] DEADLINE: <2019-08-21 三>
 
 *** TODO [[http://jeffe.cs.illinois.edu/teaching/algorithms/book/07-mst.pdf][Minimum spanning trees]]                                     :reading:
     DEADLINE: <2019-08-22 四>
 
 
 
+
+
+** notes
+
+*** Depth-first search
+
+    1. Although depth-first search can be accurately described as *whatever-first search with a stack*, the algorithm is normally implemented recursively, rather than using an explicit stack.
+    2. 无向连通图可以通过 DFS 获得最小生成树，有向连通图则不然。
+    3. 深度遍历的时候，「入栈」的时候加一个 clock，「出栈」的时候加一个 clock，可以在一次 DFS 过程中，同时获得先序和后序遍历的结果。
+    4. DFS 过程中，边的关系只有三种：a. A -> B (A 是 B直接或间接的祖先); b. A <- B（与 a 相反）; c. A cross B（两者之外）。
+    5. *lemma 6.1* 告诉我们 IsAcyclc 算法的正确性：如果 v -> w 中，发现 w 是 active ，则由 *lemma 6.1* 知存在 w -> v 的 path，从而证明有环的存在。
+    6. Evaluating any recurrence with memoization is exactly the same as performing a depth-first search of the dependency graph
+    7. 最长路径问题在图是 DAG 的情况下可以用动态规划快速求解。
+    8. 动态规划和 DFS 的关系。
+    9. 强连接是一种等价关系，可以用来划分一个图。
+
+       但其实还有最后跟强连接相关的部分，过得很潦草。
 
