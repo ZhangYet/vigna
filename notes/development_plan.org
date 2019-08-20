@@ -1,10 +1,10 @@
 * development plan
 
-** 在切换 TODO 状态的时候，自动提交到版本控制系统            :emacs:org:mode:
+** 在切换 TODO 状态的时候，自动提交到版本控制系统            :emacs:org:
 
    或者 =org-mode= 本身有内置功能可以完成。
 
-** 实现 TODO 状态的状态机                                    :emacs:org:mode:
+** 实现 TODO 状态的状态机                                    :emacs:org:
 
    现在做任务管理的时候，有一个任务状态 =WAITING= 应该只能从 =IN-PROGRESS= 转换过来。
 
@@ -13,9 +13,13 @@
    FYI: [[http://julienblanchard.com/2016/fancy-rust-development-with-emacs/][Fancy Rust development with Emacs]]
    最好就是打包一个干净的开发环境，然后配置好开发环境，把 box 打包走。
 
-** DONE 插入链接                                             :emacs:org:mode:
+** DONE 插入链接                                             :emacs:org:
    CLOSED: [2019-08-19 一 10:20]
 
    参考[这个 stackexchange 问答](https://emacs.stackexchange.com/questions/19598/org-mode-link-to-heading-in-other-org-file)。
 
    实际上就是 org-mode 内置的 =C-c C-l=
+
+** 处理 org-mode 插入代码的问题                                       :emacs:
+
+   FYI: [[http://wenshanren.org/?p=327][Emacs：在 org-mode 中插入源代码块]]
