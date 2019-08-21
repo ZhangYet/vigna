@@ -14,3 +14,6 @@
    - [[https://docs.dwolla.com/#introduction][api docs]]
 
 
+** IN-PROGRESS run cerberus                                             :job:
+
+** TODO read source code of cerberus and msscore                        :job:
