@@ -8,7 +8,7 @@
 *** DONE [[http://jeffe.cs.illinois.edu/teaching/algorithms/book/06-dfs.pdf][Depth-first search]]                                         :reading:
     CLOSED: [2019-08-20 二 23:50] DEADLINE: <2019-08-21 三>
 
-*** TODO [[http://jeffe.cs.illinois.edu/teaching/algorithms/book/07-mst.pdf][Minimum spanning trees]]                                     :reading:
+*** IN-PROGRESS [[http://jeffe.cs.illinois.edu/teaching/algorithms/book/07-mst.pdf][Minimum spanning trees]]                              :reading:
     DEADLINE: <2019-08-22 四>
 
 
@@ -31,3 +31,4 @@
 
        但其实还有最后跟强连接相关的部分，过得很潦草。
 
+*** Minimum spanning treea

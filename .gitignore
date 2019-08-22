@@ -12,3 +12,6 @@
 
 # html
 *.html
+
+# Doc notes
+notes/doc_notes/*
