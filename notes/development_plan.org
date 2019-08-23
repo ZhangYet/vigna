@@ -30,3 +30,11 @@
 ** 处理 org-mode 插入代码的问题                                       :emacs:
 
    FYI: [[http://wenshanren.org/?p=327][Emacs：在 org-mode 中插入源代码块]]
+
+** 用 cgo 包一个 libwebp go module
+
+   1. 如何写一个 go 的库？
+   2. 如果用 cgo 调用 libwebp？
+   3. 先读完 《Go 语言高级编程》对应的章节。
+
+
