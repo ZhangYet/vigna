@@ -18,5 +18,12 @@
 
 ** IN-PROGRESS read source code of cerberus and msscore                 :job:
 
+*** DONE read a cerberus view function
+    CLOSED: [2019-08-23 五 17:07]
+
+*** IN-PROGRESS read msscore
+
+*** TODO read mssapi
+
 ** DONE read dwolla 接入文档                                            :job:
    CLOSED: [2019-08-22 四 13:29]
