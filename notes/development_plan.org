@@ -8,14 +8,17 @@
 
    现在做任务管理的时候，有一个任务状态 =WAITING= 应该只能从 =IN-PROGRESS= 转换过来。
 
-** IN-PROGRESS add rust-mode 起码要有自动补全吧                  :emacs:rust:
+** DONE add rust-mode 起码要有自动补全吧                         :emacs:rust:
+   CLOSED: [2019-08-23 五 13:12]
 
    FYI: [[http://julienblanchard.com/2016/fancy-rust-development-with-emacs/][Fancy Rust development with Emacs]]
    最好就是打包一个干净的开发环境，然后配置好开发环境，把 box 打包走。
 
    环境有了，但是代码补全以及定义跳转并不好用。定义跳转还是可行的。
 
-   还差导出 vagrant box.
+   还差导出 vagrant box。
+
+   可以了，记得还人家 U 盘。
 
 ** DONE 插入链接                                             :emacs:org:
    CLOSED: [2019-08-19 一 10:20]

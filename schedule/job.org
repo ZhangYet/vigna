@@ -13,9 +13,10 @@
    - [[https://developers.dwolla.com/resources/][api basic]]
    - [[https://docs.dwolla.com/#introduction][api docs]]
 
-** WAITING run cerberus                                                 :job:
+** DONE run cerberus                                                    :job:
+   CLOSED: [2019-08-23 五 13:09]
 
-** TODO read source code of cerberus and msscore                        :job:
+** IN-PROGRESS read source code of cerberus and msscore                 :job:
 
 ** DONE read dwolla 接入文档                                            :job:
    CLOSED: [2019-08-22 四 13:29]
