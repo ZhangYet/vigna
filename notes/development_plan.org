@@ -31,10 +31,13 @@
 
    FYI: [[http://wenshanren.org/?p=327][Emacs：在 org-mode 中插入源代码块]]
 
-** 用 cgo 包一个 libwebp go module
+** DONE 用 cgo 包一个 libwebp go module
+   CLOSED: [2019-08-25 日 12:49]o
+
+   勉强用 cgo 调用 libwebp 封装了转换功能，但是封装成库真的太麻烦了。不干了。
 
    1. 如何写一个 go 的库？
    2. 如果用 cgo 调用 libwebp？
    3. 先读完 《Go 语言高级编程》对应的章节。
 
-
+      
