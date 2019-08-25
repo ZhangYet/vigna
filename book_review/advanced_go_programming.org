@@ -1,0 +1,14 @@
+* [[https://book.douban.com/subject/34442131/][《Go 语言高级编程》]]
+
+** 摘抄与零散笔记
+
+*** RPC 入门
+
+    1. 一个我曾经用过但是后来忘记了的小技巧：用 =nc -l 1234= 启动1234端口的 tcp 服务。此外还可以通过 =echo -e '{}' | nc localhost 1234= 发送返回数据。
+    2. proto3 已经不支持自定义默认值了，令人失望。
+    3. protobuf 的意义：用 Protobuf 定义与语言无关的 RPC 服务接口才是它真正的价值所在!
+    4. 回头看看 protoc-gen-go 的源代码。
+    5. 采用 interceptor 实现 fix simulator 的验证与参数校验功能（采用 go-grpc-middleware）。
+
+
+
