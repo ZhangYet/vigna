@@ -1,0 +1,38 @@
+* [[https://book.douban.com/subject/34262228/][深入理解Python特性]]
+
+** notes
+
+*** python 整洁之道
+
+**** 断言[fn:1]
+
+     1. [[https://en.wikipedia.org/wiki/Heisenbug][Heisenbug]];
+     2. 因为当 [[https://docs.python.org/3/library/constants.html#__debug__][__debug__]] 为 =False= 时， =assert= 会被禁用，所以不应该用 =assert= 作为生产环境中的数据校验手段;
+     3. 如果将非空元组传给 =assert= ，则 =assert= 永远为真;
+
+**** 逗号
+
+     1. [[https://docs.python.org/3/reference/lexical_analysis.html#string-literal-concatenation][String literal concatenation]] 以及与之相关的 [[https://stackoverflow.com/questions/34174539/python-string-literal-concatenation][stackoverflow Q&A]];
+     2. 列表中分拆成多行，每行以逗号结尾的好处——改动容易在 VCS 中看见；避免不小心的 string literal concatenation;
+
+**** 变量名中的下划线
+
+     1. 使用 =from package import *= 的时候，以单下滑线开头的名字(如 =_var=)不会被导入。 详见[[https://docs.python.org/3/tutorial/modules.html#importing-from-a-package][文档]];
+     2. Python 社区中将双下划线称为 dunder;
+     3. 以 dunder 开头的变量名/方法名，会被 name mangling，用 =dir()= 查看对象属性的时候，会看见对应的变量名/方法名被改写了，这是为了避免这些变量/方法被子类覆盖;
+     4. 前后都有 dunder 的变量/方法不会被改写名称[fn:2];
+
+**** 字符串格式化
+
+     1. 使用模板字符串避免安全问题，其余情况尽量使用 [[https://docs.python.org/3/whatsnew/3.6.html#whatsnew36-pep498][Formatted string literals]] ;
+
+*** 高效的函数
+
+**** 
+
+* Footnotes
+
+[fn:2] 这都什么鬼。。。 
+
+[fn:1] 老实说，断言这么麻烦，用来干啥。
+
