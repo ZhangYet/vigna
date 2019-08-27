@@ -36,6 +36,6 @@
 
 ** 开发 banking service
 
-*** 封装 dwolla 库
+*** IN-PROGRESS 封装 dwolla 库
 
 *** 定义相关 model
