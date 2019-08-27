@@ -16,7 +16,8 @@
 ** DONE run cerberus                                                    :job:
    CLOSED: [2019-08-23 五 13:09]
 
-** IN-PROGRESS read source code of cerberus and msscore                 :job:
+** DONE read source code of cerberus and msscore                        :job:
+   CLOSED: [2019-08-27 二 10:53]
 
 *** DONE read a cerberus view function
     CLOSED: [2019-08-23 五 17:07]
@@ -24,9 +25,17 @@
 *** DONE read msscore
     CLOSED: [2019-08-26 一 15:08]
 
-*** TODO read mssapi
+*** DONE read mssapi
+    CLOSED: [2019-08-27 二 10:52]
 
-*** 再过一次 bank service 设计文档
+*** DONE 再过一次 bank service 设计文档
+    CLOSED: [2019-08-27 二 10:52]
 
 ** DONE read dwolla 接入文档                                            :job:
    CLOSED: [2019-08-22 四 13:29]
+
+** 开发 banking service
+
+*** 封装 dwolla 库
+
+*** 定义相关 model

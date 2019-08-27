@@ -30,7 +30,7 @@
 
 **** 
 
-* Footnotes
+** Footnotes
 
 [fn:2] 这都什么鬼。。。 
 

@@ -15,3 +15,6 @@
 
 # Doc notes
 notes/doc_notes/*
+
+# book review
+book_review/*.md
