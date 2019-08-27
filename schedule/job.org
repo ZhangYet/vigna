@@ -21,9 +21,12 @@
 *** DONE read a cerberus view function
     CLOSED: [2019-08-23 五 17:07]
 
-*** IN-PROGRESS read msscore
+*** DONE read msscore
+    CLOSED: [2019-08-26 一 15:08]
 
 *** TODO read mssapi
+
+*** 再过一次 bank service 设计文档
 
 ** DONE read dwolla 接入文档                                            :job:
    CLOSED: [2019-08-22 四 13:29]
