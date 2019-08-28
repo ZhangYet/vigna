@@ -36,6 +36,11 @@
 
 ** 开发 banking service
 
-*** IN-PROGRESS 封装 dwolla 库
+*** WAITING 封装 dwolla 库
 
-*** 定义相关 model
+**** DONE read source code of dwollav2
+     CLOSED: [2019-08-27 二 17:39]
+
+
+
+*** IN-PROGRESS 定义相关 model
