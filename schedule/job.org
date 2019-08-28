@@ -42,5 +42,18 @@
      CLOSED: [2019-08-27 二 17:39]
 
 
-
 *** IN-PROGRESS 定义相关 model
+
+*** DONE 定义 schema
+    CLOSED: [2019-08-28 三 17:24]
+
+*** TODO rebase from upstream
+    DEADLINE: <2019-08-29 四 +1d>
+    :PROPERTIES:
+    :LAST_REPEAT: [2019-08-28 三 13:23]
+    :END:
+
+    - State "DONE"       from "WAITING"    [2019-08-28 三 13:23]
+    1. cerberus;
+    2. mss;
+    3. protos
