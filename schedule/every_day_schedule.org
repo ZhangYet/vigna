@@ -17,11 +17,12 @@
    - State "DONE"       from "WAITING"    [2019-08-19 一 21:32]
    - State "DONE"       from "WAITING"    [2019-08-18 日 22:53]
 ** TODO 日语早读                                                   :japanese:
-   DEADLINE: <2019-08-28 三 +2d>
+   DEADLINE: <2019-08-30 五 +2d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-08-27 二 22:10]
+   :LAST_REPEAT: [2019-08-28 三 22:08]
    :END:
 
+   - State "DONE"       from "WAITING"    [2019-08-28 三 22:08]
    - State "DONE"       from "WAITING"    [2019-08-27 二 22:10]
    - State "DONE"       from "WAITING"    [2019-08-25 日 15:06]
    - State "DONE"       from "WAITING"    [2019-08-22 四 22:52]
@@ -30,12 +31,20 @@
    - State "DONE"       from "WAITING"    [2019-08-18 日 20:26]
 
 ** TODO 日语视频学习                                               :japanese:
-   DEADLINE: <2019-08-28 三 +2d>
+   DEADLINE: <2019-08-30 五 +2d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-08-27 二 22:10]
+   :LAST_REPEAT: [2019-08-28 三 22:08]
    :END:
+   - State "DONE"       from "WAITING"    [2019-08-28 三 22:08]
    - State "DONE"       from "WAITING"    [2019-08-27 二 22:10]
    - State "DONE"       from "WAITING"    [2019-08-25 日 15:06]
    - State "DONE"       from "WAITING"    [2019-08-22 四 22:52]
    - State "DONE"       from "WAITING"    [2019-08-20 二 17:04]
    - State "DONE"       from "WAITING"    [2019-08-19 一 00:35]
+
+** TODO 冥想
+   DEADLINE: <2019-08-29 四 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2019-08-28 三 20:20]
+   :END:
+   - State "DONE"       from "WAITING"    [2019-08-28 三 20:20]
