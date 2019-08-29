@@ -17,7 +17,7 @@
 
 **** 变量名中的下划线
 
-     1. 使用 =from package import *= 的时候，以单下滑线开头的名字(如 =_var=)不会被导入。 详见[[https://docs.python.org/3/tutorial/modules.html#importing-from-a-package][文档]];
+      1. 使用 =from package import *= 的时候，以单下滑线开头的名字(如 =_var=)不会被导入。 详见[[https://docs.python.org/3/tutorial/modules.html#importing-from-a-package][文档]];
      2. Python 社区中将双下划线称为 dunder;
      3. 以 dunder 开头的变量名/方法名，会被 name mangling，用 =dir()= 查看对象属性的时候，会看见对应的变量名/方法名被改写了，这是为了避免这些变量/方法被子类覆盖;
      4. 前后都有 dunder 的变量/方法不会被改写名称[fn:2];
@@ -28,7 +28,41 @@
 
 *** 高效的函数
 
-**** 
+*** 类与面向对象
+
+**** 对象比较
+
+     其实比较 =is= 和 ==== ，还有一点需要补充：[[https://docs.python.org/3/c-api/memory.html][Python 内存管理]]，以及如下例子：
+
+#+NAME: <name>
+#+BEGIN_SRC python
+t = 256
+s = 256
+t is s # True
+
+t = 257
+s = 257
+t is s # False
+#+END_SRC
+
+
+**** 浅拷贝与审拷贝
+
+**** nametuple
+
+**** 类变量
+     
+     **类变量** 的改变会影响所有实例。当然对实例修改类变量的话，会在该实例那里生成一个实例变量覆盖类变量——然后类变量可以通过 =instance.__class__.var_name= 访问。
+
+**** 实例方法、类方法和静态方法
+
+     1. 实例方法可以通过 =self.__class__= 访问类本身，即实例方法也可以修改类的状态；
+     2. 类方法无法修改对象实例状态；
+     3. 静态方法不能修改对象状态和类状态；
+
+
+
+
 
 ** Footnotes
 
