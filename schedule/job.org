@@ -34,7 +34,7 @@
 ** DONE read dwolla 接入文档                                            :job:
    CLOSED: [2019-08-22 四 13:29]
 
-** 开发 banking service
+** 开发 banking service                                                 :job:
 
 *** WAITING 封装 dwolla 库
 
@@ -42,17 +42,19 @@
      CLOSED: [2019-08-27 二 17:39]
 
 
-*** IN-PROGRESS 定义相关 model
+*** DONE 定义相关 model
+    CLOSED: [2019-08-29 四 13:43]
 
 *** DONE 定义 schema
     CLOSED: [2019-08-28 三 17:24]
 
 *** TODO rebase from upstream
-    DEADLINE: <2019-08-29 四 +1d>
+    DEADLINE: <2019-08-30 五 +1d>
     :PROPERTIES:
-    :LAST_REPEAT: [2019-08-28 三 13:23]
+    :LAST_REPEAT: [2019-08-29 四 11:11]
     :END:
 
+    - State "DONE"       from "WAITING"    [2019-08-29 四 11:11]
     - State "DONE"       from "WAITING"    [2019-08-28 三 13:23]
     1. cerberus;
     2. mss;

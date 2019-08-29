@@ -43,9 +43,10 @@
    - State "DONE"       from "WAITING"    [2019-08-20 二 17:04]
    - State "DONE"       from "WAITING"    [2019-08-19 一 00:35]
 
-** TODO 冥想
-   DEADLINE: <2019-08-29 四 +1d>
+** TODO 冥想                                                          :daily:
+   DEADLINE: <2019-08-30 五 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-08-28 三 20:20]
+   :LAST_REPEAT: [2019-08-29 四 11:32]
    :END:
+   - State "DONE"       from "WAITING"    [2019-08-29 四 11:32]
    - State "DONE"       from "WAITING"    [2019-08-28 三 20:20]
