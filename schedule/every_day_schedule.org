@@ -1,11 +1,12 @@
 * every day schedule
 
 ** TODO 背日语单词                                                 :japanese:
-   DEADLINE: <2019-08-29 四 +1d>
+   DEADLINE: <2019-08-30 五 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-08-29 四 00:03]
+   :LAST_REPEAT: [2019-08-29 四 23:46]
    :END:
 
+   - State "DONE"       from "WAITING"    [2019-08-29 四 23:46]
    - State "DONE"       from "WAITING"    [2019-08-29 四 00:03]
    - State "DONE"       from "WAITING"    [2019-08-27 二 22:34]
    - State "DONE"       from "WAITING"    [2019-08-26 一 22:20]
