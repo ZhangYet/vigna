@@ -36,7 +36,7 @@
 
 ** 开发 banking service                                                 :job:
 
-*** IN-PROGRESS 封装 dwolla 库
+*** WAITING 封装 dwolla 库
 
 **** DONE read source code of dwollav2
      CLOSED: [2019-08-27 二 17:39]
@@ -44,7 +44,23 @@
 *** DONE update urls
     CLOSED: [2019-08-30 五 11:54]
 
-*** TODO develop views
+*** IN-PROGRESS develop views
+
+**** DONE list funding source views
+     CLOSED: [2019-08-30 五 15:34]
+
+***** DONE model list funding source api
+      CLOSED: [2019-08-30 五 13:51]
+
+      model 跟接口是一致的，所以不用再封装了。
+
+***** DONE request handle
+      CLOSED: [2019-08-30 五 15:34]
+
+**** DONE get funding source views
+     CLOSED: [2019-08-30 五 15:35]
+
+
 
 *** DONE 定义相关 model
     CLOSED: [2019-08-29 四 13:43]
