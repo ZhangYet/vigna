@@ -59,3 +59,5 @@
     1. cerberus;
     2. mss;
     3. protos
+
+*** IN-PROGRESS read [[https://docs.djangoproject.com/en/2.2/topics/class-based-views/][class based views]]
