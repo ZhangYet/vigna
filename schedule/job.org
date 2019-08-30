@@ -36,11 +36,15 @@
 
 ** 开发 banking service                                                 :job:
 
-*** WAITING 封装 dwolla 库
+*** IN-PROGRESS 封装 dwolla 库
 
 **** DONE read source code of dwollav2
      CLOSED: [2019-08-27 二 17:39]
 
+*** DONE update urls
+    CLOSED: [2019-08-30 五 11:54]
+
+*** TODO develop views
 
 *** DONE 定义相关 model
     CLOSED: [2019-08-29 四 13:43]
@@ -49,15 +53,17 @@
     CLOSED: [2019-08-28 三 17:24]
 
 *** TODO rebase from upstream
-    DEADLINE: <2019-08-30 五 +1d>
+    DEADLINE: <2019-08-31 六 +1d>
     :PROPERTIES:
-    :LAST_REPEAT: [2019-08-29 四 11:11]
+    :LAST_REPEAT: [2019-08-30 五 10:09]
     :END:
 
+    - State "DONE"       from "WAITING"    [2019-08-30 五 10:09]
     - State "DONE"       from "WAITING"    [2019-08-29 四 11:11]
     - State "DONE"       from "WAITING"    [2019-08-28 三 13:23]
     1. cerberus;
     2. mss;
     3. protos
 
-*** IN-PROGRESS read [[https://docs.djangoproject.com/en/2.2/topics/class-based-views/][class based views]]
+*** DONE read [[https://docs.djangoproject.com/en/2.2/topics/class-based-views/][class based views]]
+    CLOSED: [2019-08-30 五 10:02]
