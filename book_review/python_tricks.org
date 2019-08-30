@@ -7,7 +7,7 @@
 **** 断言[fn:1]
 
      1. [[https://en.wikipedia.org/wiki/Heisenbug][Heisenbug]];
-     2. 因为当 [[https://docs.python.org/3/library/constants.html#__debug__][__debug__]] 为 =False= 时， =assert= 会被禁用，所以不应该用 =assert= 作为生产环境中的数据校验手段;
+     2. 因为当 [[https://docs.python.org/3/library/constants.html#__debug__][内置变量 =__debug__=]] 为 =False= 时， =assert= 会被禁用，所以不应该用 =assert= 作为生产环境中的数据校验手段;
      3. 如果将非空元组传给 =assert= ，则 =assert= 永远为真;
 
 **** 逗号
@@ -65,8 +65,34 @@ t is s # False
 
 *** 循环和迭代
 
+**** 迭代器
+
+     **在迭代器协议中，最重要的是 =__iter__= 要返回带有 =__next__= 方法的对象** 。
+
+**** 生成器表达式和迭代器链
+
+*** 字典
+
+#+NAME: <name>
+#+BEGIN_SRC python
+{True: 'yes', 1: 'no', 1.0: 'maybe'} # 至少在 3.6.4 输出结果仍然是 {True: 'maybe'}
+#+END_SRC
+
+这段代码奇怪的结果是因为在字典中 =True=, =1= 和 =1.0= 是相同的 key 值。这意味着这三个值的值相等，hash 也相同[fn:3]。
+
+
+*** Python 式高级技巧
+
+使用 [[https://docs.python.org/3/library/dis.html][dis]] 来探索 python 的字节码。
+
+**** further reading: [[https://book.douban.com/subject/5416853/][Compiler Design]]
+
+
+
 
 ** Footnotes
+
+[fn:3] 作者在这里验证的思路挺不错的，可以借鉴。 
 
 [fn:2] 这都什么鬼。。。 
 
