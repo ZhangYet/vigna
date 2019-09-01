@@ -5,3 +5,68 @@
    [[https://leetcode.com/problems/remove-invalid-parentheses/][301. Remove Invalid Parentheses]]
 
 ** Solution
+
+   [[https://leetcode.com/problems/remove-invalid-parentheses/solution/][答案]]的 go 版本翻译。
+
+#+NAME: <name>
+#+BEGIN_SRC go 
+import "strings"
+
+var result map[string]int
+
+func recursion(s string, index, left_count, right_count, left_rem, right_rem int, expr []string) {
+	if len(s) == index {
+		if left_rem == 0 && right_rem == 0 {
+			answer := strings.Join(expr, "")
+			result[answer] = 1
+		}
+	} else {
+		c := string(s[index])
+		if c == "(" && left_rem > 0 || c == ")" && right_rem > 0 {
+			if c == "(" {
+				recursion(s, index+1, left_count, right_count, left_rem-1, right_rem, expr)
+			}
+			if c == ")" {
+				recursion(s, index+1, left_count, right_count, left_rem, right_rem-1, expr)
+			}
+		}
+		expr = append(expr, c)
+		if c != "(" && c != ")" {
+			recursion(s, index+1, left_count, right_count, left_rem, right_rem, expr)
+		} else if c == "(" {
+			recursion(s, index+1, left_count+1, right_count, left_rem, right_rem, expr)
+		} else  if c == ")" && left_count > right_count {
+			recursion(s, index+1, left_count, right_count+1, left_rem, right_rem, expr)
+		}
+		expr = expr[:len(expr)-1]
+	}
+
+}
+
+func removeInvalidParentheses(s string) []string {
+	left, right := 0, 0
+	for _, ch := range s {
+		if string(ch) == "(" {
+			left += 1
+		}
+		if string(ch) == ")" {
+			if left == 0 {
+				right += 1
+			}
+			if left > 0 {
+				left -= 1
+			}
+		}
+	}
+
+	result = make(map[string]int)
+	expr := []string{}
+	recursion(s, 0, 0, 0, left, right, expr)
+
+	ret := []string{}
+	for key := range result {
+		ret = append(ret, key)
+	}
+	return ret
+}
+#+END_SRC
