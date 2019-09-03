@@ -57,6 +57,17 @@
 ***** DONE request handle
       CLOSED: [2019-08-30 五 15:34]
 
+**** DONE activate/deactivate sources
+     CLOSED: [2019-09-03 二 13:39]
+
+***** model api
+      
+      1. update api
+      2. activate/deactivate api
+
+***** views
+
+
 **** DONE get funding source views
      CLOSED: [2019-08-30 五 15:35]
 
@@ -69,11 +80,15 @@
     CLOSED: [2019-08-28 三 17:24]
 
 *** TODO rebase from upstream
-    DEADLINE: <2019-08-31 六 +1d>
+    DEADLINE: <2019-09-04 三 +1d>
     :PROPERTIES:
-    :LAST_REPEAT: [2019-08-30 五 10:09]
+    :LAST_REPEAT: [2019-09-03 二 10:32]
     :END:
 
+    - State "DONE"       from "WAITING"    [2019-09-03 二 10:32]
+    - State "DONE"       from "WAITING"    [2019-09-03 二 09:49]
+    - State "DONE"       from "WAITING"    [2019-09-03 二 09:49]
+    - State "DONE"       from "WAITING"    [2019-09-03 二 09:49]
     - State "DONE"       from "WAITING"    [2019-08-30 五 10:09]
     - State "DONE"       from "WAITING"    [2019-08-29 四 11:11]
     - State "DONE"       from "WAITING"    [2019-08-28 三 13:23]
