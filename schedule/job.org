@@ -34,7 +34,7 @@
 ** DONE read dwolla 接入文档                                            :job:
    CLOSED: [2019-08-22 四 13:29]
 
-** 开发 banking service                                                 :job:
+** IN-PROGRESS 开发 banking service                                     :job:
 
 *** WAITING 封装 dwolla 库
 
@@ -67,8 +67,8 @@
 
 ***** views
 
-**** IN-PROGRESS remove source
-
+**** DONE remove source
+     CLOSED: [2019-09-04 三 10:55]
 ***** wrap dwolla api
 
 ***** views
@@ -77,8 +77,24 @@
 **** DONE get funding source views
      CLOSED: [2019-08-30 五 15:35]
 
-**** IN-PROGRESS create transfer views
-     DEADLINE: <2019-09-04 三>
+
+**** DONE create transfer views
+     CLOSED: [2019-09-04 三 14:32] DEADLINE: <2019-09-04 三>
+
+***** DONE create transfer model api
+      CLOSED: [2019-09-04 三 13:37]
+
+***** DONE create view
+      CLOSED: [2019-09-04 三 14:32]
+
+**** DONE reject and cancel
+     CLOSED: [2019-09-04 三 18:15]
+
+***** DONE model update status
+      CLOSED: [2019-09-04 三 17:31]
+
+***** DONE views
+      CLOSED: [2019-09-04 三 18:15]
 
 
 *** DONE 定义相关 model
@@ -88,11 +104,12 @@
     CLOSED: [2019-08-28 三 17:24]
 
 *** TODO rebase from upstream
-    DEADLINE: <2019-09-04 三 +1d>
+    DEADLINE: <2019-09-05 四 +1d>
     :PROPERTIES:
-    :LAST_REPEAT: [2019-09-03 二 10:32]
+    :LAST_REPEAT: [2019-09-04 三 10:29]
     :END:
 
+    - State "DONE"       from "WAITING"    [2019-09-04 三 10:29]
     - State "DONE"       from "WAITING"    [2019-09-03 二 10:32]
     - State "DONE"       from "WAITING"    [2019-09-03 二 09:49]
     - State "DONE"       from "WAITING"    [2019-09-03 二 09:49]

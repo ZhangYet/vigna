@@ -25,10 +25,12 @@
    - State "DONE"       from "WAITING"    [2019-08-18 日 22:53]
 
 ** TODO 冥想                                                          :daily:
-   DEADLINE: <2019-09-03 二 +1d>
+   DEADLINE: <2019-09-05 四 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-09-02 一 21:13]
+   :LAST_REPEAT: [2019-09-04 三 14:40]
    :END:
+   - State "DONE"       from "WAITING"    [2019-09-04 三 14:40]
+   - State "DONE"       from "WAITING"    [2019-09-04 三 14:32]
    - State "DONE"       from "WAITING"    [2019-09-02 一 21:13]
    - State "DONE"       from "WAITING"    [2019-09-02 一 21:13]
    - State "DONE"       from "WAITING"    [2019-09-01 日 20:57]
