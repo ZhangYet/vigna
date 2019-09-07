@@ -17,7 +17,7 @@
 
 **** 变量名中的下划线
 
-      1. 使用 =from package import *= 的时候，以单下滑线开头的名字(如 =_var=)不会被导入。 详见[[https://docs.python.org/3/tutorial/modules.html#importing-from-a-package][文档]];
+     1. 使用 =from package import *= 的时候，以单下滑线开头的名字(如 =_var=)不会被导入。 详见[[https://docs.python.org/3/tutorial/modules.html#importing-from-a-package][文档]];
      2. Python 社区中将双下划线称为 dunder;
      3. 以 dunder 开头的变量名/方法名，会被 name mangling，用 =dir()= 查看对象属性的时候，会看见对应的变量名/方法名被改写了，这是为了避免这些变量/方法被子类覆盖;
      4. 前后都有 dunder 的变量/方法不会被改写名称[fn:2];
