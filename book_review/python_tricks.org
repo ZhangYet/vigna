@@ -87,9 +87,6 @@ t is s # False
 
 **** further reading: [[https://book.douban.com/subject/5416853/][Compiler Design]]
 
-
-
-
 ** Footnotes
 
 [fn:3] 作者在这里验证的思路挺不错的，可以借鉴。 
