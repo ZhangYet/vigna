@@ -1,0 +1,89 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /Users/dantezhang/Repos/vigna/schedule/job.org
+
+
+* DONE review 490 commit                                                :job:
+  CLOSED: [2019-08-19 一 18:07] DEADLINE: <2019-08-20 二>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-09 一 09:58
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file /Users/dantezhang/Repos/vigna/schedule/job.org
+
+
+* DONE run cerberus                                                     :job:
+  CLOSED: [2019-08-23 五 13:09]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-09 一 09:58
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file /Users/dantezhang/Repos/vigna/schedule/job.org
+
+
+* DONE read dwolla document                                             :job:
+  CLOSED: [2019-08-22 四 10:30] DEADLINE: <2019-08-20 二>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-09 一 09:58
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+  - [[https://developers.dwolla.com/resources/bank-transfer-workflow/processing-times.html][process]]
+  - [[https://developers.dwolla.com/guides/][guides]]
+  - [[https://developers.dwolla.com/resources/][api basic]]
+  - [[https://docs.dwolla.com/#introduction][api docs]]
+
+
+Archived entries from file /Users/dantezhang/Repos/vigna/schedule/job.org
+
+
+* DONE read source code of cerberus and msscore                         :job:
+  CLOSED: [2019-08-27 二 10:53]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-09 一 09:58
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE read a cerberus view function
+   CLOSED: [2019-08-23 五 17:07]
+
+** DONE read msscore
+   CLOSED: [2019-08-26 一 15:08]
+
+** DONE read mssapi
+   CLOSED: [2019-08-27 二 10:52]
+
+** DONE 再过一次 bank service 设计文档
+   CLOSED: [2019-08-27 二 10:52]
+
+
+Archived entries from file /Users/dantezhang/Repos/vigna/schedule/job.org
+
+
+* DONE read dwolla 接入文档                                             :job:
+  CLOSED: [2019-08-22 四 13:29]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-09 一 09:58
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
