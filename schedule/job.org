@@ -77,18 +77,14 @@
 
 ***** run and test
 
-*** DONE 定义相关 model
-    CLOSED: [2019-08-29 四 13:43]
-
-*** DONE 定义 schema
-    CLOSED: [2019-08-28 三 17:24]
-
 *** TODO rebase from upstream
-    DEADLINE: <2019-09-07 六 +1d>
+    DEADLINE: <2019-09-09 一 +1d>
     :PROPERTIES:
-    :LAST_REPEAT: [2019-09-06 五 10:47]
+    :LAST_REPEAT: [2019-09-09 一 10:00]
     :END:
 
+    - State "DONE"       from "WAITING"    [2019-09-09 一 10:00]
+    - State "DONE"       from "WAITING"    [2019-09-09 一 10:00]
     - State "DONE"       from "WAITING"    [2019-09-06 五 10:47]
     - State "DONE"       from "WAITING"    [2019-09-06 五 10:47]
     - State "DONE"       from "WAITING"    [2019-09-04 三 10:29]
