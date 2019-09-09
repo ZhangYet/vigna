@@ -1,6 +1,6 @@
 * every day schedule
 
-** TODO 背日语单词                                                 :japanese:
+** IN-PROGRESS 背日语单词                                          :japanese:
    DEADLINE: <2019-09-09 一 +1d>
    :PROPERTIES:
    :LAST_REPEAT: [2019-09-08 日 22:31]
