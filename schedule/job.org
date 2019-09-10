@@ -75,14 +75,35 @@
 ***** DONE migrate database
       CLOSED: [2019-09-06 五 14:10]
 
-***** run and test
+***** DONE run and test
+      CLOSED: [2019-09-09 一 10:22]
+
+**** DONE test reject and cancel views
+     CLOSED: [2019-09-09 一 11:26]
+
+***** DONE test cancel 
+      CLOSED: [2019-09-09 一 11:26]
+
+***** DONE test reject
+      CLOSED: [2019-09-09 一 11:25]
+
+**** test funding source views
+
+***** list
+
+***** create
+
+***** info
+
+
 
 *** TODO rebase from upstream
-    DEADLINE: <2019-09-09 一 +1d>
+    DEADLINE: <2019-09-10 二 +1d>
     :PROPERTIES:
-    :LAST_REPEAT: [2019-09-09 一 10:00]
+    :LAST_REPEAT: [2019-09-09 一 10:22]
     :END:
 
+    - State "DONE"       from "WAITING"    [2019-09-09 一 10:22]
     - State "DONE"       from "WAITING"    [2019-09-09 一 10:00]
     - State "DONE"       from "WAITING"    [2019-09-09 一 10:00]
     - State "DONE"       from "WAITING"    [2019-09-06 五 10:47]
