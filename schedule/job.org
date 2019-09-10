@@ -97,28 +97,3 @@
 
 
 
-*** TODO rebase from upstream
-    DEADLINE: <2019-09-10 二 +1d>
-    :PROPERTIES:
-    :LAST_REPEAT: [2019-09-09 一 10:22]
-    :END:
-
-    - State "DONE"       from "WAITING"    [2019-09-09 一 10:22]
-    - State "DONE"       from "WAITING"    [2019-09-09 一 10:00]
-    - State "DONE"       from "WAITING"    [2019-09-09 一 10:00]
-    - State "DONE"       from "WAITING"    [2019-09-06 五 10:47]
-    - State "DONE"       from "WAITING"    [2019-09-06 五 10:47]
-    - State "DONE"       from "WAITING"    [2019-09-04 三 10:29]
-    - State "DONE"       from "WAITING"    [2019-09-03 二 10:32]
-    - State "DONE"       from "WAITING"    [2019-09-03 二 09:49]
-    - State "DONE"       from "WAITING"    [2019-09-03 二 09:49]
-    - State "DONE"       from "WAITING"    [2019-09-03 二 09:49]
-    - State "DONE"       from "WAITING"    [2019-08-30 五 10:09]
-    - State "DONE"       from "WAITING"    [2019-08-29 四 11:11]
-    - State "DONE"       from "WAITING"    [2019-08-28 三 13:23]
-    1. cerberus;
-    2. mss;
-    3. protos
-
-*** DONE read [[https://docs.djangoproject.com/en/2.2/topics/class-based-views/][class based views]]
-    CLOSED: [2019-08-30 五 10:02]
