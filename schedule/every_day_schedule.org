@@ -32,9 +32,10 @@
    - State "DONE"       from "WAITING"    [2019-08-18 日 22:53]
 
 ** TODO 吃药（两片）
-   DEADLINE: <2019-09-11 三 +1d>
+   DEADLINE: <2019-09-12 四 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-09-10 二 08:36]
+   :LAST_REPEAT: [2019-09-11 三 09:57]
    :END:
+   - State "DONE"       from "WAITING"    [2019-09-11 三 09:57]
    - State "DONE"       from "WAITING"    [2019-09-10 二 08:36]
    - State "DONE"       from "WAITING"    [2019-09-09 一 21:15]

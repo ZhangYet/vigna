@@ -47,4 +47,6 @@
 
 *** 搞一个 lua 开发环境
 
-** 用 [[https://github.com/segmentio/nightmare][nightmare]] 把豆瓣阅读中读过的书拉下来。
+** IN-PROGRESS 用 [[https://github.com/segmentio/nightmare][nightmare]] 把豆瓣阅读中读过的书拉下来。
+
+   但是其实不需要用 nightmare，直接用 requests 把网页拉下来就好。
