@@ -39,3 +39,5 @@
    - State "DONE"       from "WAITING"    [2019-09-11 三 09:57]
    - State "DONE"       from "WAITING"    [2019-09-10 二 08:36]
    - State "DONE"       from "WAITING"    [2019-09-09 一 21:15]
+
+   1. 09-11 有头晕症状。
