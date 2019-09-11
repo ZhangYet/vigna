@@ -6,13 +6,19 @@
 
 *** WAITING 封装 dwolla 库
 
+**** DONE login dwolla
+     CLOSED: [2019-09-10 二 11:53]
+
+**** DONE config dwolla
+     CLOSED: [2019-09-10 二 13:11]
+
 **** DONE read source code of dwollav2
      CLOSED: [2019-08-27 二 17:39]
 
 *** DONE update urls
     CLOSED: [2019-08-30 五 11:54]
 
-*** IN-PROGRESS develop views
+*** WAITING develop views
 
 **** DONE list funding source views
      CLOSED: [2019-08-30 五 15:34]
@@ -87,13 +93,23 @@
 ***** DONE test reject
       CLOSED: [2019-09-09 一 11:25]
 
-**** test funding source views
+**** IN-PROGRESS develop and test funding source views
 
-***** list
+***** DONE list
+      CLOSED: [2019-09-10 二 14:04]
 
-***** create
+***** DONE create
+      CLOSED: [2019-09-10 二 13:49]
 
-***** info
+***** DONE info
+      CLOSED: [2019-09-10 二 14:04]
 
+***** WAITING mapping and encoder and error
 
+***** DONE transfer.update
+      CLOSED: [2019-09-10 二 17:42]
+
+***** add account data
+
+***** handle time
 
