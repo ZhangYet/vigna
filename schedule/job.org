@@ -104,7 +104,8 @@
 ***** DONE info
       CLOSED: [2019-09-10 二 14:04]
 
-***** WAITING mapping and encoder and error
+***** DONE mapping and4 encoder and error
+      CLOSED: [2019-09-12 四 09:40]
 
 ***** DONE transfer.update
       CLOSED: [2019-09-10 二 17:42]
