@@ -18,7 +18,8 @@
 *** DONE update urls
     CLOSED: [2019-08-30 五 11:54]
 
-*** WAITING develop views
+*** DONE develop views
+    CLOSED: [2019-09-12 四 10:28]
 
 **** DONE list funding source views
      CLOSED: [2019-08-30 五 15:34]
@@ -93,7 +94,8 @@
 ***** DONE test reject
       CLOSED: [2019-09-09 一 11:25]
 
-**** IN-PROGRESS develop and test funding source views
+**** DONE develop and test funding source views
+     CLOSED: [2019-09-12 四 09:43]
 
 ***** DONE list
       CLOSED: [2019-09-10 二 14:04]
@@ -117,3 +119,15 @@
 
 ***** DONE handle removed
       CLOSED: [2019-09-11 三 16:14]
+
+*** account and dwolla mapping 
+
+**** IN-PROGRESS model
+
+***** update protos
+
+***** define models
+
+***** define api
+
+**** views
