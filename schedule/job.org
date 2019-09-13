@@ -134,4 +134,7 @@
 ***** DONE define api
       CLOSED: [2019-09-12 四 14:05]
 
-**** IN-PROGRESS views
+**** DONE views
+     CLOSED: [2019-09-13 五 13:32]
+
+**** IN-PROGRESS account document
