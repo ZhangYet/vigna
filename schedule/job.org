@@ -120,14 +120,18 @@
 ***** DONE handle removed
       CLOSED: [2019-09-11 三 16:14]
 
-*** account and dwolla mapping 
+*** IN-PROGRESS account and dwolla mapping 
 
-**** IN-PROGRESS model
+**** DONE model
+     CLOSED: [2019-09-12 四 14:05]
 
-***** update protos
+***** DONE update protos
+      CLOSED: [2019-09-12 四 11:00]
 
-***** define models
+***** DONE define models
+      CLOSED: [2019-09-12 四 14:05]
 
-***** define api
+***** DONE define api
+      CLOSED: [2019-09-12 四 14:05]
 
-**** views
+**** IN-PROGRESS views
