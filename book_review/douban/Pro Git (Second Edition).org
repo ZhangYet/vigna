@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26208470/][Pro Git (Second Edition)]]:douban::read:
+* [[https://book.douban.com/subject/26208470/][Pro Git (Second Edition)]]    :douban::read:
 为了给师姐讲 git，把本书过了一遍。把自己的工程实践升华了一遍，把零碎的东西系统化了。

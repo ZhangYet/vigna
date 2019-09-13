@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/1232057/][学习 Vi 编辑器（第六版）]]:douban::read:
+* [[https://book.douban.com/subject/1232057/][学习 Vi 编辑器（第六版）]]    :douban::read:
 之所以给4星，是因为它告诉我VIM有那么多好玩的东西

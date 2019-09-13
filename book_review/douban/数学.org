@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/25829287/][数学]]:douban::read:
+* [[https://book.douban.com/subject/25829287/][数学]]    :douban::read:
 非常好的通识教材。第五章维度让我了解"分数维"，第六章几何值得重读。

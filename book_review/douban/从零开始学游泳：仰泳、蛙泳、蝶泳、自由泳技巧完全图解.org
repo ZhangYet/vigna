@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26648125/][从零开始学游泳：仰泳、蛙泳、蝶泳、自由泳技巧完全图解]]:douban::read:
+* [[https://book.douban.com/subject/26648125/][从零开始学游泳：仰泳、蛙泳、蝶泳、自由泳技巧完全图解]]    :douban::read:
 实践证明，读书是学不会自由泳的（在池子里扑腾了半天也没有学会）。

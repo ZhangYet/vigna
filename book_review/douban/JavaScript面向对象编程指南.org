@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/21372235/][JavaScript面向对象编程指南]]:douban::read:
+* [[https://book.douban.com/subject/21372235/][JavaScript面向对象编程指南]]    :douban::read:
 可以在简历上写熟悉js了(熟个鬼)。

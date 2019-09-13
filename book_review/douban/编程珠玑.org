@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/3227098/][编程珠玑]]:douban::read:
+* [[https://book.douban.com/subject/3227098/][编程珠玑]]    :douban::read:
 略略读过，日后再细读。

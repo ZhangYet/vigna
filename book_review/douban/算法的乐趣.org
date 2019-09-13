@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26351257/][算法的乐趣]]:douban::read:
+* [[https://book.douban.com/subject/26351257/][算法的乐趣]]    :douban::read:
 作者我们聊聊人生，为什么一本算法书不好好写伪代码，居然用C++写？

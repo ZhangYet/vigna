@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/1857556/][MATLAB Programming for Engineers]]:douban::read:
-
+* [[https://book.douban.com/subject/4877410/][Matlab Programming for Engineers]]    :douban::read:
+端的是好书！一本从头到尾贯彻工程师思维，教你如何解决问题的Matlab教材，其中提到的方法甚至可以应用到其他程序语言当中，不过我只是读过其中文的翻译版（是ILoveMatlab的网友提供的）

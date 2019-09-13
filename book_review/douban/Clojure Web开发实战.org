@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26758035/][Clojure Web开发实战]]:douban::read:
+* [[https://book.douban.com/subject/26758035/][Clojure Web开发实战]]    :douban::read:
 有优点：给出了一个Clojure工程实践很好的综述：怎样组织工程，那些库好用，有参考材料，可以作为一个开发路观图。大缺点是详略不当，小缺点有两个：没有在最后提供一个索引（应该给出一个涉及的开源项目的目录，这是很有帮助的），排版有点小问题。关于light table 的配置这个只能叫过时，不算缺点。

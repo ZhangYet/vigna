@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/5366248/][你一定爱读的极简欧洲史]]:douban::read:
+* [[https://book.douban.com/subject/5366248/][你一定爱读的极简欧洲史]]    :douban::read:
 为什么在豆瓣阅读上读完之后还要在豆瓣读书上面标一下读过？贵司的数据库设计和业务逻辑吃药了吧？

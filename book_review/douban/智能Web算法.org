@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/6545083/][智能Web算法]]:douban::read:
+* [[https://book.douban.com/subject/6545083/][智能Web算法]]    :douban::read:
 这本书真是烂到爆啊，连科普都算不上，你见过用 java 代码讲 bagging 的么？代码步骤还是写在注释里的。基本上懂的不用看，看的不会懂。

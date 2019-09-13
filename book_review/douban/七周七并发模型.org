@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26337939/][七周七并发模型]]:douban::read:
+* [[https://book.douban.com/subject/26337939/][七周七并发模型]]    :douban::read:
 

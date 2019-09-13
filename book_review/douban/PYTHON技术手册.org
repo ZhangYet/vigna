@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/2005622/][PYTHON技术手册]]:douban::read:
+* [[https://book.douban.com/subject/2005622/][PYTHON技术手册]]    :douban::read:
 

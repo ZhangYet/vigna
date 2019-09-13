@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/2111801/][设计模式]]:douban::read:
+* [[https://book.douban.com/subject/2111801/][设计模式]]    :douban::read:
 读不懂……

@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/2861790/][R Graphics]]:douban::read:
+* [[https://book.douban.com/subject/2861790/][R Graphics]]    :douban::read:
 终于翻译完了。

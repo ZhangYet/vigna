@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/24522045/][Redis入门指南]]:douban::read:
+* [[https://book.douban.com/subject/24522045/][Redis入门指南]]    :douban::read:
 写得不错，结合场景的说明，功能介绍得很到位，可以让读者对redis有清晰的认识。不过故事写得挺烂的。
