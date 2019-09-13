@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/25831800/][我的第一本古典音乐书]]    :douban::read:
+* [[https://book.douban.com/subject/25831800/][我的第一本古典音乐书]]    :douban:read:
 

@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26772851/][Kubernetes实战]]    :douban::read:
+* [[https://book.douban.com/subject/26772851/][Kubernetes实战]]    :douban:read:
 水分略多，把各种略显累赘的示例挤一挤，可以省下三分一篇幅。

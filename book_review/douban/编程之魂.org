@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/4719230/][编程之魂]]    :douban::read:
+* [[https://book.douban.com/subject/4719230/][编程之魂]]    :douban:read:
 

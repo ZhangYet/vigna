@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/2668182/][They Never Said It]]    :douban::read:
+* [[https://book.douban.com/subject/2668182/][They Never Said It]]    :douban:read:
 一本小册子，列举了各种常见的“引用”问题：引用的词句有变化（比如丘吉尔的 I have nothing to offer but blood, sweat, and tears, 原文应该是 blood and toil, tears and sweat)，生造引用：把某句话分到某个名人头上（比如说伏尔泰那句“我誓死捍卫你说话的权利”），还有一些毛病诸如断章取义、搞错原始出处等。可见不仅鲁迅受引用之苦，古今中外的名人都常常为自己没有说过（或者原意被歪曲）的话背黑锅。本书给我们的教训就是：名言的引用最多可以作为修辞的手段而不应作为论据的一种。

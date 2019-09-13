@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/3851892/][深入浅出Google Android]]    :douban::read:
+* [[https://book.douban.com/subject/3851892/][深入浅出Google Android]]    :douban:read:
 

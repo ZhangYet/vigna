@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/2124114/][怎样解题]]    :douban::read:
+* [[https://book.douban.com/subject/2124114/][怎样解题]]    :douban:read:
 好的方法不一定能把问题解决，但是能提高解决问题的概率和求解问题过程中的收益。简单的笔记：http://dantepy.yslsg.org/?p=32

@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/6831294/][Quaternions for Computer Graphics]]    :douban::read:
+* [[https://book.douban.com/subject/6831294/][Quaternions for Computer Graphics]]    :douban:read:
 感觉其实一篇文章可以把这本书的内容概括完。

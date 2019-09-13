@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26733525/][记忆-牛津通识读本]]    :douban::read:
+* [[https://book.douban.com/subject/26733525/][记忆-牛津通识读本]]    :douban:read:
 比较好的一部牛津通识。

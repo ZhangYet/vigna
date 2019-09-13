@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26417293/][20世纪的教训]]    :douban::read:
+* [[https://book.douban.com/subject/26417293/][20世纪的教训]]    :douban:read:
 最有意思的观点有两个 1.民主，最重要的是法治，即使因此而增加了政府干预，也是可以接受的，2.应该争论的问题不是谁该统治，而是应该如何统治。

@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/2147362/][计算机算法设计与分析]]    :douban::read:
+* [[https://book.douban.com/subject/2147362/][计算机算法设计与分析]]    :douban:read:
 我比较讨厌一个背包问题讲了大半本书。

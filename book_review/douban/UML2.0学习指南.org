@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/2014026/][UML2.0学习指南]]    :douban::read:
+* [[https://book.douban.com/subject/2014026/][UML2.0学习指南]]    :douban:read:
 简单地浏览而过，知道神马是UML而已

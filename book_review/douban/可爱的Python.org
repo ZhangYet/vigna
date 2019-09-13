@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/3884108/][可爱的Python]]    :douban::read:
+* [[https://book.douban.com/subject/3884108/][可爱的Python]]    :douban:read:
 只是浏览，回家细读

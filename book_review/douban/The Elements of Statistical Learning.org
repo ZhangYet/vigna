@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/3294335/][The Elements of Statistical Learning]]    :douban::read:
+* [[https://book.douban.com/subject/3294335/][The Elements of Statistical Learning]]    :douban:read:
 好感动啊。

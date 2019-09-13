@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/6834012/][R Graphics, Second Edition]]    :douban::read:
+* [[https://book.douban.com/subject/6834012/][R Graphics, Second Edition]]    :douban:read:
 毕竟是译者

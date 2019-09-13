@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/1632977/][The Little Schemer - 4th Edition]]    :douban::read:
+* [[https://book.douban.com/subject/1632977/][The Little Schemer - 4th Edition]]    :douban:read:
 两百页都不到，停机问题和Y combinator都写了，抵啊。

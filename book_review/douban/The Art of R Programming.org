@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/6727873/][The Art of R Programming]]    :douban::read:
+* [[https://book.douban.com/subject/6727873/][The Art of R Programming]]    :douban:read:
 我可以读更高级的Writing R extension了

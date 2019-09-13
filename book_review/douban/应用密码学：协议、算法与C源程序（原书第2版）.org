@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/25772389/][应用密码学：协议、算法与C源程序（原书第2版）]]    :douban::read:
+* [[https://book.douban.com/subject/25772389/][应用密码学：协议、算法与C源程序（原书第2版）]]    :douban:read:
 太丰富了！地图一般的著作。
