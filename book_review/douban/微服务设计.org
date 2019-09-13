@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26772677/][微服务设计]]:read:
+* [[https://book.douban.com/subject/26772677/][微服务设计]]:douban::read:
 

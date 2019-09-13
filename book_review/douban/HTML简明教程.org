@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/1650341/][HTML简明教程]]:read:
+* [[https://book.douban.com/subject/1650341/][HTML简明教程]]:douban::read:
 简易到，明难达，这本1998年出版的书，薄薄的，但是已经把HTML的轮廓描绘出来，我作为一个之前甚少接触Web编程的人，表示满意。当然是让你了解HTML而已，对一本书期望过重是一种错误。

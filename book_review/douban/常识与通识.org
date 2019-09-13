@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/1023000/][常识与通识]]:read:
+* [[https://book.douban.com/subject/1023000/][常识与通识]]:douban::read:
 卖弄不是问题，请卖弄自己了解的东西而不是自己一知半解的东西。

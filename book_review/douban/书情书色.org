@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/3880732/][书情书色]]:read:
+* [[https://book.douban.com/subject/3880732/][书情书色]]:douban::read:
 无聊的课上看一眼吧

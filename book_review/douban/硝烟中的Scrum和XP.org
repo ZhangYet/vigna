@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/5501718/][硝烟中的Scrum和XP]]:read:
+* [[https://book.douban.com/subject/5501718/][硝烟中的Scrum和XP]]:douban::read:
 

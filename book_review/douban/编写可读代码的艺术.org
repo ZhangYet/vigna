@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/10797189/][编写可读代码的艺术]]:read:
+* [[https://book.douban.com/subject/10797189/][编写可读代码的艺术]]:douban::read:
 一篇博客可以讲完的事情，需要写一本书吗？

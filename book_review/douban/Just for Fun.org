@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/1451172/][Just for Fun]]:read:
+* [[https://book.douban.com/subject/1451172/][Just for Fun]]:douban::read:
 很迷人，令人想见北国风光。同时也很热血，读着让人有从床上滚下来写代码的冲动。不过后面Linus论述知识产权那部分就没有那么有趣了。

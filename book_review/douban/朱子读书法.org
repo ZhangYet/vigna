@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26898827/][朱子读书法]]:read:
+* [[https://book.douban.com/subject/26898827/][朱子读书法]]:douban::read:
 世殊事异，又何必乞灵于古人？

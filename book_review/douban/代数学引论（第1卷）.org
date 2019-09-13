@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/2036531/][代数学引论（第1卷）]]:read:
+* [[https://book.douban.com/subject/2036531/][代数学引论（第1卷）]]:douban::read:
 值得我们一读再读的好书！真的，在这个代数学如此不发达的国度，这样一本书是伟大的——不，在整个世界，都可以这样说。

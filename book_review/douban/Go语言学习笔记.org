@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26832468/][Go语言学习笔记]]:read:
+* [[https://book.douban.com/subject/26832468/][Go语言学习笔记]]:douban::read:
 作为Go源码的索引看。注意到Go版本迭代之后，书中的源码跟最新版本的Go有差异。

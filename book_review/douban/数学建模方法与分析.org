@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/1392709/][数学建模方法与分析]]:read:
+* [[https://book.douban.com/subject/1392709/][数学建模方法与分析]]:douban::read:
 

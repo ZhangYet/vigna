@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/1033248/][幸福之路]]:read:
+* [[https://book.douban.com/subject/1033248/][幸福之路]]:douban::read:
 解决自我与世界的对立。

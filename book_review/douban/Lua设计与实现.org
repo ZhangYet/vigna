@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/27108476/][Lua设计与实现]]:read:
+* [[https://book.douban.com/subject/27108476/][Lua设计与实现]]:douban::read:
 越发喜欢lua

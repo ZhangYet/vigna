@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26593084/][迷人的材料]]:read:
+* [[https://book.douban.com/subject/26593084/][迷人的材料]]:douban::read:
 涉及的科学原理太少。篇幅也十分散乱。

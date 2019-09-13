@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/24381562/][统计思维：程序员数学之概率统计]]:read:
+* [[https://book.douban.com/subject/24381562/][统计思维：程序员数学之概率统计]]:douban::read:
 

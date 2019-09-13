@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26697774/][“错误”的行为]]:read:
+* [[https://book.douban.com/subject/26697774/][“错误”的行为]]:douban::read:
 以后再补充笔记吧。

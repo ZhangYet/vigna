@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/25986284/][单页Web应用]]:read:
+* [[https://book.douban.com/subject/25986284/][单页Web应用]]:douban::read:
 译者好认真！

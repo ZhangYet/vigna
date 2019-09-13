@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/1152111/][程序员修炼之道]]:read:
+* [[https://book.douban.com/subject/1152111/][程序员修炼之道]]:douban::read:
 

@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26792674/][R绘图系统]]:read:
+* [[https://book.douban.com/subject/26792674/][R绘图系统]]:douban::read:
 

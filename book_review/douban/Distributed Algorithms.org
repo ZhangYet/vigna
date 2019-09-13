@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/25796795/][Distributed Algorithms]]:read:
+* [[https://book.douban.com/subject/25796795/][Distributed Algorithms]]:douban::read:
 过于陈旧
