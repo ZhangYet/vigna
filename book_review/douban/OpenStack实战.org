@@ -1,0 +1,2 @@
+* [[https://book.douban.com/subject/27042005/][OpenStack实战]]:read:
+太实战了，尼玛连安装的apt命令都列出来了，有这时间，还不如好好描述一下OpenStack的架构（图画得太丑了）。

@@ -1,0 +1,2 @@
+* [[https://book.douban.com/subject/4722718/][编程的本质]]:read:
+挺有意思的。给编程一个比较严谨的数学描述。

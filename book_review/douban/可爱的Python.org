@@ -1,0 +1,2 @@
+* [[https://book.douban.com/subject/3884108/][可爱的Python]]:read:
+只是浏览，回家细读
