@@ -120,7 +120,8 @@
 ***** DONE handle removed
       CLOSED: [2019-09-11 三 16:14]
 
-*** IN-PROGRESS account and dwolla mapping 
+*** DONE account and dwolla mapping 
+    CLOSED: [2019-09-14 六 10:10]
 
 **** DONE model
      CLOSED: [2019-09-12 四 14:05]
@@ -137,4 +138,19 @@
 **** DONE views
      CLOSED: [2019-09-13 五 13:32]
 
-**** IN-PROGRESS account document
+**** DONE account document
+     CLOSED: [2019-09-14 六 10:03]
+
+*** DONE link 
+    CLOSED: [2019-09-14 六 15:41]
+
+**** DONE 返还的 url
+     CLOSED: [2019-09-14 六 15:41]
+
+**** DONE 模板 view 函数
+     CLOSED: [2019-09-14 六 14:16]
+
+**** DONE tempelate
+     CLOSED: [2019-09-14 六 14:16]
+
+*** create funding source

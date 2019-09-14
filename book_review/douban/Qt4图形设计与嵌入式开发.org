@@ -1,2 +1,0 @@
-* [[https://book.douban.com/subject/3613402/][Qt4图形设计与嵌入式开发]]    :douban:read:
-写得还好啦，关键是实例选得不差，而且解释了某些设计思想。
