@@ -1,2 +1,3 @@
-* [[https://book.douban.com/subject/1467587/][UNIX编程艺术]]    :douban:read:
+* [[https://book.douban.com/subject/1467587/][UNIX编程艺术]]                                              :douban:toreread:
+我怀疑我当时读得有多马虎。
 
