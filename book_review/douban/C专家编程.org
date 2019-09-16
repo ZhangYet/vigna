@@ -1,2 +1,0 @@
-* [[https://book.douban.com/subject/2377310/][C专家编程]]    :douban:read:
-指针那三章需要细读。

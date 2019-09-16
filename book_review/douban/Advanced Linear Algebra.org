@@ -1,2 +1,0 @@
-* [[https://book.douban.com/subject/2861408/][Advanced Linear Algebra]]    :douban:read:
-人生第一本GTM
