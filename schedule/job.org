@@ -2,9 +2,11 @@
 
   Records every day work plan
 
-** IN-PROGRESS 开发 banking service                                     :job:
+** DONE 开发 banking service                                            :job:
+   CLOSED: [2019-09-16 一 10:41]
 
-*** WAITING 封装 dwolla 库
+*** DONE 封装 dwolla 库
+    CLOSED: [2019-09-16 一 10:41]
 
 **** DONE login dwolla
      CLOSED: [2019-09-10 二 11:53]
@@ -153,4 +155,12 @@
 **** DONE tempelate
      CLOSED: [2019-09-14 六 14:16]
 
-*** create funding source
+*** DONE create funding source
+    CLOSED: [2019-09-16 一 10:41]
+
+** 测试 banking service
+
+*** 测试确定 dwolla 返回的各种信息。
+
+*** 测试 link 接口以及返回的页面。
+
