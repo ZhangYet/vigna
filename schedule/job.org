@@ -168,3 +168,16 @@
 所以要先增加一个创建 customer 的接口。然后在我们这边先调用了。
 总算把 account 的数据搞进去了。
 
+*** DONE 创建 funding source 的逻辑
+    CLOSED: [2019-09-18 三 10:39]
+
+首先验证用户 account， 然后用用户的 account 信息创建客户的 funding source
+然而我们其实是需要先创建 customer 的。先检查是否有 dwolla customer 然后如果没有，就创建吧
+
+*** rebase 
+
+**** 先把 commit 数处理掉
+
+**** 再跟踪上游
+
+*** 从头检视，确认各种概念的问题
