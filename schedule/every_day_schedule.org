@@ -1,11 +1,12 @@
 * every day schedule
 
 ** TODO 背日语单词                                                 :japanese:
-   DEADLINE: <2019-09-19 四 +1d>
+   DEADLINE: <2019-09-20 五 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-09-19 四 10:15]
+   :LAST_REPEAT: [2019-09-19 四 21:26]
    :END:
 
+   - State "DONE"       from "WAITING"    [2019-09-19 四 21:26]
    - State "DONE"       from "WAITING"    [2019-09-19 四 10:15]
    - State "DONE"       from "WAITING"    [2019-09-18 三 10:51]
    - State "DONE"       from "WAITING"    [2019-09-16 一 22:52]
@@ -39,24 +40,5 @@
    - State "DONE"       from "WAITING"    [2019-08-19 一 21:32]
    - State "DONE"       from "WAITING"    [2019-08-18 日 22:53]
 
-** TODO 吃药（两片）                                                :medical:
+** TODO 吃药（三片）
    DEADLINE: <2019-09-20 五 +1d>
-   :PROPERTIES:
-   :LAST_REPEAT: [2019-09-19 四 10:15]
-   :END:
-   - State "DONE"       from "WAITING"    [2019-09-19 四 10:15]
-   - State "DONE"       from "WAITING"    [2019-09-18 三 10:51]
-   - State "DONE"       from "WAITING"    [2019-09-17 二 09:56]
-   - State "DONE"       from "WAITING"    [2019-09-16 一 12:38]
-   - State "DONE"       from "WAITING"    [2019-09-16 一 12:38]
-   - State "DONE"       from "WAITING"    [2019-09-14 六 13:41]
-   - State "DONE"       from "WAITING"    [2019-09-13 五 10:18]
-   - State "DONE"       from "WAITING"    [2019-09-12 四 09:44]
-   - State "DONE"       from "WAITING"    [2019-09-11 三 09:57]
-   - State "DONE"       from "WAITING"    [2019-09-10 二 08:36]
-   - State "DONE"       from "WAITING"    [2019-09-09 一 21:15]
-
-   - 09-11 有头晕症状。
-   - 09-18 剧烈头痛。
-   - 09-19 复诊，可能会更换药物。
-
