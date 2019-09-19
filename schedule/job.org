@@ -174,10 +174,23 @@
 首先验证用户 account， 然后用用户的 account 信息创建客户的 funding source
 然而我们其实是需要先创建 customer 的。先检查是否有 dwolla customer 然后如果没有，就创建吧
 
-*** rebase 
+*** DONE rebase 
+    CLOSED: [2019-09-18 三 14:28]
 
-**** 先把 commit 数处理掉
+**** DONE 先把 commit 数处理掉
+     CLOSED: [2019-09-18 三 14:21]
 
-**** 再跟踪上游
+**** DONE 再跟踪上游
+     CLOSED: [2019-09-18 三 14:28]
 
-*** 从头检视，确认各种概念的问题
+*** IN-PROGRESS 从头检视，确认各种概念的问题
+
+**** transfer 的 id 问题：dwolla 会生成一个 id， WIRE 会采用自己的 id
+
+**** amount, requested_amount, fee 这几个量中间的关系
+
+**** dwolla 接口的异常处理
+
+所有 dwolla 接口如果不是正常返回，都是抛出异常这就很烦了，不知道是不是该在 dwolla.py 里面封装异常。
+
+**** cancel/reject 这两个请求，是否跟 dwolla 有关
