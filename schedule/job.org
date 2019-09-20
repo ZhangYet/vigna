@@ -187,10 +187,16 @@
 
 **** transfer 的 id 问题：dwolla 会生成一个 id， WIRE 会采用自己的 id
 
+dwolla 生成的 id 写入 upstream_id
+
 **** amount, requested_amount, fee 这几个量中间的关系
+
+目前是把 requested_amount 作为 amount 使用， fee 是直接保存。
 
 **** dwolla 接口的异常处理
 
 所有 dwolla 接口如果不是正常返回，都是抛出异常这就很烦了，不知道是不是该在 dwolla.py 里面封装异常。
 
 **** cancel/reject 这两个请求，是否跟 dwolla 有关
+
+**** model 层的错误处理
