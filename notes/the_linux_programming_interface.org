@@ -36,3 +36,37 @@
 
     =reboot= 第二个参数的 magic 数值转换成十六进制之后，其实就是 Linus 和他女儿的生日，见[[https://stackoverflow.com/questions/4808748/magic-numbers-of-the-linux-reboot-system-call][这个回答]]。
 
+
+** 文件 I/O
+
+*** =open()=
+
+    1. 因为早期的 UNIX 实现，使用 0、1和2表示 =O_RDONLY=, =O_WRONLY= 和 =O_RDWR= 所以， =O_RDWR= 不等于 =O_RDONLY | O_WRONLY=[fn:1]。
+    2. 新建文件的权限会依赖于 =open()= 的参数 mode 以及进程的 umask 值和父目录的默认访问控制列表。
+
+*** =read()=
+
+    1. =read()= 读取的字节数少于请求的字节数的情况：靠近 **普通文件** 尾部；管道、FIFO、socket 或者终端。
+    2. C 语言里面调用 =read()= 还得手动加 ='\0= 。
+
+*** =write()=
+
+    1. 对磁盘文件执行 I/O 操作时， =write()= 成功并不能确保数据已经写入磁盘。因为内核会缓存磁盘的 I/O 操作。
+
+*** =close()=
+    
+    1. 关闭文件可能的错误：关闭未打开或者已经关闭的文件。
+
+*** =lseek()= 改变文件偏移量
+
+    1. 并不适用于所有文件（如管道、FIFO、socket或者终端）。
+    2. =lseek()= 之后再写入，可以导致文件空洞
+
+*** 练习
+
+    1. 写一个 tee
+    2. 复制时带空洞
+
+** Footnotes
+
+[fn:1] 所以别乱用 
