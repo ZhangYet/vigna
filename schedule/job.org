@@ -185,7 +185,8 @@
 
 *** IN-PROGRESS 从头检视，确认各种概念的问题
 
-**** transfer 的 id 问题：dwolla 会生成一个 id， WIRE 会采用自己的 id
+**** DONE transfer 的 id 问题：dwolla 会生成一个 id， WIRE 会采用自己的 id
+     CLOSED: [2019-09-20 五 13:21]
 
 dwolla 生成的 id 写入 upstream_id
 
@@ -200,3 +201,11 @@ dwolla 生成的 id 写入 upstream_id
 **** cancel/reject 这两个请求，是否跟 dwolla 有关
 
 **** model 层的错误处理
+
+**** DONE 通过页面创建一个 funding source
+     CLOSED: [2019-09-20 五 15:30]
+
+流程我走过了，但是在最后一步卡住了。
+
+**** DONE rebase
+     CLOSED: [2019-09-20 五 15:16]
