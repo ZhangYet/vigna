@@ -1,0 +1,13 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /Users/zhangye/Repos/vigna/book_review/douban/深入浅出Node.js.org
+
+
+* [[https://book.douban.com/subject/25768396/][深入浅出Node.js]]    :douban:read:
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-21 六 17:36
+  :ARCHIVE_FILE: ~/Repos/vigna/book_review/douban/深入浅出Node.js.org
+  :ARCHIVE_CATEGORY: 深入浅出Node.js
+  :END:
+内容很实惠，除了稍嫌不够深入之外，材料也有落伍的地方（毕竟发展得快），没有太大的缺点。介绍 nodejs 模块以及异步编程的部分对我帮助很大（我之前一直看不懂 vs code extension  api 的原因即是我不了解 js 异步编程范式），如果 #我的同事阿辉#  看过这本书，他就不会在我问他“js的垃圾回收机制是什么”的时候哑口无言了。第8章可以看作开发网络框架的思路。

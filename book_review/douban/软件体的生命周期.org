@@ -1,2 +1,2 @@
-* [[https://book.douban.com/subject/26295450/][软件体的生命周期]]    :douban:read:
+* [[https://book.douban.com/subject/26295450/][软件体的生命周期]]                                          :douban:toreread:
 不如《你一生的故事》惊艳。部分原因是编排的问题。作为一个沉重(因为这个故事里面都是钱的问题啊，任何故事只要涉及钱都会沉重)的中篇，《软件体的生命周期》这一篇应该放在最后。

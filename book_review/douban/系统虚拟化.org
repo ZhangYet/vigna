@@ -1,2 +1,0 @@
-* [[https://book.douban.com/subject/3619896/][系统虚拟化]]    :douban:read:
-过了一遍，太旧了。
