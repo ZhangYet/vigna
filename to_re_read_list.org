@@ -140,3 +140,195 @@ Ted Chiang 的七肢桶可以看到所有时刻，它们之所以来地球。是
   
 * [[https://book.douban.com/subject/26916012/][黑暗的左手]]                                                :douban:toreread:
 无可挑剔。
+* [[https://book.douban.com/subject/2340609/][2001太空漫游]]                                              :douban:toreread:
+想象瑰丽无比。但是第一次读得仓促，我决定重新读一次。
+* [[https://book.douban.com/subject/26417293/][20世纪的教训]]                                              :douban:toreread:
+最有意思的观点有两个 1.民主，最重要的是法治，即使因此而增加了政府干预，也是可以接受的，2.应该争论的问题不是谁该统治，而是应该如何统治。
+* [[https://book.douban.com/subject/10404804/][An Enemy of the People]]                                    :douban:toreread:
+看完之后不是很明白之前邵宾纳改编的版本里面安排医生夫人和报社主编出轨的情节。不过总的来说改编还是很成功的。原著里面的医生太精英气息了。
+* [[https://book.douban.com/subject/1106304/][Borland传奇]]                                               :douban:toreread:
+忽然觉得，没有了Borland这种对手，是微软现在一副挫样的重要原因
+* [[https://book.douban.com/subject/1438060/][Cat's Cradle]]                                              :douban:toreread:
+* [[https://book.douban.com/subject/26642310/][DOOM启世录（纪念版）]]                                      :douban:toreread:
+有时候读书并不是什么好事。做了三年多社畜之后，再读这本书，我充满焦虑，觉得自己既没有天分也没有热忱，即使安慰自己计算机行业的精英光环都是构建的，也无法忽视一个事实：卡马克做的事情实在了不起。在这个时代，一个平庸的人该如何自处？
+* [[https://book.douban.com/subject/1366558/][Eight Million Ways to Die]]                                 :douban:toreread:
+
+这应该是我第一次读劳伦斯·布洛克（也可能是《父之罪》），无论如何，都值得重读一次。
+* [[https://book.douban.com/subject/26832468/][Go语言学习笔记]]                                            :douban:toreread:
+作为Go源码的索引看。注意到Go版本迭代之后，书中的源码跟最新版本的Go有差异。
+* [[https://book.douban.com/subject/1451172/][Just for Fun]]                                              :douban:toreread:
+很迷人，令人想见北国风光。同时也很热血，读着让人有从床上滚下来写代码的冲动。不过后面Linus论述知识产权那部分就没有那么有趣了。
+* [[https://book.douban.com/subject/27108476/][Lua设计与实现]]                                             :douban:toreread:
+越发喜欢lua
+* [[https://book.douban.com/subject/20441131/][QED]]                                                       :douban:toreread:
+数学太少反而看不懂。。。都是我这半吊子的数学训练害的。。。。
+* [[https://book.douban.com/subject/26772149/][Scala函数式编程]]                                           :douban:toreread:
+为了跟我的朋友卜北吃饭，特意借来翻了一次，第二部分开始基本完全不懂，还是得买一本回来刷题。
+* [[https://book.douban.com/subject/3294335/][The Elements of Statistical Learning]]                      :douban:toreread:
+好感动啊。其实我从来就没有读懂过。
+* [[https://book.douban.com/subject/1632977/][The Little Schemer - 4th Edition]]                          :douban:toreread:
+两y百页都不到，停机问题和Y combinator都写了，抵啊。
+* [[https://book.douban.com/subject/1467587/][UNIX编程艺术]]                                              :douban:toreread:
+我怀疑我当时读得有多马虎。
+
+* [[https://book.douban.com/subject/2297697/][ZOO]]                                                       :douban:toreread:
+
+考虑是短篇小说集，我觉得还是可以重新看一下的。
+
+* [[https://book.douban.com/subject/26697774/][“错误”的行为]]                                            :douban:toreread:
+以后再补充笔记吧。
+* [[https://book.douban.com/subject/3633461/][一句顶一万句]]                                              :douban:toreread:
+刘震云简直就像他书里面的人物，一句带出千万句，一件事绕到另一件事情上面去。正本书就像听一个赶集的老汉扯，偏偏扯得有味，能让你琢磨琢磨。
+* [[https://book.douban.com/subject/6789551/][不存在的骑士]]                                              :douban:toreread:
+看到了王小波的师承。
+* [[https://book.douban.com/subject/1004376/][世說新語校箋（全二冊）]]                                    :douban:toreread:
+
+* [[https://book.douban.com/subject/1030503/][东晋门阀政治]]                                              :douban:toreread:
+精彩绝伦！！编剧们读读历史吧！！东晋才是真的纯爷们斗智斗力的舞台好吧。少来那些向皇帝泡媚眼的清宫戏了，东晋的历史真可说是中国历史版本的“冰与火之歌”啊
+* [[https://book.douban.com/subject/3842128/][中国经典十种]]                                              :douban:toreread:
+
+* [[https://book.douban.com/subject/1205052/][九三年]]                                                    :douban:toreread:
+
+* [[https://book.douban.com/subject/10738023/][了不起的盖茨比]]                                            :douban:toreread:
+我以前一直抗拒读这本书，没想到这次这么愉快地看完了。
+* [[https://book.douban.com/subject/10508054/][云中人]]                                                    :douban:toreread:
+晦暗，压抑，迥异的校园小说。
+* [[https://book.douban.com/subject/30147566/][五号屠场]]                                                  :douban:toreread:
+Ted Chiang 的七肢桶可以看到所有时刻，它们之所以来地球。是因为它们来地球(因果是同一的)。这个创意冯内古特在这本《五号屠场》写过了，不知道 Ted 是否受此启发。人类打了两次世界大战，到底得到了什么？什么都没有得到。只有狗屎。
+* [[https://book.douban.com/subject/6556296/][亚洲教父]]                                                  :douban:toreread:
+这本书真是爽到爆啊，把李嘉诚等东南亚大亨黑了遍。
+* [[https://book.douban.com/subject/1058679/][人·兽·鬼]]                                                  :douban:toreread:
+
+钱锺书为人聪明，长篇小说其实力有未逮，《围城》算不上一流的作品，看他的短篇小说其实更好。
+
+* [[https://book.douban.com/subject/2036531/][代数学引论（第1卷）]]                                       :douban:toreread:
+值得我们一读再读的好书！真的，在这个代数学如此不发达的国度，这样一本书是伟大的——不，在整个世界，都可以这样说。
+* [[https://book.douban.com/subject/3264642/][似水流年]]                                                  :douban:toreread:
+恨短！恨短！
+* [[https://book.douban.com/subject/25892399/][余生皆假期]]                                                :douban:toreread:
+重新读了一次，感觉这才是伊坂最好的作品(但他总给我一种他还能有更好的作品的感觉)。
+
+这似乎是目前，伊坂最值得重读的一本了。
+* [[https://book.douban.com/subject/5984387/][佛学概论]]                                                  :douban:toreread:
+简明扼要，脉络清晰。
+
+最近（09年9月中）刚好读了一些南传佛教的材料，不妨重新读一下。
+* [[https://book.douban.com/subject/1057788/][佛陀和原始佛教思想]]                                        :douban:toreread:
+比《印度佛教史》适合入门。
+* [[https://book.douban.com/subject/26295448/][你一生的故事]]                                              :douban:toreread:
+精妙绝伦。
+* [[https://book.douban.com/subject/5044790/][儒林外史汇校汇评本]]                                        :douban:toreread:
+吐槽神作啊！！！@夜月生 里面大量的点评其实就是古人的弹幕吐槽啊！！！
+* [[https://book.douban.com/subject/25891911/][光明王]]                                                    :douban:toreread:
+无与伦比，其中我最喜欢阎摩。
+
+上次重读（2019年6月）感觉就不如初读，不知道再次阅读，会有怎样的体验。
+* [[https://book.douban.com/subject/30325325/][全能侦探社]]                                                :douban:toreread:
+
+* [[https://book.douban.com/subject/21690283/][再会，谢谢所有的鱼]]                                        :douban:toreread:
+这本确实不行。节奏一塌糊涂。
+* [[https://book.douban.com/subject/3888123/][写作这回事]]                                                :douban:toreread:
+
+我想还是可以再读一次。
+
+* [[https://book.douban.com/subject/1961884/][功利主义]]                                                  :douban:toreread:
+如果没有读过穆勒的原著，谁能想到功利主义居然是要求人“高尚”的呢？
+寒假再读一次。
+
+然而实际上我一直都没有读。
+* [[https://book.douban.com/subject/26327547/][单词的历史]]                                                :douban:toreread:
+
+* [[https://book.douban.com/subject/27029478/][厨艺的常识]]                                                :douban:toreread:
+一本非常完美的烹饪入门教科书：介绍了重点的材料（盐、水、黄油等）和基本技法（煎、炒、烤等），有原理有最佳实践，每个主题下还附带合适的菜谱。我很同意作者对烹饪的看法：基本功，只要长期锻炼基本功，才能成就及格的厨艺。
+* [[https://book.douban.com/subject/30234414/][咒语]]                                                      :douban:toreread:
+很佩服这么荒诞又絮絮叨叨的作品居然如此流畅，可以一口气读完。
+* [[https://book.douban.com/subject/2341188/][唐诗选注]]                                                  :douban:toreread:
+
+今年又读了一次，但还是会再读。选的诗确实好，注释也有意思，虽然充满了学者味，但还是「蔚然可观」。
+* [[https://book.douban.com/subject/27045888/][囚鸟]]                                                      :douban:toreread:
+让我想起赫拉巴尔《我曾伺候过英国国王》，还有王小波，翻译很优秀。后半段有点无力。
+* [[https://book.douban.com/subject/24882304/][地海传奇1：地海巫师]]                                       :douban:toreread:
+挺难影视化的，或者应该拍成《少年派的奇幻漂流》那样的风格？
+* [[https://book.douban.com/subject/25752979/][基本无害]]                                                  :douban:toreread:
+评论一个作家的文笔的时候，我往往会看ta如何写食物，亚当斯在这一本里面写阿瑟做的三明治（虽然用的是一种子虚乌有的动物的肉）看得我都馋了——这可以作为一个例证，当然他写得好的地方不止这里。
+* [[https://book.douban.com/subject/1076728/][复活]]                                                      :douban:toreread:
+
+* [[https://book.douban.com/subject/26833398/][失去一切的人]]                                              :douban:toreread:
+这一本其实不如《黑暗的左手》，但是我更喜欢这本。我喜欢阿瑞纳斯这个贫瘠但是平等自由的无政府主义世界，谢维克有点像《斯通纳》里面的斯通纳，但是他更幸运，面对命运也更有力。
+* [[https://book.douban.com/subject/2136484/][如果在冬夜，一个旅人]]                                      :douban:toreread:
+
+* [[https://book.douban.com/subject/3711709/][娱乐至死 童年的消逝]]                                       :douban:toreread:
+
+* [[https://book.douban.com/subject/10488563/][宇宙尽头的餐馆]]                                            :douban:toreread:
+“宇宙他妈的意义是什么？”“宇宙毫无意义。”——重读了一遍。
+* [[https://book.douban.com/subject/1021623/][安娜·卡列宁娜（上下）]]                                     :douban:toreread:
+
+* [[https://book.douban.com/subject/25796120/][小径分岔的花园]]                                            :douban:toreread:
+
+* [[https://book.douban.com/subject/3194071/][少年巴比伦]]                                                :douban:toreread:
+豆瓣阅读
+* [[https://book.douban.com/subject/25772389/][应用密码学：协议、算法与C源程序（原书第2版）]]              :douban:toreread:
+太丰富了！地图一般的著作。
+* [[https://book.douban.com/subject/2364764/][彼得堡故事]]                                                :douban:toreread:
+
+完全不记得读过了，得重读一下。
+
+* [[https://book.douban.com/subject/19985027/][御伽草纸]]                                                  :douban:toreread:
+人往往会因为一部作品而对某个作家产生偏见，实在无法想象写出《人间失格》的太宰治居然写出了《御伽草纸》。《浦岛太郎》一篇实在精彩极了。
+* [[https://book.douban.com/subject/3003466/][恶棍列传]]                                                  :douban:toreread:
+叙事简短，但是很耐嚼。
+* [[https://book.douban.com/subject/3406401/][悉达多]]                                                    :douban:toreread:
+
+完全忘记这本书了。
+
+* [[https://book.douban.com/subject/1038656/][我曾侍候过英国国王]]                                        :douban:toreread:
+
+* [[https://book.douban.com/subject/30320887/][我的世界观]]                                                :douban:toreread:
+爱因斯坦文笔流畅，各种文章都有一种自然不费力的风度。全书分四个部分，第一部分是世界观。第二部分是爱因斯坦的和平主义思想论述。爱因斯坦的和平主义思想莫名让我想起托尔金，把军备比作魔戒的话，爱因斯坦的和平计划就跟林谷会议的决策一样：只有销毁魔戒才能保存这个世界。然而世界就只是拿着不同的魔戒来信砍。第三部分是犹太民族相关。第四部分是物理讲义，往往是他的讲义和一些论文评论，我没有细看（因为这部分内容很多都是面对物理学者的）。
+* [[https://book.douban.com/subject/4075784/][手机]]                                                      :douban:toreread:
+
+有空可以重新看看。
+
+* [[https://book.douban.com/subject/1487995/][文字生涯]]                                                  :douban:toreread:
+
+
+* [[https://book.douban.com/subject/2027666/][杜甫诗歌讲演录]]                                            :douban:toreread:
+这本书太好看了，尤其是关于杜诗注本的三篇，令我大开眼界。莫老本人也是幽默锋利。
+* [[https://book.douban.com/subject/3697494/][洞穴奇案]]                                                  :douban:toreread:
+
+* [[https://book.douban.com/subject/24163576/][漫长的告别]]                                                :douban:toreread:
+为什么最后不是一个阴暗的结局？
+* [[https://book.douban.com/subject/3836566/][玫瑰的名字]]                                                :douban:toreread:
+书就是迷宫，一本书会把你引向更多的书。
+* [[https://book.douban.com/subject/19938026/][生命，宇宙以及一切]]                                        :douban:toreread:
+难为译者了。
+* [[https://book.douban.com/subject/10555509/][看不见的城市]]                                              :douban:toreread:
+文字的无限可能。
+* [[https://book.douban.com/subject/20376550/][科学革命的结构]]                                            :douban:toreread:
+今年到目前为止读过最好的书。核心观点就是：科学的发展就是新范式取代旧范式，而不是一个“事实和理论的积累”，看完这本书再去看其他科学史的书，心中自有经纬在。
+* [[https://book.douban.com/subject/1022632/][罪与罚]]                                                    :douban:toreread:
+
+年轻的时候囫囵吞枣读完了一次，一点东西都没有读出来。
+
+* [[https://book.douban.com/subject/26986883/][老妇还乡]]                                                  :douban:toreread:
+发现一个新的作家，就好像发现一个新的 AV 女优一样令人惊喜（我只是喜欢这个比喻猥琐）
+* [[https://book.douban.com/subject/25793571/][脚注趣史]]                                                  :douban:toreread:
+
+* [[https://book.douban.com/subject/20494401/][费马大定理]]                                                :douban:toreread:
+大部分值得读的地方在第五章之后，那是现代数学的内容（虽然有伽罗华的悲剧人生）。读到志村和谷山提出他们的猜想的那一段的时候，我都被镇住了。虽然我一点都不懂椭圆曲线和模形式。另外我还是觉得怀尔斯很可怕。
+* [[https://book.douban.com/subject/26295450/][软件体的生命周期]]                                          :douban:toreread:
+不如《你一生的故事》惊艳。部分原因是编排的问题。作为一个沉重(因为这个故事里面都是钱的问题啊，任何故事只要涉及钱都会沉重)的中篇，《软件体的生命周期》这一篇应该放在最后。
+* [[https://book.douban.com/subject/25911182/][软件故事]]                                                  :douban:toreread:
+图形界面部分给了我新的想法（对图形界面的新看法），重新给个评价，写得太糟糕了，一股子无聊畅销书的味道，翻译也有问题。
+* [[https://book.douban.com/subject/2040775/][辛弃疾传 辛稼轩年谱]]                                       :douban:toreread:
+忽然想起度过这本书，不过完全忘记这本书写了什么了，连家中是否还有这本书都不能确定了。
+* [[https://book.douban.com/subject/2042633/][金蔷薇]]                                                    :douban:toreread:
+
+出了新版，估计会买一本新版来看。
+
+* [[https://book.douban.com/subject/3124595/][鮑參軍集注]]                                                :douban:toreread:
+明远《代空城雀》「高飞畏鸱鸢，下飞畏网罗」，羡慕青鸟「远食玉山禾」，看到吴宫燕「无罪得焚窠」，又心存侥幸自我安慰「赋命有厚薄，长叹欲如何」。可是最终身死人手，说他活该又太苛刻。只能说，人生真是太多无奈太少选择。
+* [[https://book.douban.com/subject/1082406/][黄金时代]]                                                  :douban:toreread:
+
+* [[https://book.douban.com/subject/26916012/][黑暗的左手]]                                                :douban:toreread:
+无可挑剔。
