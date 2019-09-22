@@ -93,7 +93,7 @@
     1. 5-2 用 =O_APPEND= 打开文件，并将文件偏移量置于文件起始处，写入数据；
     2. atomic_append[fn:3]
 
-
+** 进程
     
 
 ** Footnotes
