@@ -202,6 +202,8 @@ dwolla 生成的 id 写入 upstream_id
 
 **** model 层的错误处理
 
+get 不到的时候，会抛出异常，这种异常应该在哪里处理？其实本身 Model 就有对应的 DoesNotExist 的。所以看是放在哪里去处理了。
+
 **** DONE 通过页面创建一个 funding source
      CLOSED: [2019-09-20 五 15:30]
 
@@ -209,3 +211,10 @@ dwolla 生成的 id 写入 upstream_id
 
 **** DONE rebase
      CLOSED: [2019-09-20 五 15:16]
+
+** customer 接口
+
+*** 创建的 customer 是哪一种
+    
+    VerifiedPersonalCustomer
+
