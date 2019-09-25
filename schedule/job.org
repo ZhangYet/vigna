@@ -214,9 +214,13 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
 
 ** customer 接口
 
-*** 创建的 customer 是哪一种
+*** DONE 创建的 customer 是哪一种
+    CLOSED: [2019-09-24 二 11:13]
     
     VerifiedPersonalCustomer
 
-*** upstream status 有问题
+*** DONE upstream status 有问题
+    CLOSED: [2019-09-24 二 11:13]
+
+*** IN-PROGRESS test create customer api
 
