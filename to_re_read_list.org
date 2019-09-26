@@ -227,7 +227,7 @@ Ted Chiang 的七肢桶可以看到所有时刻，它们之所以来地球。是
 
 * [[https://book.douban.com/subject/21690283/][再会，谢谢所有的鱼]]                                        :douban:toreread:
 这本确实不行。节奏一塌糊涂。
-* [[https://book.douban.com/subject/3888123/][写作这回事]]                                                :douban:toreread:
+* [[https://book.douban.com/subject/3888123/][写作这回事]]                                               :douban:rereading:
 
 我想还是可以再读一次。
 
