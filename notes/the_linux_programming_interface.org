@@ -199,6 +199,22 @@
 
 *** stdio 库的缓冲
 
+*** 控制内核缓存
+
+    两种完整性：
+
+    1. synchronized I/O data intergrity completion: 读操作所请求的文件数据已经从磁盘传递给进程。写操作所制定的数据已经传递到磁盘完毕，用户获取数据的文件元数据也传递完毕。
+    2. synchronized I/O file intergrity completion: 第一种完整性的超集，所有修改过的文件元数据都传递到磁盘上。
+
+    =fsync()= 会强制使文件处于 synchronized I/O file intergrity completion 状态。与之对应的是 =fdatasync()= ，它使文件处于 synchronized I/O data intergrity completion 状态。
+
+    使用 =open()= 时指定 =O_SYNC= 标志，则会使所有后续输出同步——即所有写操作会自动将文件数据和元数据刷新到磁盘，这个标志对性能影响极大。
+
+*** I/O 缓冲小结
+
+    这里有一张图13-1，以后学会用 org 画图再画。
+
+
 
 ** Footnotes
 
