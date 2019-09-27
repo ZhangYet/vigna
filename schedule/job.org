@@ -222,5 +222,14 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
 *** DONE upstream status 有问题
     CLOSED: [2019-09-24 二 11:13]
 
-*** IN-PROGRESS test create customer api
+*** DONE test create customer api
+    CLOSED: [2019-09-26 四 13:25]
 
+** 重新填补逻辑
+
+*** IN-PROGRESS 定义对应的错误
+
+*** IN-PROGRESS 填补对应的逻辑
+
+*** DONE 在 api 定义对应生成 id 的函数
+    CLOSED: [2019-09-26 四 13:34]
