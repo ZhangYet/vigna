@@ -2,7 +2,7 @@
 
   Records every day work plan
 
-** IN-PROGRESS 测试 banking service                                     :job:
+** WAITING 测试 banking service                                         :job:
 
 *** DONE copy 一个新的 account 以及对应的 correspondent 数据到库里
     CLOSED: [2019-09-27 五 14:22]
@@ -12,3 +12,13 @@
 *** TODO create funding source 顺便测试 removed 再 create
 
 *** TODO create transfer
+
+** dwolla webhook 的问题
+
+*** 初始化的时候检查有没有订阅，如果没有，创建订阅
+
+*** webhook scription 的 model
+
+*** 检查会生成 event 的逻辑，在对应的地方补上
+
+*** 处理 sandbox 无法连上的 exception
