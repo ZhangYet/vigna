@@ -13,12 +13,16 @@
 
 *** TODO create transfer
 
-** dwolla webhook 的问题
+** IN-PROGRESS dwolla webhook 的问题
 
-*** 初始化的时候检查有没有订阅，如果没有，创建订阅
+*** DONE 初始化的时候检查有没有订阅，如果没有，创建订阅
+    CLOSED: [2019-09-28 六 14:37]
 
 *** webhook scription 的 model
 
 *** 检查会生成 event 的逻辑，在对应的地方补上
 
-*** 处理 sandbox 无法连上的 exception
+*** DONE 处理 sandbox 无法连上的 exception
+    CLOSED: [2019-09-28 六 14:37]
+
+其实也不需要大动干戈。
