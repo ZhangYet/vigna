@@ -80,7 +80,7 @@
    :END:
    - State "DONE"       from "WAITING"    [2019-09-30 一 14:20]
 
-** TODO read an English artical from hacker news
+** TODO read an English artical from hacker news                   :learning:
    DEADLINE: <2019-10-01 二 +1d>
    :PROPERTIES:
    :LAST_REPEAT: [2019-09-30 一 14:25]
