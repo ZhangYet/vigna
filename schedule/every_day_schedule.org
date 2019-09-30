@@ -50,9 +50,13 @@
    - State "DONE"       from "WAITING"    [2019-08-19 一 21:32]
    - State "DONE"       from "WAITING"    [2019-08-18 日 22:53]
 
-** TODO 吃药（三片）
+** TODO 吃药（三片）                                                :medical:
+   :PROPERTIES:
+   :LAST_REPEAT: [2019-09-30 一 10:54]
+   :END:
 
-   DEADLINE: <2019-09-30 一 +1d>
+   - State "DONE"       from "WAITING"    [2019-09-30 一 10:54]
+   DEADLINE: <2019-10-01 二 +1d>
    :PROPERTIES:
    :LAST_REPEAT: [2019-09-29 日 12:47]
    :END:
@@ -68,3 +72,17 @@
    - State "DONE"       from "WAITING"    [2019-09-20 五 09:46]
 
      1. 09-21 拍了 CT 但是没有取片。
+
+** TODO 冥想（1分钟）                                               :medical:
+   DEADLINE: <2019-10-01 二 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2019-09-30 一 14:20]
+   :END:
+   - State "DONE"       from "WAITING"    [2019-09-30 一 14:20]
+
+** TODO read an English artical from hacker news
+   DEADLINE: <2019-10-01 二 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2019-09-30 一 14:25]
+   :END:
+   - State "DONE"       from "WAITING"    [2019-09-30 一 14:25]
