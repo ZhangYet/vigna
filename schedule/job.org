@@ -18,7 +18,10 @@
 *** DONE 初始化的时候检查有没有订阅，如果没有，创建订阅
     CLOSED: [2019-09-28 六 14:37]
 
-*** webhook scription 的 model
+*** DONE webhook scription 的 model
+    CLOSED: [2019-09-28 六 15:46]
+
+原来早就写了，尴尬。
 
 *** 检查会生成 event 的逻辑，在对应的地方补上
 
