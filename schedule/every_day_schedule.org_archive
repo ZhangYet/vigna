@@ -30,3 +30,34 @@ Archived entries from file /Users/zhangye/Repos/vigna/schedule/every_day_schedul
   - 09-18 剧烈头痛。
   - 09-19 复诊，可能会更换药物。
 
+
+* 吃药（三片）                                                      :medical:
+  :PROPERTIES:
+  :LAST_REPEAT: [2019-10-01 二 13:42]
+  :ARCHIVE_TIME: 2019-10-01 二 13:42
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/every_day_schedule.org
+  :ARCHIVE_OLPATH: every day schedule
+  :ARCHIVE_CATEGORY: every_day_schedule
+  :END:
+
+  - State "DONE"       from ""           [2019-10-01 二 13:42]
+  - State "DONE"       from "WAITING"    [2019-10-01 二 13:42]
+  DEADLINE: <2019-10-04 五 +1d>
+  :PROPERTIES:
+  :LAST_REPEAT: [2019-10-01 二 13:40]
+  :END:
+  - State "DONE"       from "WAITING"    [2019-10-01 二 13:40]
+  - State "DONE"       from "WAITING"    [2019-09-30 一 10:54]
+  - State "DONE"       from "WAITING"    [2019-09-29 日 12:47]
+  - State "DONE"       from "WAITING"    [2019-09-29 日 12:46]
+  - State "DONE"       from "WAITING"    [2019-09-27 五 10:58]
+  - State "DONE"       from "WAITING"    [2019-09-26 四 10:51]
+  - State "DONE"       from "WAITING"    [2019-09-25 三 10:56]
+  - State "DONE"       from "WAITING"    [2019-09-25 三 10:55]
+  - State "DONE"       from "WAITING"    [2019-09-23 一 14:15]
+  - State "DONE"       from "WAITING"    [2019-09-22 日 14:28]
+  - State "DONE"       from "WAITING"    [2019-09-21 六 20:17]
+  - State "DONE"       from "WAITING"    [2019-09-20 五 09:46]
+
+    1. 09-21 拍了 CT 但是没有取片。
+
