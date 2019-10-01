@@ -8,14 +8,19 @@
    - State "DONE"       from "WAITING"    [2019-09-30 一 14:20]
 
 ** TODO read an English artical from hacker news                   :learning:
-   DEADLINE: <2019-10-01 二 +1d>
+   DEADLINE: <2019-10-02 三 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-09-30 一 14:25]
+   :LAST_REPEAT: [2019-10-01 二 22:30]
    :END:
+   - State "DONE"       from "WAITING"    [2019-10-01 二 22:30]
    - State "DONE"       from "WAITING"    [2019-09-30 一 14:25]
 
 ** TODO 吃药（三片）                                                :medical:
    DEADLINE: <2019-10-02 三 +1d>
 
-** 背7个日语单词并复习                                             :japanese:
-   DEADLINE: <2019-10-01 二 +1d>
+** TODO 背7个日语单词并复习                                        :japanese:
+   DEADLINE: <2019-10-02 三 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2019-10-01 二 19:38]
+   :END:
+   - State "DONE"       from "WAITING"    [2019-10-01 二 19:38]
