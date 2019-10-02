@@ -25,8 +25,9 @@
 
    - State "DONE"       from "WAITING"    [2019-10-02 三 10:29]
 ** TODO 背7个日语单词并复习                                        :japanese:
-   DEADLINE: <2019-10-02 三 +1d>
+   DEADLINE: <2019-10-03 四 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-10-01 二 19:38]
+   :LAST_REPEAT: [2019-10-02 三 23:47]
    :END:
+   - State "DONE"       from "WAITING"    [2019-10-02 三 23:47]
    - State "DONE"       from "WAITING"    [2019-10-01 二 19:38]
