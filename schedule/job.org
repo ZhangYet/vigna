@@ -31,7 +31,13 @@
 
 所以还是直接上吧。
 
+上周已经写了基础蓝图了，现在就，先去掉多余的 status 字段，然后根据事件，写对应的 update resource 吧。
+
+已经去掉了。
+
 *** DONE 处理 sandbox 无法连上的 exception
     CLOSED: [2019-09-28 六 14:37]
 
 其实也不需要大动干戈。
+
+** IN-PROGRESS rebase 提 PR
