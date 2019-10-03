@@ -90,3 +90,15 @@ Archived entries from file /Users/dantezhang/Repos/vigna/schedule/development_pl
   :END:
 
   但是其实不需要用 nightmare，直接用 requests 把网页拉下来就好。
+
+* DONE 搞 cmake-ide
+  CLOSED: [2019-10-03 四 10:56] DEADLINE: <2019-10-03 四>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-03 四 11:01
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/development_plan.org
+  :ARCHIVE_OLPATH: development plan
+  :ARCHIVE_CATEGORY: development_plan
+  :ARCHIVE_TODO: DONE
+  :END:
+
+实际上还是没有配置好，感觉得读一下 cmake-ide 的源代码。

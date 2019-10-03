@@ -388,3 +388,74 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
 
 ** DONE 在 api 定义对应生成 id 的函数
    CLOSED: [2019-09-26 四 13:34]
+
+* DONE rebase 提 PR
+  CLOSED: [2019-10-03 四 14:37]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-03 四 14:38
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+  但实际 jiadeng 也没有什么新的做法。我还是要从头开始数理流程
+
+* DONE 测试 banking service                                             :job:
+  CLOSED: [2019-10-03 四 14:44]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-03 四 14:44
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE copy 一个新的 account 以及对应的 correspondent 数据到库里
+   CLOSED: [2019-09-27 五 14:22]
+
+** TODO 创建 dwolla customer 附带 list 和 get 的测试
+
+** TODO create funding source 顺便测试 removed 再 create
+
+** TODO create transfer
+
+
+* DONE dwolla webhook 的问题
+  CLOSED: [2019-10-03 四 14:44]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-03 四 14:44
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+  现在剩下一个问题，就是资源的状态问题。
+
+** DONE 初始化的时候检查有没有订阅，如果没有，创建订阅
+   CLOSED: [2019-09-28 六 14:37]
+
+** DONE webhook scription 的 model
+   CLOSED: [2019-09-28 六 15:46]
+
+原来早就写了，尴尬。
+
+** DONE 设计 webhook 类
+   CLOSED: [2019-10-03 四 14:44]
+
+最大的问题是：在回调的时候，我们才知道具体生成了什么 topic，然后要根据 topic 执行具体的工作。
+
+现在问题是：我不知道回调是怎样的，应该是一个事件一个 topic？还是一个事件多个 topic？感觉不用多应该考虑这个，实际上应该靠 topic 来处理资源的状态变化。
+
+所以还是直接上吧。
+
+上周已经写了基础蓝图了，现在就，先去掉多余的 status 字段，然后根据事件，写对应的 update resource 吧。
+
+已经去掉了。
+
+** DONE 处理 sandbox 无法连上的 exception
+   CLOSED: [2019-09-28 六 14:37]
+
+其实也不需要大动干戈。
+

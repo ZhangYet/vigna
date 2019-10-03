@@ -16,5 +16,5 @@
 
 *** 搞一个 lua 开发环境
 
-** IN-PROGRESS 搞 cmake-ide
+** IN-PROGRESS 读 [[https://github.com/atilaneves/cmake-ide][cmake-ide]] 的源代码                                  :emacs:
    DEADLINE: <2019-10-03 四>
