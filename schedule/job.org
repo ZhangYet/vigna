@@ -2,3 +2,5 @@
 
   Records every day work plan
 
+** DONE 重新定义状态
+   CLOSED: [2019-10-03 四 19:27]
