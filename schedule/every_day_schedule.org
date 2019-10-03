@@ -18,11 +18,12 @@
    - State "DONE"       from "WAITING"    [2019-09-30 一 14:25]
 
 ** TODO 吃药（三片）                                                :medical:
-   DEADLINE: <2019-10-03 四 +1d>
+   DEADLINE: <2019-10-04 五 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-10-02 三 10:29]
+   :LAST_REPEAT: [2019-10-03 四 09:54]
    :END:
 
+   - State "DONE"       from "WAITING"    [2019-10-03 四 09:54]
    - State "DONE"       from "WAITING"    [2019-10-02 三 10:29]
 ** TODO 背7个日语单词并复习                                        :japanese:
    DEADLINE: <2019-10-03 四 +1d>
