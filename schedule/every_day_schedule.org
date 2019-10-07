@@ -1,37 +1,38 @@
 * every day schedule
 
-** TODO 冥想（1分钟）                                               :medical:
-   DEADLINE: <2019-10-02 三 +1d>
+** IN-PROGRESS read an English artical from hacker news            :learning:
+   DEADLINE: <2019-10-07 一 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-10-02 三 09:46]
+   :LAST_REPEAT: [2019-10-07 一 09:38]
    :END:
-   - State "DONE"       from "WAITING"    [2019-10-02 三 09:46]
-   - State "DONE"       from "WAITING"    [2019-09-30 一 14:20]
-
-** TODO read an English artical from hacker news                   :learning:
-   DEADLINE: <2019-10-03 四 +1d>
-   :PROPERTIES:
-   :LAST_REPEAT: [2019-10-02 三 09:53]
-   :END:
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
    - State "DONE"       from "WAITING"    [2019-10-02 三 09:53]
    - State "DONE"       from "WAITING"    [2019-10-01 二 22:30]
    - State "DONE"       from "WAITING"    [2019-09-30 一 14:25]
 
 ** TODO 吃药（三片）                                                :medical:
-   DEADLINE: <2019-10-05 六 +1d>
+   DEADLINE: <2019-10-07 一 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-10-04 五 21:20]
+   :LAST_REPEAT: [2019-10-07 一 09:38]
    :END:
 
-   - State "DONE"       from "WAITING"    [2019-10-04 五 21:20]
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
    - State "DONE"       from "WAITING"    [2019-10-03 四 09:54]
    - State "DONE"       from "WAITING"    [2019-10-02 三 10:29]
+
 ** TODO 背7个日语单词并复习                                        :japanese:
-   DEADLINE: <2019-10-05 六 +1d>
+   DEADLINE: <2019-10-07 一 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-10-04 五 21:26]
+   :LAST_REPEAT: [2019-10-07 一 09:38]
    :END:
-   - State "DONE"       from "WAITING"    [2019-10-04 五 21:26]
-   - State "DONE"       from "WAITING"    [2019-10-03 四 22:41]
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+   - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
    - State "DONE"       from "WAITING"    [2019-10-02 三 23:47]
    - State "DONE"       from "WAITING"    [2019-10-01 二 19:38]

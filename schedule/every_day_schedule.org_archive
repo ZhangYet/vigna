@@ -118,3 +118,17 @@ Archived entries from file /Users/zhangye/Repos/vigna/schedule/every_day_schedul
   - State "DONE"       from "WAITING"    [2019-08-19 一 21:32]
   - State "DONE"       from "WAITING"    [2019-08-18 日 22:53]
 
+
+* TODO 冥想（1分钟）                                                :medical:
+  DEADLINE: <2019-10-02 三 +1d>
+  :PROPERTIES:
+  :LAST_REPEAT: [2019-10-02 三 09:46]
+  :ARCHIVE_TIME: 2019-10-07 一 09:38
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/every_day_schedule.org
+  :ARCHIVE_OLPATH: every day schedule
+  :ARCHIVE_CATEGORY: every_day_schedule
+  :ARCHIVE_TODO: TODO
+  :END:
+  - State "DONE"       from "WAITING"    [2019-10-02 三 09:46]
+  - State "DONE"       from "WAITING"    [2019-09-30 一 14:20]
+
