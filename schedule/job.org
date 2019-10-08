@@ -2,5 +2,27 @@
 
   Records every day work plan
 
-** DONE 重新定义状态
-   CLOSED: [2019-10-03 四 19:27]
+** TODO 资源状态的检查
+
+** IN-PROGRESS 测试接口
+
+*** DONE 增加顾客
+    CLOSED: [2019-10-08 二 11:24]
+
+**** DONE 先复制顾客数据过来吧。
+     CLOSED: [2019-10-07 一 10:56]
+
+*** DONE 测试增加顾客之后的回调
+    CLOSED: [2019-10-08 二 11:24]
+
+*** add funding source
+
+*** add funding source 之后的回调
+
+*** 发起 transfer 
+
+*** transfer 之后的回调
+
+** IN-PROGRESS 寄快递
+
+   没带身份证，明天再寄。

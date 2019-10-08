@@ -459,3 +459,33 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
 
 其实也不需要大动干戈。
 
+
+* DONE 重新定义状态
+  CLOSED: [2019-10-03 四 19:27]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-07 一 10:25
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE 处理 fix simulator 的文档
+  CLOSED: [2019-10-08 二 15:22]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-08 二 15:24
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE 安装 nodejs
+   CLOSED: [2019-10-08 二 11:24]
+
+** DONE 拉 repo 到虚机，部署并修改 readme 
+   CLOSED: [2019-10-08 二 14:56]
+    
+   raml-1-parser 返回了一个错。其实是没有初始化 submodule 而已。
+
+
