@@ -489,3 +489,46 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
    raml-1-parser 返回了一个错。其实是没有初始化 submodule 而已。
 
 
+
+* DONE review 后的修改
+  CLOSED: [2019-10-09 三 16:29]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-09 三 16:29
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE 合并 models 以及将 models 合并之后的影响处理掉
+   CLOSED: [2019-10-08 二 16:36]
+
+** DONE 处理枚举，统一成 string
+   CLOSED: [2019-10-09 三 10:26]
+
+** DONE 处理默认值
+   CLOSED: [2019-10-09 三 10:26]
+
+
+* DONE 寄快递
+  CLOSED: [2019-10-09 三 16:29]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-09 三 16:29
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+  没带身份证，明天再寄。
+
+
+* DONE rebase from develop
+  CLOSED: [2019-10-09 三 16:35]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-09 三 18:19
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
