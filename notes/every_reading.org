@@ -1,0 +1,7 @@
+* every day reading
+
+** [[https://fangpenlin.com/posts/2019/10/07/elliptic-curve-cryptography-explained/][Elliptic Curve Cryptography Explained]]                             :toread:
+
+** [[https://en.wikipedia.org/wiki/Noisy-channel_coding_theorem][noisy channel coding theorem]]                                 :toread:wiki:
+
+** [[https://skerritt.blog/timsort-the-fastest-sorting-algorithm-youve-never-heard-of/][timsort]]                                                 :toread:algorithm:
