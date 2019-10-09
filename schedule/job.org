@@ -26,3 +26,15 @@
 ** IN-PROGRESS 寄快递
 
    没带身份证，明天再寄。
+
+** IN-PROGRESS review 后的修改
+
+*** DONE 合并 models 以及将 models 合并之后的影响处理掉
+    CLOSED: [2019-10-08 二 16:36]
+
+*** DONE 处理枚举，统一成 string
+    CLOSED: [2019-10-09 三 10:26]
+
+*** DONE 处理默认值
+    CLOSED: [2019-10-09 三 10:26]
+
