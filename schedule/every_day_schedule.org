@@ -1,11 +1,13 @@
 * every day schedule
 
 ** TODO 吃药（三片）                                                :medical:
-   DEADLINE: <2019-10-10 四 +1d>
+   DEADLINE: <2019-10-12 六 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-10-09 三 10:52]
+   :LAST_REPEAT: [2019-10-11 五 13:42]
    :END:
 
+   - State "DONE"       from "WAITING"    [2019-10-11 五 13:42]
+   - State "DONE"       from "WAITING"    [2019-10-11 五 13:41]
    - State "DONE"       from "WAITING"    [2019-10-09 三 10:52]
    - State "DONE"       from "WAITING"    [2019-10-08 二 10:39]
    - State "DONE"       from "WAITING"    [2019-10-07 一 10:06]

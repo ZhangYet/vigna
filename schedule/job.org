@@ -22,3 +22,15 @@
 *** 发起 transfer 
 
 *** transfer 之后的回调
+
+** DONE 资源状态图
+   CLOSED: [2019-10-11 五 13:41]
+
+*** DONE customer
+    CLOSED: [2019-10-10 四 14:54]
+
+*** DONE funding_source
+    CLOSED: [2019-10-11 五 10:18]
+
+*** DONE transfer
+    CLOSED: [2019-10-11 五 10:18]
