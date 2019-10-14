@@ -2,33 +2,21 @@
 
   Records every day work plan
 
-** TODO 资源状态的检查
+** cerberus
 
-** IN-PROGRESS 测试接口
+*** TODO 资源状态的检查
 
-*** DONE 增加顾客
-    CLOSED: [2019-10-08 二 11:24]
+*** 接入 cashier
 
-**** DONE 先复制顾客数据过来吧。
-     CLOSED: [2019-10-07 一 10:56]
+** fix simulator
 
-*** DONE 测试增加顾客之后的回调
-    CLOSED: [2019-10-08 二 11:24]
+*** DONE 处理 fix simulator 的日志问题
+    CLOSED: [2019-10-14 一 10:20]
 
-*** add funding source
+    原则上我希望能实现像 dicloud 那样带有 trace id 但是这样我要把 context 一层一层传进去，改动会有点大。而且 lua 那层没有 ctx
 
-*** add funding source 之后的回调
+    luaVm 这边我就用
 
-*** 发起 transfer 
+*** IN-PROGRESS 提供更简易的 order 创建和 exec report 发送功能
 
-*** transfer 之后的回调
-
-** 接入 cashier
-
-** DONE 处理 fix simulator 的日志问题
-   CLOSED: [2019-10-14 一 10:16]
-
-   原则上我希望能实现像 dicloud 那样带有 trace id 但是这样我要把 context 一层一层传进去，改动会有点大。而且 lua 那层没有 ctx
-
-   luaVm 这边我就用
-
+*** panic 后自动回复

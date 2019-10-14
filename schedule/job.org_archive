@@ -551,3 +551,30 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
 
 ** DONE transfer
    CLOSED: [2019-10-11 五 10:18]
+
+* IN-PROGRESS 测试接口
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-14 一 10:20
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: IN-PROGRESS
+  :END:
+
+** DONE 增加顾客
+   CLOSED: [2019-10-08 二 11:24]
+
+*** DONE 先复制顾客数据过来吧。
+    CLOSED: [2019-10-07 一 10:56]
+
+** DONE 测试增加顾客之后的回调
+   CLOSED: [2019-10-08 二 11:24]
+
+** add funding source
+
+** add funding source 之后的回调
+
+** 发起 transfer 
+
+** transfer 之后的回调
+
