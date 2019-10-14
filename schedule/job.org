@@ -8,7 +8,7 @@
 
 *** 接入 cashier
 
-** fix simulator
+** IN-PROGRESS fix simulator
 
 *** DONE 处理 fix simulator 的日志问题
     CLOSED: [2019-10-14 一 10:20]
@@ -17,6 +17,9 @@
 
     luaVm 这边我就用
 
-*** IN-PROGRESS 提供更简易的 order 创建和 exec report 发送功能
+*** DONE 提供更简易的 order 创建和 exec report 发送功能
+    CLOSED: [2019-10-14 一 17:15]
+
+*** IN-PROGRESS 写文档
 
 *** panic 后自动回复
