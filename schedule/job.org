@@ -23,14 +23,12 @@
 
 *** transfer 之后的回调
 
-** DONE 资源状态图
-   CLOSED: [2019-10-11 五 13:41]
+** 接入 cashier
 
-*** DONE customer
-    CLOSED: [2019-10-10 四 14:54]
+** DONE 处理 fix simulator 的日志问题
+   CLOSED: [2019-10-14 一 10:16]
 
-*** DONE funding_source
-    CLOSED: [2019-10-11 五 10:18]
+   原则上我希望能实现像 dicloud 那样带有 trace id 但是这样我要把 context 一层一层传进去，改动会有点大。而且 lua 那层没有 ctx
 
-*** DONE transfer
-    CLOSED: [2019-10-11 五 10:18]
+   luaVm 这边我就用
+

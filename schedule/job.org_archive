@@ -532,3 +532,22 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
   :ARCHIVE_CATEGORY: job
   :ARCHIVE_TODO: DONE
   :END:
+
+* DONE 资源状态图
+  CLOSED: [2019-10-11 五 13:41]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-12 六 13:38
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE customer
+   CLOSED: [2019-10-10 四 14:54]
+
+** DONE funding_source
+   CLOSED: [2019-10-11 五 10:18]
+
+** DONE transfer
+   CLOSED: [2019-10-11 五 10:18]

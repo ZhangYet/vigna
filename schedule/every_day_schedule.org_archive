@@ -170,3 +170,26 @@ Archived entries from file /Users/zhangye/Repos/vigna/schedule/every_day_schedul
   - State "DONE"       from "WAITING"    [2019-10-01 二 22:30]
   - State "DONE"       from "WAITING"    [2019-09-30 一 14:25]
 
+
+* TODO 吃药（三片）                                                 :medical:
+  DEADLINE: <2019-10-12 六 +1d>
+  :PROPERTIES:
+  :LAST_REPEAT: [2019-10-11 五 13:42]
+  :ARCHIVE_TIME: 2019-10-14 一 10:17
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/every_day_schedule.org
+  :ARCHIVE_OLPATH: every day schedule
+  :ARCHIVE_CATEGORY: every_day_schedule
+  :ARCHIVE_TODO: TODO
+  :END:
+
+  - State "DONE"       from "WAITING"    [2019-10-11 五 13:42]
+  - State "DONE"       from "WAITING"    [2019-10-11 五 13:41]
+  - State "DONE"       from "WAITING"    [2019-10-09 三 10:52]
+  - State "DONE"       from "WAITING"    [2019-10-08 二 10:39]
+  - State "DONE"       from "WAITING"    [2019-10-07 一 10:06]
+  - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+  - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+  - State "DONE"       from "WAITING"    [2019-10-07 一 09:38]
+  - State "DONE"       from "WAITING"    [2019-10-03 四 09:54]
+  - State "DONE"       from "WAITING"    [2019-10-02 三 10:29]
+
