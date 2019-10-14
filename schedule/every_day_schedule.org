@@ -8,5 +8,9 @@
 
    - State "DONE"       from "WAITING"    [2019-10-14 一 10:18]
 
-** 翻译
-   DEADLINE: <2019-10-14 一 +1d>
+** TODO 翻译
+   DEADLINE: <2019-10-15 二 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2019-10-14 一 23:08]
+   :END:
+   - State "DONE"       from "WAITING"    [2019-10-14 一 23:08]
