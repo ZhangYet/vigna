@@ -22,4 +22,6 @@
 
 *** IN-PROGRESS 写文档
 
+*** IN-PROGRESS 修改一些 lua 函数的命名并重新处理单元测试
+
 *** panic 后自动回复
