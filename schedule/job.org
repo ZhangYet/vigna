@@ -20,8 +20,45 @@
 *** DONE 提供更简易的 order 创建和 exec report 发送功能
     CLOSED: [2019-10-14 一 17:15]
 
-*** IN-PROGRESS 写文档
+*** DONE 写文档
+    CLOSED: [2019-10-16 三 15:18]
 
-*** IN-PROGRESS 修改一些 lua 函数的命名并重新处理单元测试
+*** DONE 修改一些 lua 函数的命名并重新处理单元测试
+    CLOSED: [2019-10-16 三 15:18]
 
 *** panic 后自动回复
+
+*** DONE ensure all field in exec report
+    CLOSED: [2019-10-16 三 18:02]
+
+**** DONE orderID    
+     CLOSED: [2019-10-16 三 15:22]
+
+**** clOrderID
+
+**** DONE execID
+     CLOSED: [2019-10-16 三 15:22]
+
+**** DONE execType
+     CLOSED: [2019-10-16 三 15:22]
+
+**** DONE ordStatus
+     CLOSED: [2019-10-16 三 15:22]
+
+**** DONE ordType
+     CLOSED: [2019-10-16 三 15:27]
+
+**** DONE lastShares
+     CLOSED: [2019-10-16 三 15:23]
+
+**** DONE lastPx
+     CLOSED: [2019-10-16 三 15:28]
+
+**** DONE leavesQty
+     CLOSED: [2019-10-16 三 15:24]
+
+**** DONE cumQty
+     CLOSED: [2019-10-16 三 15:27]
+
+**** DONE averagePx
+     CLOSED: [2019-10-16 三 15:27]
