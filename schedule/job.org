@@ -57,4 +57,14 @@
      3. CumQty 累计成交
      4. LeavesQty 剩余未成交就用 QrderQty 跟 CumQty 计算吧
 
-**** 将 orderManager 改成一个单例
+**** IN-PROGRESS 将 orderManager 改成一个单例
+
+     这样子会变得非常尴尬，因为 script 也涉及了 db 的设置。
+
+     将 dbConfig 放到 Config 里面。
+
+     model 模块自己初始化 model 并根据 isMock 初始化实例（决定是 mock 还是 db）。
+
+     scriptModel 也需要这种重构，但是现在只能先搁下了。
+
+**** TODO 将 scriptManagement 改成单例
