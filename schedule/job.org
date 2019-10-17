@@ -62,3 +62,22 @@
 
 **** DONE averagePx
      CLOSED: [2019-10-16 三 15:27]
+
+*** 重新设计 order 对象
+
+**** 增加 field    
+
+     1. OrderQty
+     2. AvgPx
+     3. CumQty 累计成交
+     4. LeavesQty 剩余未成交就用 QrderQty 跟 CumQty 计算吧
+
+**** 增加一些工具函数
+
+     1. 成交新的 Qty
+     2. update order (将 ExecReport 加到 order，改变 order 状态)
+     3. 总的来说是根据 exec report 修改 order 的状态
+
+*** 重新设计 send
+
+    send 的话，拿到 exec report 然后更新 order 就可以了。
