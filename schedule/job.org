@@ -10,22 +10,6 @@
 
 ** IN-PROGRESS fix simulator
 
-*** DONE 处理 fix simulator 的日志问题
-    CLOSED: [2019-10-14 一 10:20]
-
-    原则上我希望能实现像 dicloud 那样带有 trace id 但是这样我要把 context 一层一层传进去，改动会有点大。而且 lua 那层没有 ctx
-
-    luaVm 这边我就用
-
-*** DONE 提供更简易的 order 创建和 exec report 发送功能
-    CLOSED: [2019-10-14 一 17:15]
-
-*** DONE 写文档
-    CLOSED: [2019-10-16 三 15:18]
-
-*** DONE 修改一些 lua 函数的命名并重新处理单元测试
-    CLOSED: [2019-10-16 三 15:18]
-
 *** panic 后自动回复
 
 *** DONE ensure all field in exec report
@@ -63,21 +47,14 @@
 **** DONE averagePx
      CLOSED: [2019-10-16 三 15:27]
 
-*** 重新设计 order 对象
+*** IN-PROGRESS 重新设计 order 对象
 
-**** 增加 field    
+**** DONE 增加 field    
+     CLOSED: [2019-10-17 四 09:56]
 
      1. OrderQty
      2. AvgPx
      3. CumQty 累计成交
      4. LeavesQty 剩余未成交就用 QrderQty 跟 CumQty 计算吧
 
-**** 增加一些工具函数
-
-     1. 成交新的 Qty
-     2. update order (将 ExecReport 加到 order，改变 order 状态)
-     3. 总的来说是根据 exec report 修改 order 的状态
-
-*** 重新设计 send
-
-    send 的话，拿到 exec report 然后更新 order 就可以了。
+**** 将 orderManager 改成一个单例
