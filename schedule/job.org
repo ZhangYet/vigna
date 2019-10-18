@@ -70,7 +70,8 @@
 
 **** TODO 将 scriptManagement 改成单例
 
-**** IN-PROGRESS order 状态变化
+**** DONE order 状态变化
+     CLOSED: [2019-10-17 四 18:43]
 
      我们现在有一个 OrderStatus 的转换表。以及对应的优先级表。但是真的好难抽象啊。
 
@@ -108,3 +109,8 @@
 
 
 
+
+**** DONE order 不需要暴露 save 操作，应该在发送 report 的时候处理
+     CLOSED: [2019-10-17 四 18:43]
+
+     钻了牛角尖了，filled 的时候 ClOrdId 没有变，用 ClOrdId 查就可以了。
