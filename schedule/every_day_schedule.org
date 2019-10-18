@@ -1,5 +1,5 @@
 * every day schedule
-
+  
 ** TODO 吃药
    DEADLINE: <2019-10-17 四 +1d>
    :PROPERTIES:
@@ -12,11 +12,3 @@
 
      10月14-16日没有服药
 
-** TODO 翻译
-   DEADLINE: <2019-10-17 四 +1d>
-   :PROPERTIES:
-   :LAST_REPEAT: [2019-10-16 三 23:52]
-   :END:
-   - State "DONE"       from "WAITING"    [2019-10-16 三 23:52]
-   - State "DONE"       from "WAITING"    [2019-10-16 三 23:52]
-   - State "DONE"       from "WAITING"    [2019-10-14 一 23:08]
