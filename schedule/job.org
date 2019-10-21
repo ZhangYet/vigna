@@ -47,7 +47,8 @@
 **** DONE averagePx
      CLOSED: [2019-10-16 三 15:27]
 
-*** IN-PROGRESS 重新设计 order 对象
+*** DONE 重新设计 order 对象
+    CLOSED: [2019-10-19 六 16:08]
 
 **** DONE 增加 field    
      CLOSED: [2019-10-17 四 09:56]
@@ -114,3 +115,17 @@
      CLOSED: [2019-10-17 四 18:43]
 
      钻了牛角尖了，filled 的时候 ClOrdId 没有变，用 ClOrdId 查就可以了。
+
+**** DONE 修改 model 定义
+     CLOSED: [2019-10-18 五 18:39]
+
+     symbol 和 side 应该往 model 里面写，因为它们可能用来做筛选条件，但是 cumQty 之类的就不必了。 orderQty 也需要保存，因为可能会变动。
+
+     可以自动生成。
+
+**** DONE 过来的 msg 里面的 price 要怎么设置
+     CLOSED: [2019-10-19 六 16:02]
+
+     limit 订单的时候需要使用 price，需要使用 price。
+
+**** IN-PROGRESS 写新文档
