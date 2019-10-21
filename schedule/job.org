@@ -2,7 +2,7 @@
 
   Records every day work plan
 
-** cerberus
+** WAITING cerberus
 
 *** TODO 资源状态的检查
 
@@ -10,7 +10,8 @@
 
 ** IN-PROGRESS fix simulator
 
-*** panic 后自动回复
+*** DONE panic 后自动回复
+    CLOSED: [2019-10-21 一 19:40]
 
 *** DONE ensure all field in exec report
     CLOSED: [2019-10-16 三 18:02]
@@ -69,7 +70,6 @@
 
      scriptModel 也需要这种重构，但是现在只能先搁下了。
 
-**** TODO 将 scriptManagement 改成单例
 
 **** DONE order 状态变化
      CLOSED: [2019-10-17 四 18:43]
@@ -128,4 +128,19 @@
 
      limit 订单的时候需要使用 price，需要使用 price。
 
-**** IN-PROGRESS 写新文档
+**** DONE 写新文档
+     CLOSED: [2019-10-21 一 11:04]
+
+**** DONE 发送 new report
+     CLOSED: [2019-10-21 一 11:31]
+
+*** TODO 将 scriptManagement 改成单例
+
+*** DONE bug fix: 匹配到了已经删除的 script
+    CLOSED: [2019-10-21 一 19:40]
+
+    这有尴尬，因为匹配的时候只看 SessionId 和 MsgType。
+
+
+
+
