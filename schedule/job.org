@@ -10,9 +10,12 @@
 
 ** IN-PROGRESS fix simulator
 
-*** TODO 将 scriptManagement 改成单例
+*** IN-PROGRESS 将 scriptManagement 改成单例
 
-*** TODO 定义询价的流信息
+*** DONE 定义询价的流信息
+    CLOSED: [2019-10-24 四 18:17]
 
     我准备传一个 chan 进入读取 Quote，然后 err 处理就算了。
 
+*** DONE 处理 503 的问题
+    CLOSED: [2019-10-24 四 18:17]
