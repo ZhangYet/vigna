@@ -11,13 +11,4 @@
 
 ** IN-PROGRESS fix simulator
 
-*** DONE 将 scriptManagement 改成单例
-    CLOSED: [2019-10-25 五 16:43]
-
-*** DONE 定义询价的流信息，将 quote 改成一个单例，有一个 channel 管理自己的生存。
-    CLOSED: [2019-10-25 五 16:43]
-
-    我准备传一个 chan 进入读取 Quote，然后 err 处理就算了。
-
-    原则上我应该要让 write 这边负责关闭 channel，这样问题会比较复杂，我需要传入另外一个 channel 去通知这个 go routine 需要关闭？或者应该把 quote 部分接口实现成一个单例，自己管理生存期。
-
+*** TODO 读 laser 的代码
