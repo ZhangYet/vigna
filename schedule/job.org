@@ -2,16 +2,17 @@
 
   Records every day work plan
 
-** WAITING cerberus
+** IN-PROGRESS cerberus
 
 *** TODO 资源状态的检查
 
 *** 接入 cashier
 
+*** IN-PROGRESS rebase
 
-** IN-PROGRESS fix simulator
 
-*** DONE 读 laser 的代码
-    CLOSED: [2019-10-26 六 15:04]
+** WAITING fix simulator
 
-*** 写模拟
+*** IN-PROGRESS 写模拟
+
+**** 

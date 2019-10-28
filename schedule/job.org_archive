@@ -850,3 +850,25 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
 
   原则上我应该要让 write 这边负责关闭 channel，这样问题会比较复杂，我需要传入另外一个 channel 去通知这个 go routine 需要关闭？或者应该把 quote 部分接口实现成一个单例，自己管理生存期。
 
+
+* DONE 读 laser 的代码
+  CLOSED: [2019-10-26 六 15:04]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-28 一 11:50
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/fix simulator
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* DONE order 的模拟
+  CLOSED: [2019-10-28 一 11:51]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-28 一 12:07
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/fix simulator/写模拟
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
