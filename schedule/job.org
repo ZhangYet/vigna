@@ -11,4 +11,7 @@
 
 ** IN-PROGRESS fix simulator
 
-*** TODO 读 laser 的代码
+*** DONE 读 laser 的代码
+    CLOSED: [2019-10-26 六 15:04]
+
+*** 写模拟
