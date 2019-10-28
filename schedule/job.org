@@ -8,7 +8,8 @@
 
 *** 接入 cashier
 
-*** IN-PROGRESS rebase
+*** DONE rebase
+    CLOSED: [2019-10-28 一 19:55]
 
 
 ** WAITING fix simulator
