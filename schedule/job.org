@@ -4,6 +4,26 @@
 
 ** IN-PROGRESS cerberus
 
+*** 重新设计处理事件的部分
+
+    现在有个问题，因为其他的资源只需要更新资源的状态就可以了，但是 transfer，需要跟 cashier 交互。
+
+    第一个需要抽象的地方就是，整个过程，我们要怎样抽象——
+
+    1. 收到事件；
+    2. 更新资源状态；
+    3. 更新 cashier (但这只有 transfer 需要，所以要怎样命名这个阶段？)；
+
+    第二个需要抽象的地方，transfer 有情况：
+
+    1. 失败（不需要更新 cashier）;
+    2. 成功，需要更新 cashier；
+    3. 成功之后失败，需要更新 cashier；
+       
+    因为失败就是最后的状态了，所以我们只需要检查失败事件之后有没有成功就好了。
+
+    事件处理，我先模仿 quickfix 的 state 流转，做成一个 pipeline 式的处理方案（但是调用者不需要操心哪个 state 先哪个 state 后）。
+
 ** WAITING fix simulator
 
 *** WAITING 写模拟
