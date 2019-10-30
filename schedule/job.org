@@ -4,16 +4,12 @@
 
 ** IN-PROGRESS cerberus
 
-*** TODO 资源状态的检查
-
-*** 接入 cashier
-
-*** DONE rebase
-    CLOSED: [2019-10-28 一 19:55]
-
-
 ** WAITING fix simulator
 
-*** IN-PROGRESS 写模拟
+*** WAITING 写模拟
 
-**** 
+*** 处理 log，过滤掉 login 和心跳的 msg，然后打印订单相关的 msg 
+
+*** 提供一个接口，查询那些 session 连接上了，每个连接的 msg id 是多少
+
+**** 参考 quickfix 的 c++ 文档

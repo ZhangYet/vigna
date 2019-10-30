@@ -872,3 +872,37 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
   :ARCHIVE_TODO: DONE
   :END:
 
+
+* DONE 资源状态的检查
+  CLOSED: [2019-10-30 三 15:48]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-30 三 15:49
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* DONE 接入 cashier
+  CLOSED: [2019-10-30 三 15:48]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-30 三 15:49
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* DONE rebase
+  CLOSED: [2019-10-28 一 19:55]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-30 三 15:49
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
