@@ -4,7 +4,8 @@
 
 ** IN-PROGRESS cerberus
 
-*** 重新设计处理事件的部分
+*** DONE 重新设计处理事件的部分
+    CLOSED: [2019-10-31 四 17:03]
 
     现在有个问题，因为其他的资源只需要更新资源的状态就可以了，但是 transfer，需要跟 cashier 交互。
 
@@ -23,6 +24,16 @@
     因为失败就是最后的状态了，所以我们只需要检查失败事件之后有没有成功就好了。
 
     事件处理，我先模仿 quickfix 的 state 流转，做成一个 pipeline 式的处理方案（但是调用者不需要操心哪个 state 先哪个 state 后）。
+
+    设计一个类，所有类，这个类暴露一个 api， process()，封装所有流程，并且不返回结果，只抛出异常。process() 封装其他私有函数，每个私有函数都返回 self。
+
+
+*** 处理 transfer 的逻辑
+
+    1. 查 transfer；
+    2. 根据 topic 处理 transfer；
+    3. 调用 cashier；
+
 
 ** WAITING fix simulator
 
