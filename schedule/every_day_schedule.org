@@ -1,13 +1,11 @@
 * every day schedule
   
-** TODO 翻译：补完第七章的内容
-   DEADLINE: <2019-10-29 二>
-
 ** TODO 健身
-   DEADLINE: <2019-10-31 四 +1d>
+   DEADLINE: <2019-11-01 五 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-10-31 四 00:15]
+   :LAST_REPEAT: [2019-11-01 五 10:29]
    :END:
+   - State "DONE"       from "WAITING"    [2019-11-01 五 10:29]
    - State "DONE"       from "WAITING"    [2019-10-31 四 00:15]
    - State "DONE"       from "WAITING"    [2019-10-31 四 00:15]
    - State "DONE"       from "WAITING"    [2019-10-28 一 22:26]

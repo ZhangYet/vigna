@@ -28,12 +28,18 @@
     设计一个类，所有类，这个类暴露一个 api， process()，封装所有流程，并且不返回结果，只抛出异常。process() 封装其他私有函数，每个私有函数都返回 self。
 
 
-*** 处理 transfer 的逻辑
+*** DONE 处理 transfer 的逻辑
+    CLOSED: [2019-11-01 五 18:09]
 
     1. 查 transfer；
     2. 根据 topic 处理 transfer；
     3. 调用 cashier；
 
+    其实因为 cashiser 肯定是在 save 之后，所以资源肯定是能找到的。
+
+
+*** DONE 写一个模拟 dwolla 回调的工具
+    CLOSED: [2019-11-03 日 17:35]
 
 ** WAITING fix simulator
 
