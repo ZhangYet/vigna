@@ -906,3 +906,64 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
   :END:
 
 
+
+* DONE 重新设计处理事件的部分
+  CLOSED: [2019-10-31 四 17:03]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-04 一 15:26
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+  现在有个问题，因为其他的资源只需要更新资源的状态就可以了，但是 transfer，需要跟 cashier 交互。
+
+  第一个需要抽象的地方就是，整个过程，我们要怎样抽象——
+
+  1. 收到事件；
+  2. 更新资源状态；
+  3. 更新 cashier (但这只有 transfer 需要，所以要怎样命名这个阶段？)；
+
+  第二个需要抽象的地方，transfer 有情况：
+
+  1. 失败（不需要更新 cashier）;
+  2. 成功，需要更新 cashier；
+  3. 成功之后失败，需要更新 cashier；
+       
+  因为失败就是最后的状态了，所以我们只需要检查失败事件之后有没有成功就好了。
+
+  事件处理，我先模仿 quickfix 的 state 流转，做成一个 pipeline 式的处理方案（但是调用者不需要操心哪个 state 先哪个 state 后）。
+
+  设计一个类，所有类，这个类暴露一个 api， process()，封装所有流程，并且不返回结果，只抛出异常。process() 封装其他私有函数，每个私有函数都返回 self。
+
+
+
+* DONE 处理 transfer 的逻辑
+  CLOSED: [2019-11-01 五 18:09]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-04 一 15:26
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+  1. 查 transfer；
+  2. 根据 topic 处理 transfer；
+  3. 调用 cashier；
+
+  其实因为 cashiser 肯定是在 save 之后，所以资源肯定是能找到的。
+
+
+
+* DONE 写一个模拟 dwolla 回调的工具
+  CLOSED: [2019-11-03 日 17:35]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-04 一 15:26
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
