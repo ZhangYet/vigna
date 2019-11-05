@@ -1,20 +1,10 @@
 * development plan
 
-** 在切换 TODO 状态的时候，自动提交到版本控制系统            :emacs:org:
-
-   或者 =org-mode= 本身有内置功能可以完成。
-
-** 实现 TODO 状态的状态机                                    :emacs:org:
-
-   现在做任务管理的时候，有一个任务状态 =WAITING= 应该只能从 =IN-PROGRESS= 转换过来。
-
 ** 处理 org-mode 插入代码的问题                                       :emacs:
 
    FYI: [[http://wenshanren.org/?p=327][Emacs：在 org-mode 中插入源代码块]]
 
-** 封装一个转换 webp 的 lua package
-
-*** 搞一个 lua 开发环境
-
 ** IN-PROGRESS 读 [[https://github.com/atilaneves/cmake-ide][cmake-ide]] 的源代码                                  :emacs:
    DEADLINE: <2019-10-03 四>
+
+** 一个更方便的在 org-mode 插入 custom id 的方案

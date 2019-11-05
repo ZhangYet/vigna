@@ -102,3 +102,36 @@ Archived entries from file /Users/dantezhang/Repos/vigna/schedule/development_pl
   :END:
 
 实际上还是没有配置好，感觉得读一下 cmake-ide 的源代码。
+
+* 封装一个转换 webp 的 lua package
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-05 二 21:54
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/development_plan.org
+  :ARCHIVE_OLPATH: development plan
+  :ARCHIVE_CATEGORY: development_plan
+  :END:
+
+** 搞一个 lua 开发环境
+
+
+* 实现 TODO 状态的状态机                                          :emacs:org:
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-05 二 21:54
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/development_plan.org
+  :ARCHIVE_OLPATH: development plan
+  :ARCHIVE_CATEGORY: development_plan
+  :END:
+
+  现在做任务管理的时候，有一个任务状态 =WAITING= 应该只能从 =IN-PROGRESS= 转换过来。
+
+
+* 在切换 TODO 状态的时候，自动提交到版本控制系统                  :emacs:org:
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-05 二 21:54
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/development_plan.org
+  :ARCHIVE_OLPATH: development plan
+  :ARCHIVE_CATEGORY: development_plan
+  :END:
+
+  或者 =org-mode= 本身有内置功能可以完成。
+
