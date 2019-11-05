@@ -4,24 +4,11 @@
 
 ** IN-PROGRESS cerberus
 
-*** DONE rebase mss
-    CLOSED: [2019-11-05 二 14:43]
-
-*** 删除 sandbox 里面的 customer
-
-    这个好像做不到，算了，试试先 deactivate.
-
-*** DONE rebase cerberus
-    CLOSED: [2019-11-05 二 14:49]
-
-*** 重新创建 customer 数据
+*** 创建 account
 
 ** WAITING fix simulator
 
-*** WAITING 写模拟
-
-*** DONE 处理 log，过滤掉 login 和心跳的 msg，然后打印订单相关的 msg 
-    CLOSED: [2019-11-05 二 14:43]
+*** WAITING 写单测
 
 *** 提供一个接口，查询那些 session 连接上了，每个连接的 msg id 是多少
 

@@ -967,3 +967,60 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
   :ARCHIVE_TODO: DONE
   :END:
 
+
+* DONE 处理 log，过滤掉 login 和心跳的 msg，然后打印订单相关的 msg 
+  CLOSED: [2019-11-05 二 14:43]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-05 二 16:10
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/fix simulator
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* DONE rebase cerberus
+  CLOSED: [2019-11-05 二 14:49]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-05 二 16:11
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* DONE 删除 sandbox 里面的 customer
+  CLOSED: [2019-11-05 二 16:06]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-05 二 16:11
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+  这个好像做不到，算了，试试先 deactivate.
+
+
+* DONE rebase mss
+  CLOSED: [2019-11-05 二 14:43]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-05 二 16:11
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* DONE 重新创建 customer 数据
+  CLOSED: [2019-11-05 二 16:41]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-05 二 16:43
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
