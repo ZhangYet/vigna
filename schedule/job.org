@@ -6,6 +6,11 @@
 
 *** 创建 account
 
+需要重新同步数据库
+
+*** DONE 处理 review 的意见
+    CLOSED: [2019-11-06 三 16:42]
+
 ** WAITING fix simulator
 
 *** WAITING 写单测
