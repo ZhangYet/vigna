@@ -4,6 +4,17 @@
 
 ** IN-PROGRESS cerberus
 
+*** DONE 先把服务起起来
+    CLOSED: [2019-11-09 六 15:29]
+
+*** IN-PROGRESS 增加外部调用时的 cid 对应的检查
+
+因为入参的不同，每个 view 必须实现自己的检查 decorator
+
+*** process_at 增加
+
+*** init status
+
 ** WAITING fix simulator
 
 *** WAITING 写单测
