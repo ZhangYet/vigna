@@ -1,11 +1,11 @@
 * every day schedule
   
-** TODO 健身
-   DEADLINE: <2019-11-01 五 +1d>
+** TODO 吃药（上午）
+   DEADLINE: <2019-11-10 日 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-11-01 五 10:29]
+   :LAST_REPEAT: [2019-11-09 六 13:33]
    :END:
-   - State "DONE"       from "WAITING"    [2019-11-01 五 10:29]
-   - State "DONE"       from "WAITING"    [2019-10-31 四 00:15]
-   - State "DONE"       from "WAITING"    [2019-10-31 四 00:15]
-   - State "DONE"       from "WAITING"    [2019-10-28 一 22:26]
+   - State "DONE"       from "WAITING"    [2019-11-09 六 13:33]
+
+** TODO 吃药（下午）
+   DEADLINE: <2019-11-09 六 +1d>
