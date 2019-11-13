@@ -15,7 +15,13 @@
 *** DONE process_at 增加
     CLOSED: [2019-11-12 二 19:17]
 
-*** init status
+*** DONE init status
+    CLOSED: [2019-11-13 三 19:34]
+
+**** DONE 生成新的 proto 
+     CLOSED: [2019-11-13 三 18:34]
+
+**** IN-PROGRESS 改代码
 
 ** WAITING fix simulator
 
