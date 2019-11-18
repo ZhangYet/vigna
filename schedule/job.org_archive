@@ -1046,3 +1046,33 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
 
 需要重新同步数据库
 
+
+* DONE cerberus
+  CLOSED: [2019-11-15 五 10:28]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-15 五 10:28
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE 先把服务起起来
+   CLOSED: [2019-11-09 六 15:29]
+
+** DONE 增加外部调用时的 cid 对应的检查
+   CLOSED: [2019-11-12 二 17:14]
+
+因为入参的不同，每个 view 必须实现自己的检查 decorator
+
+** DONE process_at 增加
+   CLOSED: [2019-11-12 二 19:17]
+
+** DONE init status
+   CLOSED: [2019-11-13 三 19:34]
+
+*** DONE 生成新的 proto 
+    CLOSED: [2019-11-13 三 18:34]
+
+*** IN-PROGRESS 改代码
+

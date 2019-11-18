@@ -2,27 +2,6 @@
 
   Records every day work plan
 
-** IN-PROGRESS cerberus
-
-*** DONE 先把服务起起来
-    CLOSED: [2019-11-09 六 15:29]
-
-*** DONE 增加外部调用时的 cid 对应的检查
-    CLOSED: [2019-11-12 二 17:14]
-
-因为入参的不同，每个 view 必须实现自己的检查 decorator
-
-*** DONE process_at 增加
-    CLOSED: [2019-11-12 二 19:17]
-
-*** DONE init status
-    CLOSED: [2019-11-13 三 19:34]
-
-**** DONE 生成新的 proto 
-     CLOSED: [2019-11-13 三 18:34]
-
-**** IN-PROGRESS 改代码
-
 ** WAITING fix simulator
 
 *** WAITING 写单测
@@ -50,4 +29,6 @@
 **** 解决编译的问题
 
 **** 开始补完
+
+** banking service 测试
 

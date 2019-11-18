@@ -1,6 +1,7 @@
 * every day schedule
   
 ** TODO 吃药（上午）
+
    DEADLINE: <2019-11-18 一 +1d>
    :PROPERTIES:
    :LAST_REPEAT: [2019-11-17 日 21:23]
