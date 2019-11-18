@@ -26,9 +26,28 @@
 
 应该还差 14 章，估计林枫没有搞，自己来吧，15章的更新部分没有做。
 
-**** 解决编译的问题
+**** DONE 解决编译的问题
+     CLOSED: [2019-11-18 一 11:03]
+
+在 `index.Rmd` 里面加入
+
+```
+r = getOption("repos")
+r["CRAN"] = "http://cran.us.r-project.org"
+options(repos = r)
+install.packages("weatherData")
+```
+
+即可。
 
 **** 开始补完
 
+
 ** banking service 测试
+
+*** DONE 解答银霜的问题
+    CLOSED: [2019-11-18 一 10:20]
+
+
+
 
