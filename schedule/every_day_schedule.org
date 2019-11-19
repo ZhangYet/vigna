@@ -2,11 +2,12 @@
   
 ** TODO 吃药（上午）
    :PROPERTIES:
-   :LAST_REPEAT: [2019-11-18 一 11:15]
+   :LAST_REPEAT: [2019-11-19 二 18:25]
    :END:
 
+   - State "DONE"       from "WAITING"    [2019-11-19 二 18:25]
    - State "DONE"       from "WAITING"    [2019-11-18 一 11:15]
-   DEADLINE: <2019-11-19 二 +1d>
+   DEADLINE: <2019-11-20 三 +1d>
    :PROPERTIES:
    :LAST_REPEAT: [2019-11-17 日 21:23]
    :END:
