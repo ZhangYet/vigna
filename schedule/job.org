@@ -2,45 +2,15 @@
 
   Records every day work plan
 
-** WAITING fix simulator
-
-*** WAITING 写单测
-
-*** 提供一个接口，查询那些 session 连接上了，每个连接的 msg id 是多少
-
-**** 参考 quickfix 的 c++ 文档
-
-**** 提供一个 web 接口
-
-
 ** IN-PROGRESS 翻译
 
-*** DONE 校对第13章
-    CLOSED: [2019-11-12 二 11:01]
+*** IN-PROGRESS 补完我需要处理的章节
 
-*** TODO 补完我需要处理的章节
+**** IN-PROGRESS 开始补完
 
-**** DONE rebase
-     CLOSED: [2019-11-17 日 23:55]
+***** IN-PROGRESS chap 15
 
-**** 列出需要补全的部分
+***** chap 14
 
-应该还差 14 章，估计林枫没有搞，自己来吧，15章的更新部分没有做。
-
-**** DONE 解决编译的问题
-     CLOSED: [2019-11-18 一 11:03]
-
-在 `index.Rmd` 里面加入
-
-```
-r = getOption("repos")
-r["CRAN"] = "http://cran.us.r-project.org"
-options(repos = r)
-install.packages("weatherData")
-```
-
-即可。
-
-**** 开始补完
-
+***** chap 11
 

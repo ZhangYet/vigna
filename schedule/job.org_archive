@@ -1097,3 +1097,88 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
 *** [[https://16financial.atlassian.net/browse/MSS-1058][Link ACH]]
 
 
+
+* DONE 校对第13章
+  CLOSED: [2019-11-12 二 11:01]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-20 三 11:37
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/翻译
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* 提供一个 web 接口
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-21 四 11:09
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/fix simulator/提供一个接口，查询那些 session 连接上了，每个连接的 msg id 是多少
+  :ARCHIVE_CATEGORY: job
+  :END:
+
+
+
+* WAITING fix simulator
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-21 四 11:09
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: WAITING
+  :END:
+
+** WAITING 写单测
+
+** 提供一个接口，查询那些 session 连接上了，每个连接的 msg id 是多少
+
+*** 参考 quickfix 的 c++ 文档
+
+
+* DONE rebase
+  CLOSED: [2019-11-17 日 23:55]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-21 四 11:20
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/翻译/补完我需要处理的章节
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* DONE 列出需要补全的部分
+  CLOSED: [2019-11-21 四 11:10]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-21 四 11:20
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/翻译/补完我需要处理的章节
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+应该还差 14 章，估计林枫没有搞，自己来吧，15章的更新部分没有做。
+
+竟然就只有 15 章还没有搞，还有16小节。
+
+
+* DONE 解决编译的问题
+  CLOSED: [2019-11-18 一 11:03]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-21 四 11:20
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/翻译/补完我需要处理的章节
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+在 `index.Rmd` 里面加入
+
+```
+r = getOption("repos")
+r["CRAN"] = "http://cran.us.r-project.org"
+options(repos = r)
+install.packages("weatherData")
+```
+
+即可。
+
