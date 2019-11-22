@@ -1076,7 +1076,6 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
 
 *** IN-PROGRESS 改代码
 
-
 * banking service 测试
   :PROPERTIES:
   :ARCHIVE_TIME: 2019-11-19 二 18:24
@@ -1087,15 +1086,6 @@ get 不到的时候，会抛出异常，这种异常应该在哪里处理？其�
 
 ** DONE 解答银霜的问题
    CLOSED: [2019-11-18 一 10:20]
-
-** 处理 jira 上的问题
-
-*** [[https://16financial.atlassian.net/browse/MSS-1057][500]]
-
-*** [[https://16financial.atlassian.net/browse/MSS-1056][后端实现]]
-
-*** [[https://16financial.atlassian.net/browse/MSS-1058][Link ACH]]
-
 
 
 * DONE 校对第13章

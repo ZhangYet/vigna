@@ -14,3 +14,14 @@
 
 ***** chap 11
 
+** IN-PROGRESS 处理 jira 上的问题
+
+*** DONE [[https://16financial.atlassian.net/browse/MSS-1057][500]]
+    CLOSED: [2019-11-22 五 14:10]
+
+*** [[https://16financial.atlassian.net/browse/MSS-1056][后端实现]]
+
+*** IN-PROGRESS [[https://16financial.atlassian.net/browse/MSS-1058][Link ACH]]
+
+需要等卓允提供对外的 ip，这个就明天做吧。另外需要补充订阅的逻辑：如果没有设定的订阅 url，那么我们就重新订阅一发。
+
