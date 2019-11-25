@@ -3,12 +3,13 @@
   Records every day work plan
 
 ** IN-PROGRESS 翻译
-
 *** IN-PROGRESS 补完我需要处理的章节
 
 **** IN-PROGRESS 开始补完
 
 ***** IN-PROGRESS chap 15
+
+R basic 就是 R 的基本功能，不是绘图。
 
 ***** chap 14
 
@@ -21,7 +22,8 @@
 
 *** IN-PROGRESS [[https://16financial.atlassian.net/browse/MSS-1056][后端实现]]
 
-*** IN-PROGRESS [[https://16financial.atlassian.net/browse/MSS-1058][Link ACH]]
+*** DONE [[https://16financial.atlassian.net/browse/MSS-1058][Link ACH]]
+    CLOSED: [2019-11-23 六 14:24]
 
 需要等卓允提供对外的 ip，这个就明天做吧。另外需要补充订阅的逻辑：如果没有设定的订阅 url，那么我们就重新订阅一发。
 
