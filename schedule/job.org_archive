@@ -1172,3 +1172,39 @@ install.packages("weatherData")
 
 即可。
 
+
+* DONE [[https://16financial.atlassian.net/browse/MSS-1057][500]]
+  CLOSED: [2019-11-22 五 14:10]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-25 一 13:41
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/处理 jira 上的问题
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* DONE [[https://16financial.atlassian.net/browse/MSS-1058][Link ACH]]
+  CLOSED: [2019-11-23 六 14:24]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-25 一 13:41
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/处理 jira 上的问题
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+需要等卓允提供对外的 ip，这个就明天做吧。另外需要补充订阅的逻辑：如果没有设定的订阅 url，那么我们就重新订阅一发。
+
+
+* DONE 测试 ssn 能否重复
+  CLOSED: [2019-11-22 五 16:08]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-25 一 13:41
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/处理 jira 上的问题
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+能

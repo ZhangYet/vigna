@@ -15,19 +15,16 @@ R basic 就是 R 的基本功能，不是绘图。
 
 ***** chap 11
 
-** IN-PROGRESS 处理 jira 上的问题
+** DONE 处理 jira 上的问题
+   CLOSED: [2019-11-27 三 10:36]
 
-*** DONE [[https://16financial.atlassian.net/browse/MSS-1057][500]]
-    CLOSED: [2019-11-22 五 14:10]
+*** DONE [[https://16financial.atlassian.net/browse/MSS-1056][后端实现]]
+    CLOSED: [2019-11-27 三 10:35]
 
-*** IN-PROGRESS [[https://16financial.atlassian.net/browse/MSS-1056][后端实现]]
+*** DONE 处理 token 过期的情况
+    CLOSED: [2019-11-26 二 14:26]
 
-*** DONE [[https://16financial.atlassian.net/browse/MSS-1058][Link ACH]]
-    CLOSED: [2019-11-23 六 14:24]
 
-需要等卓允提供对外的 ip，这个就明天做吧。另外需要补充订阅的逻辑：如果没有设定的订阅 url，那么我们就重新订阅一发。
+** DONE 补完 jira 的 issue
+   CLOSED: [2019-11-26 二 11:07]
 
-*** DONE 测试 ssn 能否重复
-    CLOSED: [2019-11-22 五 16:08]
-
-能
