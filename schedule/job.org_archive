@@ -1208,3 +1208,32 @@ install.packages("weatherData")
   :END:
 
 能
+
+* DONE 处理 jira 上的问题
+  CLOSED: [2019-11-27 三 10:36]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-29 五 10:37
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE [[https://16financial.atlassian.net/browse/MSS-1056][后端实现]]
+   CLOSED: [2019-11-27 三 10:35]
+
+** DONE 处理 token 过期的情况
+   CLOSED: [2019-11-26 二 14:26]
+
+
+
+* DONE 补完 jira 的 issue
+  CLOSED: [2019-11-26 二 11:07]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-29 五 10:37
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+

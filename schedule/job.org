@@ -15,16 +15,20 @@ R basic 就是 R 的基本功能，不是绘图。
 
 ***** chap 11
 
-** DONE 处理 jira 上的问题
-   CLOSED: [2019-11-27 三 10:36]
+** 修 bug
 
-*** DONE [[https://16financial.atlassian.net/browse/MSS-1056][后端实现]]
-    CLOSED: [2019-11-27 三 10:35]
+*** 处理报错的问题
 
-*** DONE 处理 token 过期的情况
-    CLOSED: [2019-11-26 二 14:26]
+需要定义 banking 相关的错误，并确定错误码。
 
+*** topic 问题
 
-** DONE 补完 jira 的 issue
-   CLOSED: [2019-11-26 二 11:07]
+**** 将所有的 topic 添加到 webhook
 
+**** 处理 topic
+
+如果不知道，那么就不处理了，但是 webhook 本身要保存下来。
+
+**** 处理 funding_source
+
+从 funding_source 的回调中找到 customer 的 id，然后找到 customer 对应的表，再创建 funding_source.

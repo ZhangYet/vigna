@@ -315,3 +315,22 @@ Archived entries from file /Users/zhangye/Repos/vigna/schedule/every_day_schedul
   - State "DONE"       from "WAITING"    [2019-11-11 一 19:51]
   - State "DONE"       from "WAITING"    [2019-11-10 日 21:02]
   - State "DONE"       from "WAITING"    [2019-11-09 六 20:38]
+
+* TODO 吃药
+  DEADLINE: <2019-11-28 四 +1d>
+  :PROPERTIES:
+  :LAST_REPEAT: [2019-11-27 三 15:18]
+  :ARCHIVE_TIME: 2019-11-29 五 10:54
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/every_day_schedule.org
+  :ARCHIVE_OLPATH: every day schedule
+  :ARCHIVE_CATEGORY: every_day_schedule
+  :ARCHIVE_TODO: TODO
+  :END:
+   - State "DONE"       from "WAITING"    [2019-11-27 三 15:18]
+   - State "DONE"       from "WAITING"    [2019-11-27 三 15:18]
+   - State "DONE"       from "WAITING"    [2019-11-26 二 10:18]
+   - State "DONE"       from "WAITING"    [2019-11-26 二 10:18]
+   - State "DONE"       from "WAITING"    [2019-11-23 六 12:30]
+   - State "DONE"       from "WAITING"    [2019-11-22 五 13:58]
+
+因为拔了智齿，所以暂停服药了
