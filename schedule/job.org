@@ -11,19 +11,36 @@
 
 R basic 就是 R 的基本功能，不是绘图。
 
+level 还是统一翻译成水平吧。
+
 ***** chap 14
 
 ***** chap 11
 
-** 修 bug
+** IN-PROGRESS 修 bug
 
-*** 处理报错的问题
+*** DONE 处理报错的问题
+    CLOSED: [2019-11-30 六 13:53]
 
 需要定义 banking 相关的错误，并确定错误码。
 
-*** topic 问题
+dwollaCustomers:
 
-**** 将所有的 topic 添加到 webhook
+1. CreateCustomerView: 找不到 account, Invalid param 吧；
+
+funding_source:
+
+1. AccountDwolla not exits: invalid param;
+2. Acitvate 等，找不到对应的 funding_source, invalid param;
+3. remove 等，也是 invalid param；
+4. 403 那个就是权限问题了；
+
+就把 invalid param 映射过去就好了吧。
+
+*** IN-PROGRESS topic 问题
+
+**** DONE 将所有的 topic 添加到 webhook
+     CLOSED: [2019-11-30 六 14:53]
 
 **** 处理 topic
 
