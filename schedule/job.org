@@ -7,7 +7,7 @@
 
 **** IN-PROGRESS 开始补完
 
-***** IN-PROGRESS chap 15
+***** WAITING chap 15
 
 R basic 就是 R 的基本功能，不是绘图。
 
@@ -15,39 +15,17 @@ level 还是统一翻译成水平吧。
 
 置信区间那一节要怎样处理？
 
-***** chap 14
+先歇一段吧。这一章把我整死了。
 
-***** chap 11
+***** DONE chap 14
+      CLOSED: [2019-12-03 二 18:12]
 
-** IN-PROGRESS 修 bug
+想不到这一章我搞定了，赞美我自己。
 
-*** DONE 处理报错的问题
-    CLOSED: [2019-11-30 六 13:53]
+***** chap 12
 
-需要定义 banking 相关的错误，并确定错误码。
+** cerberus
 
-dwollaCustomers:
+*** transfer 问题
 
-1. CreateCustomerView: 找不到 account, Invalid param 吧；
-
-funding_source:
-
-1. AccountDwolla not exits: invalid param;
-2. Acitvate 等，找不到对应的 funding_source, invalid param;
-3. remove 等，也是 invalid param；
-4. 403 那个就是权限问题了；
-
-就把 invalid param 映射过去就好了吧。
-
-*** IN-PROGRESS topic 问题
-
-**** DONE 将所有的 topic 添加到 webhook
-     CLOSED: [2019-11-30 六 14:53]
-
-**** 处理 topic
-
-如果不知道，那么就不处理了，但是 webhook 本身要保存下来。
-
-**** 处理 funding_source
-
-从 funding_source 的回调中找到 customer 的 id，然后找到 customer 对应的表，再创建 funding_source.
+*** IN-PROGRESS 整理 jira
