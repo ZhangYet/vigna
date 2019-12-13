@@ -4,9 +4,23 @@
 
 ** IN-PROGRESS 翻译
 
-*** 发初稿
+** banking service transfer
 
- yanghailing@ptpress.com.cn
+*** DONE review 文档，拆分任务
+    CLOSED: [2019-12-13 五 14:27]
 
-** cerberus
+**** transfer 的状态是否完备，须检查
 
+**** 如何冻结资金
+
+**** 检查资金是否足够
+
+**** 须应用资金变更（包括释放冻结资金以及）
+
+**** 记得加字段(returned amount/returned fee)
+
+**** routing number 字段换成 identifier id
+
+**** type 要加上 check
+
+*** jira 列出任务

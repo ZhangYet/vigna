@@ -1424,3 +1424,35 @@ level 还是统一翻译成水平吧。
   :ARCHIVE_TODO: DONE
   :END:
 
+
+* 发初稿
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-12-11 三 11:20
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/翻译
+  :ARCHIVE_CATEGORY: job
+  :END:
+
+yanghailing@ptpress.com.cn
+
+
+* DONE 整理已经做的 issue
+  CLOSED: [2019-12-11 三 14:29]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-12-11 三 19:42
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/cerberus
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+meng xiao cashier 的重构还没有完成，所以真的是进退两难啊。
+
+* cerberus
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-12-13 五 10:19
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :END:
+
