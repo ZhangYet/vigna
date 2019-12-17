@@ -1456,3 +1456,48 @@ meng xiao cashier 的重构还没有完成，所以真的是进退两难啊。
   :ARCHIVE_CATEGORY: job
   :END:
 
+
+* DONE 翻译
+  CLOSED: [2019-12-16 一 15:02]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-12-16 一 15:02
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* jira 列出任务
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-12-16 一 15:02
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job/banking service transfer
+  :ARCHIVE_CATEGORY: job
+  :END:
+
+* banking service transfer
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-12-16 一 15:02
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/job.org
+  :ARCHIVE_OLPATH: job
+  :ARCHIVE_CATEGORY: job
+  :END:
+
+** DONE review 文档，拆分任务
+   CLOSED: [2019-12-13 五 14:27]
+
+*** transfer 的状态是否完备，须检查
+
+*** 如何冻结资金
+
+*** 检查资金是否足够
+
+*** 须应用资金变更（包括释放冻结资金以及）
+
+*** 记得加字段(returned amount/returned fee)
+
+*** routing number 字段换成 identifier id
+
+*** type 要加上 check
+
