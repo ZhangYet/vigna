@@ -2,30 +2,3 @@
 
   Records every day work plan
 
-** [[https://16financial.atlassian.net/browse/MSS-1267][MSS-1267]]
-
-*** DONE 增加 model 字段
-    CLOSED: [2019-12-18 三 14:33]
-
-
-*** DONE 出金资产检查
-    CLOSED: [2019-12-18 三 20:48]
-
-现在连用哪个接口都不清楚，网络特别慢。
-
-*** 冻结金额被 [[https://16financial.atlassian.net/browse/MSS-1265][MSS-1265]] block
-
-
-*** DONE 更新今天的 jira
-    CLOSED: [2019-12-18 三 20:48]
-
-网速慢得想杀人。
-
-*** DONE 封装那个一次可以发起多个 cashier 调用的接口
-    CLOSED: [2019-12-19 四 16:24]
-
-*** DONE 处理出入金的逻辑
-    CLOSED: [2019-12-19 四 16:24]
-
-*** DONE [[https://16financial.atlassian.net/browse/MSS-1268][MSS-1268]]
-    CLOSED: [2019-12-22 日 15:23]
