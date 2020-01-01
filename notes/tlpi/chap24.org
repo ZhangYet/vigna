@@ -1,0 +1,72 @@
+** 进程的创建
+
+*** 相关的系统调用
+
+| 系统调用                     | 说明                                                                                | 备注                 |
+|------------------------------+-------------------------------------------------------------------------------------+----------------------|
+| fork()                       | 子进程获得父进程的栈、数据段、堆和正文段                                            |                      |
+| exit(status)                 | 将资源归还内核，status 表示退出状态                                                 |                      |
+| wait(&status)                | 如果子进程尚未调用 exit() 退出，wait() 挂起父进程，子进程的终止状态通过 wait() 返回 |                      |
+| execve(pathname, argv, envp) | 加载新程序，为新程序重新创建栈、数据段以及堆                                        | 会丢弃当前程序文本段 |
+
+`spawn` 将 `fork` 和 `execve` 合二为一。
+
+*** fork
+
+调用 `fork` 之后，将会存在两个进程，每个进程都会从 `fork` 的返回处继续执行。
+
+程序代码可以通过 `fork` 的返回值确定父、子进程，`fork` 在子进程中返回0。
+
+#+BEGIN_SRC c
+#include "stdio.h"
+#include <unistd.h>
+
+static int idata = 111;
+
+int main(int argc, char *argv[]) {
+  int istack = 222;
+  pid_t childPid;
+
+  switch (childPid = fork()) {
+  case -1:
+    printf("cannot fork");
+
+  case 0:
+    idata *= 3;
+    istack *= 3;
+    break;
+
+  default:
+    if (childPid != 0) {
+      sleep(3);
+    }
+    break;
+  }
+
+  printf("PID=%ld %s, idata=%d, istack=%d\n", (long) getpid(),
+         (childPid == 0) ? "child": "parent", idata, istack);
+  exit(0);
+}
+#+END_SRC
+
+从上面这个示例代码，我们可以看见，子进程在 `fork` 时获得自己的栈和数据段拷贝，对这些段变量的修改不会影响父进程。
+
+**** 文件共享
+
+`fork` 之后，子进程获得父进程所有文件描述符的副本，所以父子进程中对应的描述符均指向相同的打开文件句柄（包含当前文件偏移量和文件状态标志）——子进程对文件属性的修改会影响父进程的描述符。
+
+**** 内存语义
+
+1. 正文段只读；
+2. 写时复制；
+
+
+*** vfork
+
+fork (完全复制) -> vfork (更高效) -> fork (写时复制)
+
+`vfork` 是为子进程 fork 之后立即执行 exec 的程序设计的。
+
+`vfork` 的语义在于执行改调用之后，系统将保证子进程先于父进程获得调度。
+
+`vfork` 创建的子进程对栈上变量的修改会影响父进程对应的变量。

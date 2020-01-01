@@ -36,7 +36,6 @@
 
     =reboot= 第二个参数的 magic 数值转换成十六进制之后，其实就是 Linus 和他女儿的生日，见[[https://stackoverflow.com/questions/4808748/magic-numbers-of-the-linux-reboot-system-call][这个回答]]。
 
-
 ** 文件 I/O
 
 *** =open()=
@@ -66,7 +65,6 @@
 
     1. 写一个 tee
     2. 复制时带空洞
-
 
 ** 深入探究文件 I/O
 
@@ -300,7 +298,6 @@
     2. 实现 =nftw()=;
     3. 验证 =fchdir()= 和 =chdir()= 的效率；
 
-
 ** 监控文件事件
 
    mac 系统上没有对应 header 真是太不方便了。
@@ -336,8 +333,9 @@
 *** 信号类型和默认行为
 
 *** `signal()`
-
     基本读不懂这个函数的原型。
+
+#+INCLUDE: "./chap24.org" :minlevel 2
 
 ** Footnotes
 
