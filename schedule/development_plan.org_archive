@@ -135,3 +135,37 @@ Archived entries from file /Users/dantezhang/Repos/vigna/schedule/development_pl
 
   或者 =org-mode= 本身有内置功能可以完成。
 
+
+* DONE 处理 org-mode 插入代码的问题                                   :emacs:
+  CLOSED: [2020-01-05 日 17:24]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-01-05 日 17:26
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/development_plan.org
+  :ARCHIVE_OLPATH: development plan
+  :ARCHIVE_CATEGORY: development_plan
+  :ARCHIVE_TODO: DONE
+  :END:
+
+  FYI: [[http://wenshanren.org/?p=327][Emacs：在 org-mode 中插入源代码块]]
+
+  找到一个别人写的代码
+
+
+* DONE 读 [[https://github.com/atilaneves/cmake-ide][cmake-ide]] 的源代码                                          :emacs:
+  CLOSED: [2020-01-05 日 17:26] DEADLINE: <2019-10-03 四>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-01-05 日 17:26
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/development_plan.org
+  :ARCHIVE_OLPATH: development plan
+  :ARCHIVE_CATEGORY: development_plan
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* 一个更方便的在 org-mode 插入 custom id 的方案
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-01-05 日 17:26
+  :ARCHIVE_FILE: ~/Repos/vigna/schedule/development_plan.org
+  :ARCHIVE_OLPATH: development plan
+  :ARCHIVE_CATEGORY: development_plan
+  :END:

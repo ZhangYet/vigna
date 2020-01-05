@@ -1,10 +1,2 @@
 * development plan
 
-** 处理 org-mode 插入代码的问题                                       :emacs:
-
-   FYI: [[http://wenshanren.org/?p=327][Emacs：在 org-mode 中插入源代码块]]
-
-** IN-PROGRESS 读 [[https://github.com/atilaneves/cmake-ide][cmake-ide]] 的源代码                                  :emacs:
-   DEADLINE: <2019-10-03 四>
-
-** 一个更方便的在 org-mode 插入 custom id 的方案
