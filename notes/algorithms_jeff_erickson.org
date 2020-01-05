@@ -11,10 +11,6 @@
 *** IN-PROGRESS [[http://jeffe.cs.illinois.edu/teaching/algorithms/book/07-mst.pdf][Minimum spanning trees]]                              :reading:
     DEADLINE: <2019-08-22 四>
 
-
-
-
-
 ** notes
 
 *** Depth-first search
@@ -32,4 +28,19 @@
        但其实还有最后跟强连接相关的部分，过得很潦草。
 
 *** Minimum spanning treea
+    1. 如果一个连通图所有边的权重都不相同，那么它有唯一的 MST；
+    2. 但是我们可以用一种 ShorterEdge 准则判断保留两条等重的边中的一条，所以我们可以把所有的连通图当作权重不相同的边处理（其实对所有边都等重的图不太管用）；
+    3. 然而真相却是:  *The situation is similar to graph traversal, where several dierent algorithms are all variants of the generic traversal algorithm whatever-first search.*
+    4. 我们要维持一个集合 *F* ，集合中的树都是 G 的最小生成树的子图。[fn:1]
+    5. *useless* 两点都属于 *F*，但是这条边本身不属于 *F*。
+    6. *safe* 只有一个点属于 *F* 的最小权值边。[fn:2]
+    7. *Prim 引理* MST 包含所有 safe 边。
 
+
+
+
+** Footnotes
+
+[fn:2] 这也是一个让我费解的概念，为什么只能有一个 endpoint 属于 *F* ？
+
+[fn:1] 但是我觉得很奇怪，在我们确定 MST 之前，我们怎么知道一个集合是不是 MST 的子图？ *蠢啊，最初的时候都是一个点，它们当然是 MST 的子集啊！*
