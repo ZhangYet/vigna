@@ -1,0 +1,31 @@
+* 需要复习的知识
+
+** TCP
+
+*** tcp 三次握手与四次挥手
+
+*** 四次挥手中的状态
+
+*** TCP 如何保障可靠性[fn:1]
+
+** 语言相关
+
+*** 线程/协程/进程
+
+*** go 中 GMP 机制
+
+*** go 垃圾回收机制
+
+** HTTP
+
+*** HTTP 与 HTTPS 的区别
+
+*** 常见 HTTP 状态码
+
+** redis
+
+*** redis 分布式锁
+
+** Footnotes
+
+[fn:1] [[https://juejin.im/post/5cf7ea91e51d4576bc1a0dc2][参考资料]] 
