@@ -14,6 +14,49 @@
 
 *** go 中 GMP 机制
 
+**** 符号
+
+- *G*: goroutine，其实是一个跟踪 goroutine 栈和状态的结构。
+- *P*: logical process，获取 M 以运行 G
+- *M*: 系统线程
+
+**** M, P 和 G 之间的交互
+
+based on http://morsmachine.dk/go-scheduler
+
+*Q*: 为什么需要调度器
+
+*A*: 1. pthreads 很多资源（比如 signal mask 和 CPU affinity）, goroutine 并不需要。2. 有了调度器，我们可以进行 informed scheduling decisions (OS 做不到)。
+
+go scheduler 是 *M:N scheduler*, 多个 goroutine 跑在多个系统线程上。
+
+符号：
+
+- *M*: 系统进程
+
+- *G*: goroutine
+
+- *P*: context，或者可以理解成跟某个 M 绑定的 local scheduler
+
+#+CAPTION: GMP 模型
+#+NAME:   fig:SED-HR4049
+[[http://morsmachine.dk/in-motion.jpg]]
+
+对上图的解释：
+
+#+BEGIN_QUOTE
+
+Goroutines are added to the end of a runqueue whenever a goroutine executes a go statement. Once a context has run a goroutine until a scheduling point, it pops a goroutine off its runqueue, sets stack and instruction pointer and begins running the goroutine.
+
+#+END_QUOTE
+
+#+CAPTION: Go 调度中对 syscall 的处理
+#+NAME:   fig:SED-HR4049
+[[http://morsmachine.dk/syscall.jpg]]
+
+如图所示，M0 进入 syscall block 的时候，调度器会将 M0 的 P 移到新的 P 去运行。
+
+
 *** go 垃圾回收机制
 
 ** HTTP
