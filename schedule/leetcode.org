@@ -15,17 +15,19 @@
 ** DONE [[https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/][Maximum Subarray Sum with One Deletion]]
    CLOSED: [2020-01-10 五 14:13] DEADLINE: <2037-01-10 六>
 
-** [[https://leetcode.com/problems/search-a-2d-matrix-ii/][Search a 2D Matrix II]]
+** DONE [[https://leetcode.com/problems/search-a-2d-matrix-ii/][Search a 2D Matrix II]]
+   CLOSED: [2020-01-11 六 15:37] DEADLINE: <2037-01-10 六>
+从右上角开始查找。
+** WAITING [[https://leetcode.com/problems/validate-ip-address/][Validate IP Address]]
    DEADLINE: <2037-01-10 六>
 
-** [[https://leetcode.com/problems/validate-ip-address/][Validate IP Address]]
-   DEADLINE: <2037-01-10 六>
+看了个答案，非常烦，就是一段一段解析。
 
-** [[https://leetcode.com/problems/defanging-an-ip-address/][Defanging an IP Address]]
-   DEADLINE: <2037-01-10 六>
-
-** [[https://leetcode.com/problems/restore-ip-addresses/][Restore IP Addresses]]
-   DEADLINE: <2037-01-10 六>
+** DONE [[https://leetcode.com/problems/defanging-an-ip-address/][Defanging an IP Address]]
+   CLOSED: [2020-01-11 六 15:48] DEADLINE: <2037-01-10 六>
+无语
+** DONE [[https://leetcode.com/problems/restore-ip-addresses/][Restore IP Addresses]]
+   CLOSED: [2020-01-11 六 17:48] DEADLINE: <2037-01-10 六>
 
 ** 树的遍历
    DEADLINE: <2020-01-11 六>
