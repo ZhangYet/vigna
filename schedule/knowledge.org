@@ -54,7 +54,7 @@ Goroutines are added to the end of a runqueue whenever a goroutine executes a go
 #+NAME:   fig:SED-HR4049
 [[http://morsmachine.dk/syscall.jpg]]
 
-如图所示，M0 进入 syscall block 的时候，调度器会将 M0 的 P 移到新的 P 去运行。
+如图所示，M0 进入 syscall block 的时候，调度器会将 M0 的 P 移到新的 P 去运行。注意到 M0 此时就没有 P 了，它需要在 syscall return 之后重新获取 P。如果可以，它会偷一个，如果不行，它会把 G 放到 global queue，然后 sleep。
 
 
 *** go 垃圾回收机制
