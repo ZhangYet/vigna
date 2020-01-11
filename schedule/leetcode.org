@@ -2,14 +2,18 @@
 
 主要原则就是面试经验提到的题目，目前收集一下，在第二轮面试之前要刷完。
 
-** [[https://leetcode.com/problems/maximum-average-subarray-i/][Maximum Average Subarray I]]
-   DEADLINE: <2020-01-10 五>
+** DONE [[https://leetcode.com/problems/maximum-average-subarray-i/][Maximum Average Subarray I]]
+   CLOSED: [2020-01-10 五 11:57] DEADLINE: <2020-01-10 五>
 
-** [[https://leetcode.com/problems/maximum-subarray/][Maximum Subarray]]
-   DEADLINE: <2020-01-10 五>
+滑动窗口，否则超时。   
 
-** [[https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/][Maximum Subarray Sum with One Deletion]]
-   DEADLINE: <2037-01-10 六>
+** DONE [[https://leetcode.com/problems/maximum-subarray/][Maximum Subarray]]
+   CLOSED: [2020-01-10 五 12:45] DEADLINE: <2020-01-10 五>
+
+没有透彻理解，需要复习。
+
+** DONE [[https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/][Maximum Subarray Sum with One Deletion]]
+   CLOSED: [2020-01-10 五 14:13] DEADLINE: <2037-01-10 六>
 
 ** [[https://leetcode.com/problems/search-a-2d-matrix-ii/][Search a 2D Matrix II]]
    DEADLINE: <2037-01-10 六>
