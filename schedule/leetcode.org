@@ -36,4 +36,11 @@
 
 ** [[https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/][Recover a Tree From Preorder Traversal]]
 
-** [[https://leetcode.com/problems/n-ary-tree-preorder-traversal/][N-ary Tree Preorder Traversal]]
+** DONE [[https://leetcode.com/problems/n-ary-tree-preorder-traversal/][N-ary Tree Preorder Traversal]]
+   CLOSED: [2020-01-14 二 16:33]
+直接递归其实挺慢的
+
+** [[https://leetcode.com/problems/reverse-linked-list-ii/][Reverse Linked List II]]
+
+** WAITING [[https://leetcode.com/problems/tag-validator/][Tag Validator]]
+处理 CDATA 太烦了。
