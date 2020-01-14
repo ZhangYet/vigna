@@ -335,8 +335,9 @@
 *** `signal()`
     基本读不懂这个函数的原型。
 
-#+INCLUDE: "./chap24.org" :minlevel 
-#+INCLUDE: "./chap25.org" :minlevel 
+#+INCLUDE: "./chap21.org" :minlevel 2
+#+INCLUDE: "./chap24.org" :minlevel 2
+#+INCLUDE: "./chap25.org" :minlevel 2
 
 ** Footnotes
 

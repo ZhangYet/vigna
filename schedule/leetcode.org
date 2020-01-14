@@ -29,5 +29,11 @@
 ** DONE [[https://leetcode.com/problems/restore-ip-addresses/][Restore IP Addresses]]
    CLOSED: [2020-01-11 六 17:48] DEADLINE: <2037-01-10 六>
 
-** 树的遍历
-   DEADLINE: <2020-01-11 六>
+** DONE 树的遍历
+   CLOSED: [2020-01-12 日 15:18] DEADLINE: <2020-01-11 六>
+
+终于搞懂了后序中序和先序几种遍历方式了。
+
+** [[https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/][Recover a Tree From Preorder Traversal]]
+
+** [[https://leetcode.com/problems/n-ary-tree-preorder-traversal/][N-ary Tree Preorder Traversal]]

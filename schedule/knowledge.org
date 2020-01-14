@@ -69,6 +69,10 @@ Goroutines are added to the end of a runqueue whenever a goroutine executes a go
 
 *** redis 分布式锁
 
+*Q*： 只用 redis SETEX 会有什么问题？
+
+*A*： redis 倒霉催的挂了怎么破？即使我们有主从，但是因为主从是异步的，所以如果有 client 刚获得锁 master 就崩溃了，那么另外的 client 可以获得锁。
+
 ** Footnotes
 
 [fn:1] [[https://juejin.im/post/5cf7ea91e51d4576bc1a0dc2][参考资料]] 
