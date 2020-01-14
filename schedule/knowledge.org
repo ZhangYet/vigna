@@ -1,7 +1,5 @@
 * 需要复习的知识
-
 ** TCP
-
 *** tcp 三次握手与四次挥手
 
 *** 四次挥手中的状态
@@ -9,7 +7,6 @@
 *** TCP 如何保障可靠性[fn:1]
 
 ** 语言相关
-
 *** 线程/协程/进程
 
 *** go 中 GMP 机制
@@ -56,23 +53,21 @@ Goroutines are added to the end of a runqueue whenever a goroutine executes a go
 
 如图所示，M0 进入 syscall block 的时候，调度器会将 M0 的 P 移到新的 P 去运行。注意到 M0 此时就没有 P 了，它需要在 syscall return 之后重新获取 P。如果可以，它会偷一个，如果不行，它会把 G 放到 global queue，然后 sleep。
 
-
 *** go 垃圾回收机制
 
-** HTTP
+[[http://morsmachine.dk/machine-gc][难点]]： 正确处理引用（寄存器中的引用、多线程下以及事件循环中的引用）。
 
+** HTTP
 *** HTTP 与 HTTPS 的区别
 
 *** 常见 HTTP 状态码
 
 ** redis
-
 *** [[https://redis.io/topics/distlock][redis 分布式锁]]
 
 *Q*： 只用 redis SETEX 会有什么问题？
 
 *A*： redis 倒霉催的挂了怎么破？即使我们有主从，但是因为主从是异步的，所以如果有 client 刚获得锁 master 就崩溃了，那么另外的 client 可以获得锁。
-
 
 
 ** Footnotes
