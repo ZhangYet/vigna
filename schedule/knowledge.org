@@ -57,10 +57,17 @@ Goroutines are added to the end of a runqueue whenever a goroutine executes a go
 
 [[http://morsmachine.dk/machine-gc][难点]]： 正确处理引用（寄存器中的引用、多线程下以及事件循环中的引用）。
 
+[[https://blog.golang.org/ismmkeynote][ISMM 的 keynote]]: GC 需要解决的问题——GC 延迟。
+
+[[https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice/][Go GC: theory and practice]]
+
+*** python dict 实现
+
 ** HTTP
 *** HTTP 与 HTTPS 的区别
 
 *** 常见 HTTP 状态码
+
 
 ** redis
 *** [[https://redis.io/topics/distlock][redis 分布式锁]]
@@ -68,6 +75,14 @@ Goroutines are added to the end of a runqueue whenever a goroutine executes a go
 *Q*： 只用 redis SETEX 会有什么问题？
 
 *A*： redis 倒霉催的挂了怎么破？即使我们有主从，但是因为主从是异步的，所以如果有 client 刚获得锁 master 就崩溃了，那么另外的 client 可以获得锁。
+
+**  MySQL
+
+*** MySQL 索引
+
+*** primary key 跟 non-primary key 的区别
+
+*** 为什么用 B+ 树
 
 
 ** Footnotes
