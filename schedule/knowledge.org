@@ -84,6 +84,9 @@ Goroutines are added to the end of a runqueue whenever a goroutine executes a go
 
 *** 为什么用 B+ 树
 
+** 算法
+
+#+INCLUDE: "../notes/ita/chap11_hash_table.org" :minlevel 2
 
 ** Footnotes
 
