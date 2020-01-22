@@ -63,6 +63,11 @@ Goroutines are added to the end of a runqueue whenever a goroutine executes a go
 
 *** python dict 实现
 
+采用开放寻址，随机化探寻，初始化有8个 slot，超过一定比例的时候会 resize，resize 之后会扩展成比 4 * ma_used 大的2的幂。删除 key 的时候不会 resize。
+
+[[https://www.laurentluce.com/posts/python-dictionary-implementation/][参考材料]]
+
+
 ** HTTP
 *** HTTP 与 HTTPS 的区别
 
