@@ -2,3 +2,4 @@
 
 #+INCLUDE: "./chap11_hash_table.org" :minlevel 2
 #+INCLUDE: "./chap06_heapsort.org" :minlevel 2
+#+INCLUDE: "./chap18_b_tree.org" :minlevel 2
