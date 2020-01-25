@@ -1,3 +1,6 @@
+#+TITLE: 算法导论笔记
+#+OPTIONS: num:nil
+
 * [[https://book.douban.com/subject/1885170/][算法导论]]
 
 #+INCLUDE: "./chap11_hash_table.org" :minlevel 2
