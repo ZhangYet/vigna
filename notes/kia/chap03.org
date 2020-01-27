@@ -28,6 +28,19 @@ pod 之间没有 NAT 。
 
 *** labels
 
+1. ~kubectl label po [podname] [label-name]=[label-value] --overwrite~: 修改已有 pod 的 label (已有的 label 需要 overwrite 参数)
+
+*** 使用 label 选择一组 pod
+
+label 可以选择已有的 pod，也可以让干涉 schedule 过程，让 pod 部署到符合 label 描述的 node 上（在 spec 中通过 nodeSelector 选择对应的 node）
+
+*** namespace
+
+namespace 并不提供隔离性。其实让 pod 就是对其他 namespace 不可见。
+
+*** 删除 pod
+
+先发送 SIGTERM 超时再发送 SIGKILL——先礼后兵。也可以根据 label 选择要删除的 pod，也可以一次把 namespace 和 pod 都删除掉。
 
 
 *** Footnotes
