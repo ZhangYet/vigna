@@ -1,0 +1,31 @@
+** Introducing Kubernetes
+*** 微服务拆分
+ 其实没啥好说的，其实就是微服务拆分那一套。
+*** 容器与 VM 的比较：
+
+VM 需要跑一整套系统进程，容器只有自己的进程。
+
+#+BEGIN_QUOTE
+Applications running inside those VMs perform system calls to the guest OS’ ker- nel in the VM, and the kernel then performs x86 instructions on the host’s physical CPU through the hypervisor.
+
+Containers, on the other hand, all perform system calls on the exact same kernel run- ning in the host OS. This single kernel is the only one performing x86 instructions on the host’s CPU.
+#+END_QUOTE
+*** 容器隔离的机制
+1. Linux Namespace
+2. Linux Cgroup
+*** 容器写机制
+#+BEGIN_QUOTE
+This works because container image layers are read-only. When a container is run, a new writable layer is created on top of the layers in the image. When the process in the container writes to a file located in one of the underlying layers, a copy of the whole file is created in the top-most layer and the process writes to the copy.
+#+END_QUOTE
+*** Kubernetes 架构
+**** the control plane
+1. the api server;
+2. the scheduler: 为 app component 分配 working node;
+3. the controller manager: 集群功能，比如复制 component、监控集群、处理失败节点等;
+4. etcd: 存储集群配置;
+**** (working) nodes
+1. container runtime;
+2. the kubelet: 与 API 交流并管理节点上的容器；
+3. the kube-proxy: load balance;
+
+
