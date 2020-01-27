@@ -1,0 +1,35 @@
+** pods
+
+*** introduction
+
+一个 pod 可以有多个容器，但肯定在一个节点上。
+
+pod 中的容器会共享很多东西，因为它们在同一个 namespace 下，但是 file systems 是特殊的，需要 volume。同一个 pod 下面的容器还共享 port 空间。
+
+#+BEGIN_QUOTE
+all containers of a pod run under the same Network and UTS namespaces[fn:1]
+
+Similarly, all containers of a pod run under the same IPC namespace and can communicate through IPC.
+#+END_QUOTE
+
+pod 之间没有 NAT 。
+
+从资源利用和扩展性来看，为什么我们不应该用一个大 pod 将所有容器放在一起：不利于应用资源和扩展（多个 pod 可以选择痛点扩展）。
+
+*** pod 定义
+
+**** 常用的 kubectl 命令
+
+1. ~kubectl create -f~ 读取 yaml 创建 pod
+2. ~kubectl get po [podname] -o [output-format]~ 获取 pod 完整定义
+3. ~kubectl get pods~ 查看状态
+4. ~kubectl logs [podname] -c [container-name]~ 查看 pod 日志, 还可以指定具体容器
+5. ~kubectl port-forward [podname] host-port:pod-port~ 将本地 host-port 流量转发到 pod 中的 pod-port
+
+*** labels
+
+
+
+*** Footnotes
+
+[fn:1] In short, the UTS namespace is about isolating hostnames, [[https://unix.stackexchange.com/questions/183717/whats-a-uts-namespace][FYI]]
