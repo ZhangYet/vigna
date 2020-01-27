@@ -60,7 +60,6 @@ int main(int argc, char *argv[]) {
 1. 正文段只读；
 2. 写时复制；
 
-
 *** vfork
 
 fork (完全复制) -> vfork (更高效) -> fork (写时复制)
