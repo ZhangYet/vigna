@@ -1,0 +1,26 @@
+** volume
+
+*** introduction
+
+一般来说，volume 与 pod 同寿。
+
+volume 类型：
+
+1. emptyDir
+2. hostPath: 从 working node 文件系统挂载
+3. gitRepo: 牛逼
+4. nfs
+5. gcePersistentDisk, awsElasticBlockStore and azureDisk
+6. network storage (cephfs)
+7. configMap 等 k8s 特别的 resource
+8. persistentVolumeClaim
+
+
+*** 容器间共享数据
+
+
+
+
+
+
+
