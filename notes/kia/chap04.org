@@ -67,4 +67,10 @@ DaemonSet 的部署是绕开了 scheduler 的。所以即使是 unschedulable �
 
 *** Job
 
-就像 lambda。
+就像 lambda。跟书中描述不同， ~kubectl get po~ 可以看到 completed job。
+
+可以在 spec 中指定 completions: 一个 job 完成再起一个。指定 parallel: 同时起多个 job。当然可以同时指定这两种。
+
+*** CronJob
+
+定时任务，但是不一定准时，而且会有冲突，就跟 dicloud 用的那个延时队列一样。设计 job 的时候需要考虑同构和防重入。
