@@ -1,2 +1,12 @@
 ** controllers
 
+*** 保持 pod 健康
+
+**** liveness probe
+
+1. http get probe
+2. tcp socket probe: 只要能建立 tcp 连接就认为存活
+3. exec probe: 容器内运行一条命令，如果返回状态码是0，认为存活
+
+k8s 中退出的状态码是 128+x (x 是退出的信号，比如 137=128+9，表示被 SIGTERM 干掉了)， 另外注意定义 probe 时要加 init delay。
+
