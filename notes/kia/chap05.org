@@ -1,0 +1,57 @@
+** service
+
+*** 简介
+
+#+BEGIN_QUOTE
+A Kubernetes Service is a resource you create to make a single, constant point of entry to a group of pods providing the same service. Each service has an IP address and port that never change while the service exists. 
+#+END_QUOTE
+
+*** 创建 service
+
+**** 创建和测试
+
+ 可以直接用 ~kubectl expose~ 创建 service.
+
+ service 会随机选择 pod，如果希望同一个 client 的请求到同一个 pod，可以设定 sessionAffinity。
+
+ 可以为 service 定义多个 port 但是这些 port 都对应同一组 pod。
+
+ 测试 service 的方法： ~kubectl exec~ 进入容器中执行远程命令。
+
+**** 服务发现
+
+1. 通过环境变量(感觉后面创建的 pod 都能看见前面服务的 host 和 port 啊)
+2. DNS：
+#+BEGIN_QUOTE
+Any DNS query performed by a process run- ning in a pod will be handled by Kubernetes’ own DNS server, which knows all the ser- vices running in your system.
+#+END_QUOTE
+
+进入容器的命令： ~kubectl exec -it [podname] bash~
+
+值得注意的是，即使在容器里面，也是 ping 不通对应服务的 ip 的（因为是虚拟 ip）。
+
+*** 让 pod 连接外部服务
+
+service 通过 endpoint 资源，连接外部和 pod。
+
+*** 将 service 暴露给外部服务
+
+**** NodePortService
+
+#+BEGIN_SRC YAML
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia-nodeport
+spec:
+  type: NodePort
+  ports:
+  - port: 10087
+    targetPort: 8080
+    nodePort: 30128
+  selector:
+    app: kubia
+#+END_SRC
+
+如图的配置，可以起一个 nodeport 资源，然后我们访问这个 nodeport，它会转发请求：nodePort -> port[service] -> targetPort[pod]， 注意，如果你有多个 node， node1 的 nodeport 也可以将请求转发到 node2 的 pod 里面。
+
