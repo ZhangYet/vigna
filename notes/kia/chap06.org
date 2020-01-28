@@ -18,9 +18,21 @@ volume 类型：
 
 *** 容器间共享数据
 
+注意到 gitRepo 类型的 volume 不会自动同步 git repo 的更新，只有在每次 pod 创建的时候才会拉一次。居然用不了 private repo！
 
+*** hostPath
 
+这是第一种持久性存储。但是要注意，hostPath 是针对 node 的。
 
+*** 存储类型解耦
 
+引入 PersistentVolumes 和 PersistentVolumeClaims，解耦具体的持久存储类型。
 
+系统管理员将持久存储注册为 PersistentVolume，注册到 API server 中。用户声明 PersistentVolumeClaim, Server 分配对应的资源，用户可以将资源用作 volume. 注意 PersistentVolumeClaim 还会锁上对应的存储资源。
+
+PV 不属于任意 namespace，是集群级的。
+
+PersistentColumeClaim 是另外一种资源。创建了 pvc 之后，就可以在 pod 定义的 yaml 中 volumes 里面使用了。
+
+*** 6.6 跳过了，回头再看吧。
 
