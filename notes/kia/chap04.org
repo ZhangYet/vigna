@@ -10,3 +10,61 @@
 
 k8s 中退出的状态码是 128+x (x 是退出的信号，比如 137=128+9，表示被 SIGTERM 干掉了)， 另外注意定义 probe 时要加 init delay。
 
+liveness probe 可以确保容器本身健康，但是如果节点本身崩溃了，就只能靠 ReplicationController 等机制了。
+
+*** ReplicationController
+
+ReplicationController 确保某「种」 pod 保持一定数量。
+
+ReplicationController 三部分：
+
+1. label selector: 对已有的 pod 没有影响
+2. replica count
+3. pod template: 对已有的 pod 没有影响
+
+所以如果改动了 label selector 和 pod template， 旧 rc 需要别的机制处理。
+
+改变已经加入 rc 的 pod 的 label，也会改变 rc 中 pod 的数量，触发创建。
+
+更新 pod template： 需要在更新之后，删掉旧的 podname——当然我们后面会有更好的方法。
+
+*** ReplicationSet
+
+更灵活的 label selector
+
+#+BEGIN_SRC YAML
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: kubia-rc
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubia
+  template:
+    metadata:
+      labels:
+        app: kubia
+    spec:
+      containers:
+      - name: kubia
+        image: luksa/kubia
+        ports:
+        - containerPort: 8080
+#+END_SRC
+
+
+原书中的示例有点问题，关键是 appVersion 的写法。
+
+*** DaemonSet
+
+One pod one node.
+
+但是可以用 nodeSelector 选择一部分 node 部署 DaemonSet.
+
+DaemonSet 的部署是绕开了 scheduler 的。所以即使是 unschedulable 的节点也能部署 DaemonSet.
+
+*** Job
+
+就像 lambda。
