@@ -55,3 +55,30 @@ spec:
 
 如图的配置，可以起一个 nodeport 资源，然后我们访问这个 nodeport，它会转发请求：nodePort -> port[service] -> targetPort[pod]， 注意，如果你有多个 node， node1 的 nodeport 也可以将请求转发到 node2 的 pod 里面。
 
+**** LoadBalancer
+
+与 NodePort 不同，请求会先过 LoadBalancer .
+
+#+BEGIN_QUOTE
+A LoadBalancer-type service is a NodePort service with an additional infrastructure-provided load balancer.
+#+END_QUOTE
+
+注意 client ip 的问题：使用 NodePort 这信息可能就没了。
+
+*** ingress
+
+一个 NodePort(LoadBalancer) 服务需要一个 ip，但是 ingress 可以一个 ip 服务多个 service。
+
+ingress 的工作方式：外部 DNS 解析出 ip，然后从请求头的 HOST 中找到目标 HOST，映射到服务去。
+
+#+BEGIN_QUOTE
+As you can see, the Ingress controller didn’t forward the request to the service. It only used it to select a pod. Most, if not all, controllers work like this.
+#+END_QUOTE
+
+ingress 可以通过 host/path 处理到多个请求的服务。
+
+*** 保证 pod 可以接收连接
+
+readness prob 依然是三种，不列出来了。readness prob 失败不会重启容器，只会从 service 中移除。
+
+
