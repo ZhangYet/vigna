@@ -1,0 +1,53 @@
+** ConfigMap and secrets
+
+*** introduction
+
+配置容器化变量的方式：环境变量 -> 将配置文件打包进镜像 -> gitRepo 或者其他 type 的 Volume -> configMap
+
+*** 命令行参数
+TIL Dockerfile 中 ~ENTRYPOINT~ 定义要调用的程序。 ~CMD~ 指定要传给 ~ENTRYPOINT~ 的参数。
+
+再次 TIL！原来还区分 exec mode 和 shell mode （前者用中括号将 ~ENTRYPOINT~ 中的程序包起来）。后者在容器里面，PID 1 是 shell。
+
+用户可以在 yaml 中， containers 下面，用 command 和 args 来覆盖镜像中的 ENTRYPOINT 和 CMD.
+
+但这样你还是要重新 create pod 才能生效。
+
+*** 环境变量
+在 containers 下面 env 部分用一个列表，定义环境变量即可。
+
+*** ConfigMap
+应用并不需要直接读 ConfigMap，ConfigMap 资源会以环境变量或 volume 中的文件形式存在，甚至可以直接用作命令行变量。
+
+**** 以环境变量方式传入 ConfigMap 内容
+
+#+BEGIN_SRC YAML
+env:
+- name: INTERNAL
+  valueFrom:
+    configMapKeyRef:
+      name: [configMap name]
+      key: [key in configMap]
+#+END_SRC
+
+如果 configMap 确实，又没有设置可选的话，我们创建 pod 会失败（但不会重建）。
+
+**** 以命令行参数方式传入 ConfigMap 内容
+也很简单，在 yaml 里面，先在 env 里面用 valueFrom 取得变量值，然后用 args 即可。
+
+**** 用 configMap volume 暴露配置
+其实也很简单，volume 选择 configMap 即可。
+
+注意挂载点可能会把其他同名路径的文件隐藏掉（即如果你把 configMap 挂到 /etc 你原来 /etc 下面的文件就没有了）。
+
+**** 热更新配置
+用 volume 存储 configMap 有个好处：当 configMap 更新的时候，volume 中的内容也会随之改变。如果你的应用 watch 这些文件的话，它们可以自动重启，也可以发信号重启。这样可以避免重建 pod。
+
+configMap 更新到 volume 是原子化的，因为 configMap volume 里面的文件其实是 symbol link. 但是只把一些文件挂进去的话，就不会更新了。
+
+总之，注意一下：1. 你的 configMap 文件会不会更新；2. configMap 更新的时候是不同步的，时间还挺长；3. 你的应用可能不支持自动重载。
+
+*** secret 
+Kubernetes 只会把 secret 存在需要的节点的内存中。
+
+Kubernetes 还可以用 secret 来拉私有仓库的镜像。这个时候，需要在 spec 中加上 imagePullSecrets.
