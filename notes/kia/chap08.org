@@ -1,0 +1,33 @@
+** metadata
+
+*** Downward Api
+预先知道的东西用 configMap 和 secret 即可，但是有些东西，只有在 pod 创建之后才知道（比如 IP），就得靠 downward Api 了。
+
+可以暴露的 metadata：
+
+1. pod 名
+2. pod ip
+3. pod 归属的 namespace
+4. node name
+5. service account
+6. CPU 和 memory 请求
+7. CPU 和 memory 限制
+8. label
+9. annotation
+
+可以用环境变量，也可以用 downwardApi volume 挂载文件。
+
+用 downwardApi 有个好处，如果 metadata 改变了，可以随之改变。
+
+如果要使用 container 级别的 metadata 的话，需要指定 container 名，这当然看起来像是笑话，但是你写的 yaml 是定义 pod 的，但是你的 pod 不止一个 container 啊。
+
+*** 从 API server 中获取 metadata
+kubernetes api 都是要验证的，可以开 ~kubectl proxy~ 本地转发。
+
+在容器内部可以在 ~/var/run/secrets/kubernetes.io/serviceaccount/~ 下找到 ca.crt 和 token，可以用这两玩意来验证访问 kubernetes api：
+
+#+BEGIN_SRC SHELL
+curl -v -H "Authorization: Bearer $TOKEN" https://kubernetes/api --cacert ca.crt
+#+END_SRC
+
+注意到 DNS 知道 https://kubernetes 的情况。

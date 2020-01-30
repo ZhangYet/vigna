@@ -9,3 +9,4 @@
 #+INCLUDE: "./chap05.org" :minlevel 2
 #+INCLUDE: "./chap06.org" :minlevel 2
 #+INCLUDE: "./chap07.org" :minlevel 2
+#+INCLUDE: "./chap08.org" :minlevel 2
