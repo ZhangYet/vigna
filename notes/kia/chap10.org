@@ -25,3 +25,13 @@ A StatefulSet makes sure pods are rescheduled in such a way that they retain the
 
 **** 存储
 通过 PVC 和 PV 来做存储。创建 SS 的时候，提供对应的唯一的 PersistentVolumeClaims 即可。因为存储对 SS 来说很重要，所以绑定 SS 的 PVC 必须手动删除。
+
+*** 创建 SS
+非常复杂，还要创建 PVC 什么的，就不在这里做了。
+
+**** SRV record
+如何发现 peer ？用 SRV record：
+
+#+BEGIN_QUOTE
+Kubernetes creates SRV records to point to the hostnames of the pods back- ing a headless service.
+#+END_QUOTE
