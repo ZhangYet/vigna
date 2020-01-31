@@ -1,0 +1,25 @@
+** 内部实现
+
+*** 架构
+
+1. The k8s control plane
+   1. etcd
+   2. The API server
+   3. The Scheduler
+   4. The Controller Manager
+
+2. The worker  nodes
+   1. The Kubelet
+   2. The k8s Service Proxy
+   3. The Container Runtime
+
+3. Add-on
+   1. The k8s DNS server
+   2. The Dashboard
+   3. An Ingress Controller
+   4. Heapster
+   5. The Container Network Interface network plugin 
+
+*其他组件只跟 API server 通信*。
+
+
