@@ -1,1 +1,29 @@
 ** deployment
+
+Deployment 是 rc 之上的资源。
+
+*** 问题：如何升级 pod 
+新旧版本不兼容、滚动升级等问题。
+
+*** 用 RC 自动滚动升级
+我用 kubectl 的 rolling-update 没有自动补全。 rolling-update 的原理是先创建两个版本的 pod ，然后将旧版本的 pod scale 到0，新版本 scale 到旧版本的数量。
+
+但是 rolling-update 确实不是什么好方法。理由如下：
+
+1. 它会修改 pod 的 label
+2. 它其实是 kubectl 操作的，不是 kubernetes server, 万一网络断了你说死不死
+3. 它是命令式的，kubernetes 的哲学是你告诉它一个期望的状态，kubernetes 自己达到这个状态，但是 rolling-update 是一步一步告诉 kubernetes 要做什么
+
+*** 声明式升级： Deployment
+书中关于 Deployment yaml 的写法有点过时了，现在需要 selector.
+
+~kubectl patch deployment kubia -p '{"spec": {"minReadySeconds": 10}}'~ 这样不会改变已有的 pod，但是如果用 ~kubectl set image deployment kubia-dep nodejs=luksa/kubia:v2~ 改变 image 会马上触发更新。
+
+还提供了 roll back 功能，真是太强大了。见 ~kubectl rollback~ 命令。
+
+~kubectl rollout undo deployment kubia --to-revision=1~ 简直像 VCS 那么方便。
+
+此外，还可以暂停/从暂停中恢复。
+
+还有 readness probe 的运用。
+
