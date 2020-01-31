@@ -1,0 +1,27 @@
+** StatefulSet
+
+*** 考虑用 rs 加 Persistent Volume 做 stateful app
+
+但是所有 pod 用的 PV 都是一个啊。总不能一个 rs 一个 pod 一个 PV 这么费劲吧？一个 PV 多个路径对应不同的 pod 有点 tricky。
+
+rs 只能用于无状态的原因：
+
+1. 存储的问题；
+2. 无法感知自身；
+
+*** StatefulSet
+
+#+BEGIN_QUOTE
+A StatefulSet makes sure pods are rescheduled in such a way that they retain their identity and state. It also allows you to easily scale the number of pets up and down. A StatefulSet, like a ReplicaSet, has a desired replica count field that determines how many pets you want running at that time. 
+#+END_QUOTE
+
+**** 保持身份相同（名字等）
+
+ StatefulSet 的名字从0开始编号，是有意义的。每个 StatefulSet pod 都可以通过名字访问到。如果一个 StatefulSet pod 死了，kubernetes 会重起一个同名的 pod。
+
+ 扩容的话，就增加编号就好，缩容会从编号最高的容器开始。一次只能删掉一个，如果有容器不健康，不允许缩容。
+
+ StatefulSet pod 有稳定的身份。
+
+**** 存储
+通过 PVC 和 PV 来做存储。创建 SS 的时候，提供对应的唯一的 PersistentVolumeClaims 即可。因为存储对 SS 来说很重要，所以绑定 SS 的 PVC 必须手动删除。
