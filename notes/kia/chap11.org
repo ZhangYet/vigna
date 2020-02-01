@@ -62,3 +62,22 @@ kubelet 的工作：
 就算你的 pod 只有一个 container ， 你的 pod 也不知一个 container, 至少还有一个 pause container，这个 container 跟 pod 同生共死。这个 container 用来 hold （鬼知道怎样翻译）整个 pod 的 namespace 的。
 
 *** 网络
+kubernetes 自己并不设置网络，要么 SA 设置，要么通过 CNI 设置。每个 pod 自己感知到的 ip 和别的 pod 感知到是一样的，没有中间商（NAT）。
+
+为了让不同节点的 pod 互通，所以需要引入 SDN。
+
+*** service 实现
+#+BEGIN_QUOTE
+Everything related to Services is handled by the kube-proxy process running on each node.
+#+END_QUOTE
+
+kube-proxy 的原理还是挺简单的嘛。
+
+*** 高可用
+*Q: What if the servers running the Kubernetes Control Plane components go down?*
+
+A: etcd 多实例集群。API server 也可以多实例。Controller 和 Scheduler 起多实例但只启用一个。
+
+*Q: 多个 Controller 和 Scheduler 怎么选主？*
+
+A: 通过乐观锁创建 Endpoint 资源，谁抢到谁就是主。主会定时更新资源，keep alive，一旦失败，其他资源再尝试成为主。
