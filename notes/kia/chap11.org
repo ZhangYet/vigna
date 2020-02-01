@@ -22,4 +22,33 @@
 
 *其他组件只跟 API server 通信*。
 
+API server 和 etcd 可以多实例，但是 scheduler 和 controller 只能有一个。
+
+Controll plane 的组件和 proxy 通常可以用 pod 来跑。kubelet 就得作为服务组件了（所以 Master 节点也会跑一个 kubelet）。
+
+*只有 API server 直接读写 etcd*。
+
+#+BEGIN_QUOTE
+ This brings a few benefits, among them a more robust optimistic locking system as well as validation; and, by abstracting away the actual storage mechanism from all the other components, it’s much simpler to replace it in the future. It’s worth emphasizing that etcd is the only place Kubernetes stores cluster state and metadata.
+#+END_QUOTE
+
+API server 的工作：
+
+1. 认证；
+2. 鉴权（如果是写请求）；
+3. 通知资源变化（通过一个流）， 比如 ~kubectl get pods --watch~ ；
+
+scheduler 也不会直接创建 pod ， 它只是通知 API server，让 API server 通知 kubelet. scheduler 支持多种可定制的分配策略。
+
+controller manager 包含各种资源的 controller，它们都会跟 server 通信，watch 资源的变化。
+
+controller 的源代码在： https://github.com/kubernetes/kubernetes/blob/master/pkg/controller. 主要的结构体有两个：
+
+1. Informer： 监听资源变化
+2. worker： 干活的方法
+
+
+
+
+
 
