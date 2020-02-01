@@ -47,8 +47,18 @@ controller 的源代码在： https://github.com/kubernetes/kubernetes/blob/mast
 1. Informer： 监听资源变化
 2. worker： 干活的方法
 
+kubelet 的工作：
 
+1. 注册节点，往 API server 注册一个 node resource
+2. 监听 pod 信息，创建 pod
+3. 监听容器状态， 管理容器生命周期
 
+最强的地方在于它可以用本地 pod 配置文件跑起 static pod: 这就是 kubernetes 可以 boostrap 的原因了。
 
+*** 展现一个流程：部署一个 Deployment
+原书的 Figure 11.12 描述得很完美了。
 
+*** what a pod is?
+就算你的 pod 只有一个 container ， 你的 pod 也不知一个 container, 至少还有一个 pause container，这个 container 跟 pod 同生共死。这个 container 用来 hold （鬼知道怎样翻译）整个 pod 的 namespace 的。
 
+*** 网络
