@@ -1,0 +1,23 @@
+** API server 安全
+
+*** authentication
+
+#+BEGIN_QUOTE
+ServiceAccounts are nothing more than a way for an application running inside a pod to authenticate itself with the API server. 
+#+END_QUOTE
+
+创建 ServiceAccount 资源，并将 pod 绑定到对应 sa 上，可以限制 pod 访问资源，提高安全性。还可以为 pod 分配 image pull secret。
+
+*** RBAC
+妈的，太像 IAM 了，不想看了。
+
+#+BEGIN_QUOTE
+1. Roles and ClusterRoles, which specify which verbs can be performed on which resources.
+
+2. RoleBindings and ClusterRoleBindings, which bind the above roles to specific users, groups, or ServiceAccounts.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+The distinction between a Role and a ClusterRole, or between a RoleBinding and a ClusterRoleBinding, is that the Role and RoleBinding are namespaced resources, whereas the ClusterRole and ClusterRoleBinding are cluster-level resources (not namespaced). 
+#+END_QUOTE
+
