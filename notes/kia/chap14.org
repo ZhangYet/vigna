@@ -1,0 +1,15 @@
+** 计算资源
+
+*** 创建 pod 的时候带上资源请求
+唯一的难处在于单位，cpu 200m 表示 1/5 CPU， memory 10Mi 表示10 mebibytes.
+
+如果不指定 CPU 资源的话，在 CPU 紧张的时候，pod 可能拿不到资源。不过注意，pod 使用的 CPU 是可以超过 request 的 CPU 的。
+
+Scheduler 只考虑 requested 的资源，不考虑实际的资源使用量（实话）。
+
+两种分配策略：
+
+1. LeastRequestedPriority
+2. MostRequestedPriority: 方便用更少的 node
+
+注意到 kube-system 的 pod 也会占用资源，一旦资源不够分，pod 就会进入 pending 状态，decsribe 它可以知道它分配失败了。
