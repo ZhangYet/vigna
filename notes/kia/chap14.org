@@ -13,3 +13,40 @@ Scheduler 只考虑 requested 的资源，不考虑实际的资源使用量（�
 2. MostRequestedPriority: 方便用更少的 node
 
 注意到 kube-system 的 pod 也会占用资源，一旦资源不够分，pod 就会进入 pending 状态，decsribe 它可以知道它分配失败了。
+
+CPU 使用时间：按照 requested 的比例分配，但是允许跑疯占用更多的资源。
+
+*** resource limit
+#+BEGIN_QUOTE
+CPU is a compressible resource, which means the amount used by a container can be throttled without affecting the process running in the container in an adverse way. Memory is obviously different—it’s incompressible. 
+#+END_QUOTE
+
+CPU 超过限制了，就超了，Memory 超了的话，就 OOM kill 一发（当然会重启）。
+
+要注意到 container 看到的是整个节点的 CPU 和 memory 数量。可以通过 downward api 下发资源限制，也可以看 cgroup 下面的 file。
+
+*** QoS
+
+三种 QoS 类：
+
+1. BestEffort 默认，但是资源紧张的时候分配不到资源；
+2. Burstable
+3. Guaranteed 保证有资源，但是要明确设置 request 和 limit，而且不会过多占用资源；requested  资源跟 limited 必须相等；
+
+擦，QoS 的组合方式真的很多啊。
+
+正常来说，都是 BestEffort 先于 Burstable 先于 Guaranteed 的 pod 被杀，不过，难办的是所有 pod 都在同一 class。
+
+这个时候，kubernetes 通过计算 OOM 分数，决定死活。计算公式见附录B。
+
+*** 为 namespace 下的 pod 设置默认的资源设置
+
+LimitRange 资源。
+
+*** namespace 层级的资源限制
+
+ResourceQuota 资源。
+
+*** 监控资源消耗
+
+kubelet 有 cAdvisor，Heapster 可以收集每个节点 cAdvisor 收集的数据。
