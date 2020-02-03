@@ -1,1 +1,31 @@
 ** 保卫节点
+
+*** 在 pod 中使用 node 的 namespace
+
+正常情况下， pod 会在自己的 namespace 下干活，以达到隔离的目的。但是有些时候（比如 system 的 pod）会需要用到 node 的 namespace，比如说，使用 host 的网卡，可以通过 hostNetwork 选项达成。
+
+hostPort 可以将 node 的 port 与 pod 绑定，但是注意它跟 nodePort 的区别：前者只对当前 node 以及具体的 pod 生效，后者对所有 node 生效；前者直接转发到具体的 pod，后者会随机选 pod。
+
+同样，你还可以用 hostPID 和 hostIPC 获得 node 的 PID 和 IPC 资源。
+
+*** 安全相关设置
+
+因为你可以在容器中使用宿主机的 namespace，所以安全措施要做足。
+
+一般来说，如果没有指定，你的 container 以 root 用户运行。可以用 runAsUser 指定具体的用户（不过得镜像配合）。也可以用 runAsNonRoot.
+
+但是有些 pod 需要 privileged mode，比如 kube-proxy， 毕竟它要修改 node 的iptables。
+
+竟然还可以为 pod 单独加权限，真是太细致了。
+
+使用 runAsUser 跑需要挂 volume 的 pod 时，还要考虑不同的容器能否读到文件（毕竟用户不同了嘛）。
+
+*** 限制 security-related feature
+
+为了保障安全，kubernetes +挺身而出成为偶像+ 提出了 PodSecurityPolicy 资源。一旦 create 了 PodSecurityPolicy 资源，每次创建 pod 都会检查是否符合规范（比如是否能用 hostIPC 等）。
+
+因为 PodSecurityPolicy 只在创建新 pod 的时候检查，所以对它的改动，不会影响已有的 pod。
+
+虽然 PodSecurityPolicy 是集群级别的，但是可以通过 RBAC 绑定到不同的 user 和 group。
+
+*** 网络隔离
