@@ -29,3 +29,31 @@ hostPort 可以将 node 的 port 与 pod 绑定，但是注意它跟 nodePort �
 虽然 PodSecurityPolicy 是集群级别的，但是可以通过 RBAC 绑定到不同的 user 和 group。
 
 *** 网络隔离
+
+#+BEGIN_QUOTE
+By default, pods in a given namespace can be accessed by anyone.
+#+END_QUOTE
+
+但是这得 CNI 插件支持。
+
+#+BEGIN_SRC YAML
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: postgres-netpolicy
+spec:
+  podSelector:
+    matchLabels:
+      app: database
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: webserver
+    ports:
+    - port: 5432
+#+END_SRC
+
+示例中的 NetworkPolicy 定义了一组规则：database pod 只允许 webserver 从 5432 端口连接。
+
+总的来说，NetworkPolicy 可以根据 podname, namespace 和 CIDR（形如 192.168.1.0/24）选择允许连接的 pod，也可以限制出入流量，真是要多方便有多麻烦。
