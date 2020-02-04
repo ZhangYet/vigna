@@ -1,0 +1,7 @@
+** 自动扩容
+
+*** HorizontalPodAutoscaler
+
+HorizontalPodAutoscaler 定期检查 pod metrics，计算需要的 pod 数量，然后自动扩容。
+
+HorizontalPodAutoscaler 直接从 heapster 里面拿数据。
