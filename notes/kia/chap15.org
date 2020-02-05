@@ -5,3 +5,38 @@
 HorizontalPodAutoscaler 定期检查 pod metrics，计算需要的 pod 数量，然后自动扩容。
 
 HorizontalPodAutoscaler 直接从 heapster 里面拿数据。
+
+多指标的情况下，取需要最高数量的结果。
+
+**** 按照 CPU 计算
+
+#+BEGIN_QUOTE
+As far as the Autoscaler is concerned, only the pod’s guaranteed CPU amount (the CPU requests) is important when determining the CPU utilization of a pod.
+#+END_QUOTE
+
+~kubectl autoscale deployment kubia --cpu-percent=30 --min=1 --max=5~ 为名为 kubia 的 Deployment 创建 AutoScaler，标准是达到 CPU requests 的30，最少一个 pod，最多5个。
+
+**** 按照 memory 计算
+
+但是 memory 超标的情况跟 CPU 的情况是不一样的，毕竟释放内存是 app 自己的事情。Kubernetes 1.8 引入了 Memory-based autoscaling 。
+
+**** 按其他资源计算
+
+metric 的种类：
+1. resource： 比如 CPU
+2. pod： 比如 QPS
+3. object： 比如别的 pod 的 QPS
+
+*** 自动水平扩容
+
+#+BEGIN_QUOTE
+Sadly, what seems like a lifetime later, vertical pod autoscaling is still not available yet.
+#+END_QUOTE
+
+*** 水平缩放节点
+
+扩容节点比较容易，发现有 pod 无法编排的时候，确认备选节点可用，挑一个合适的就可以了。
+
+但是缩容比较麻烦，要先标记为 unschedulable 然后将上面的 pod 移走，最后再 shutdown。
+
+节点缩放目前只在某些云平台开放。
