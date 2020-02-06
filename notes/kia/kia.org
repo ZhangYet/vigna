@@ -17,4 +17,5 @@
 #+INCLUDE: "./chap13.org" :minlevel 2
 #+INCLUDE: "./chap14.org" :minlevel 2
 #+INCLUDE: "./chap15.org" :minlevel 2
-
+#+INCLUDE: "./chap16.org" :minlevel 2
+#+INCLUDE: "./chap17.org" :minlevel 2

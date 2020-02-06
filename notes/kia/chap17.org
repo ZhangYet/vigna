@@ -1,0 +1,48 @@
+** best practices
+
+*** 总体概述
+
+*** pod 的一生
+
+ 切记：
+
+ 1. ip 和 hostname 可能会变；
+ 2. 除非写到 PV，否则写到 file system 的东西有可能会丢，值得注意的就是：pod 活着，container 重生了；
+
+ 问题： *如何保证一个 pod 里面的 container 按照顺序启动？毕竟 container 之间可能有依赖*。
+ 答案：init container。 pod 的多个 init container 可以保证在最后一个 init container 之后启动 main container。
+
+ 定义 init container 只需要在 pod 定义的 yaml spec 下面，加上 initContiners 配置。
+
+**** lifecycle hooks
+
+lifecycle hooks 作用在容器上。
+
+**** pod 的终结
+
+#+BEGIN_SRC dot :file figures/chap1701.png :exports results
+digraph G{
+subgraph Termination_grace_period {
+  style=fiiled;
+  color=blue;
+  start->pre_stop_hooks->SIGTERM->end_of_graceful_termination;
+  label="termination grace period";
+}
+
+start->pre_stop_hooks;
+pre_stop_hooks->SIGTERM;
+SIGTERM->end_of_graceful_termination;
+end_of_graceful_termination->SIGKILL;
+
+start [shape=Mdiamond];
+SIGKILL [shape=Mdiamond];
+}
+#+END_SRC
+
+总的来说，pod 总结的时候还是有可能会丢数据的，别抱太大期望了。
+
+*** 处理来自客户端的连接
+
+通过 readiness probe 确保只有准备就绪的 pod 能对外服务。
+
+嗯，关闭 pod 的时候保证连接可用，还是很复杂，这部分需要从头看。

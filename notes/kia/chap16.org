@@ -1,0 +1,28 @@
+** 高级编排
+
+*** taints and tolerations ： 避免在某些 node 上部署
+
+三种 taint ：
+
+1. NoSchedule, which means pods won’t be scheduled to the node if they don’t tol- erate the taint.
+2. PreferNoSchedule is a soft version of NoSchedule, meaning the scheduler will try to avoid scheduling the pod to the node, but will schedule it to the node if it can’t schedule it somewhere else.
+3. NoExecute, unlike NoSchedule and PreferNoSchedule that only affect schedul- ing, also affects pods already running on the node. If you add a NoExecute taint to a node, pods that are already running on that node and don’t tolerate the NoExecute taint will be evicted from the node.
+
+此外还能自定义 taint。
+
+taint 的用途：
+
+#+BEGIN_QUOTE
+Taints can be used to prevent scheduling of new pods (NoSchedule effect) and to define unpreferred nodes (PreferNoSchedule effect) and even evict existing pods from a node (NoExecute).
+#+END_QUOTE
+
+*** node affinity ： 偏好在某些 node 上部署
+
+其实就是定义了一套选择要部署的 node 的 DSL，还可以用上优先级。
+
+preferredDuringSchedulingIgnoredDuringExecution 竟然定义出这么长的名字。
+
+
+*** 结合使用两种手段
+
+好复杂
