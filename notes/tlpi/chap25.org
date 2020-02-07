@@ -39,3 +39,76 @@
 #+END_QUOTE
 
 ~atexit()~ 跟 ~on_exit()~ 的区别：前者无法知道退出状态，退出处理函数也没有参数。
+
+*** fork()、stdio缓冲区以及_exit()之间的交互
+
+这里的示例略复杂。
+
+#+NAME: 示例1
+#+BEGIN_SRC C
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[]) {
+  printf("hello world\n");
+  write(STDOUT_FILENO, "Ciao\n", 5);
+
+  if (fork() == -1) {
+    printf("fork error");
+    exit(-1);
+  }
+  exit(0);
+}
+#+END_SRC
+
+直接运行的输出是：
+
+#+BEGIN_SRC SHELL
+hello world
+Ciao
+#+END_SRC
+
+重定向到文件的话，输出是：
+
+#+BEGIN_SRC SHELL
+➜  fork git:(master) ✗ ./a.out > output
+➜  fork git:(master) ✗ cat output
+Ciao
+hello world
+hello world
+#+END_SRC
+
+导致这个现象的原因是：
+
+#+BEGIN_QUOTE
+是在进程的用户空间内存中（参考13.2节）维护stdio缓冲区的。因此，通过fork()创建子进程时会复制这些缓冲区。当标准输出定向到终端时，因为缺省为行缓冲，所以会立即显示函数printf()输出的包含换行符的字符串。不过，当标准输出重定向到文件时，由于缺省为块缓冲，所以在本例中，当调用fork()时，printf()输出的字符串仍在父进程的stdio缓冲区中，并随子进程的创建而产生一份副本。父、子进程调用exit()时会刷新各自的stdio缓冲区，从而导致重复的输出结果。
+#+END_QUOTE
+
+#+NAME: 示例2
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[]) {
+  printf("hello world\n");
+  write(STDOUT_FILENO, "Ciao\n", 5);
+  fflush(stdout);
+  if (fork() == -1) {
+    printf("fork error");
+    exit(-1);
+  }
+  exit(0);
+}
+#+END_SRC
+
+加一行 ~fflush(stdout);~ 就能避免这种情况了。
+
+#+BEGIN_QUOTE
+1. 作为针对stdio缓冲区问题的特定解决方案，可以在调用fork()之前使用函数fflush()来刷新stdio缓冲区。作为另一种选择，也可以使用setvbuf()和setbuf()来关闭stdio流的缓冲功能。
+
+2. 子进程可以调用_exit()而非exit()，以便不再刷新stdio缓冲区。这一技术例证了一个更为通用的原则：在创建子进程的应用中，典型情况下仅有一个进程（一般为父进程）应通过调用exit()终止，而其他进程应调用_exit()终止，从而确保只有一个进程调用退出处理程序并刷新stdio缓冲区，这也算是众望所归吧。
+#+END_QUOTE
+
+我们实现了方案1。
