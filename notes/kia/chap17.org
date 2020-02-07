@@ -46,3 +46,27 @@ SIGKILL [shape=Mdiamond];
 通过 readiness probe 确保只有准备就绪的 pod 能对外服务。
 
 嗯，关闭 pod 的时候保证连接可用，还是很复杂，这部分需要从头看。
+
+*** 打造好镜像
+
+1. 原则上镜像越精简越好，但是有时候有些工具方便 debug；
+2. 合理打 tag， 都用 latest 不是很好，因为你无法区别哪个版本在跑也不知道怎样回滚，如果用形如 latest 的 tag，你应该用 imagePullPolicy: Always，但这又带来了拉镜像的开销，所以，自己权衡；
+3. 写 termination-log, 这样方便 ops 人员 debug（只需要 kubectl describe 就可以知道容器进程为何退出）；
+4. 可以用 kubectl cp 命令将日志等容器中的文件 cp 出来；
+
+
+#+BEGIN_QUOTE
+The default file the process needs to write the message to is /dev/termination-log, but it can be changed by setting the terminationMessagePath field in the container definition in the pod spec.
+#+END_QUOTE
+
+*** development and testing
+
+可以用 ~eval $(minikube docker-env)~ 连上 minitube 的 docker 环境。
+
+早说可以用 ~docker save <image> | (eval $(minikube docker-env) && docker load)~ 将本地镜像复制过去，就不用开 VPN 了。
+
+*** kube-applier
+自动根据更新集群配置（比如各种 pod 的 yaml 更新了）。
+
+*** Ksonnet
+也没觉得推动了，感觉还是 yaml 的天下。

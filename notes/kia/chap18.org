@@ -1,0 +1,13 @@
+** 扩展 kubernetes
+
+*** 自定义 API object
+
+可以通过 post CustomResourceDefinition 到 API server 自定义资源类型。
+
+这一节略过了。
+
+*** catalog
+
+这就是让具体应用知道 kubernetes 提供什么服务的工具？
+
+草草翻过，算了。
