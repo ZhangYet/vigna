@@ -8,8 +8,7 @@
 | exit(status)                 | 将资源归还内核，status 表示退出状态                                                 |                      |
 | wait(&status)                | 如果子进程尚未调用 exit() 退出，wait() 挂起父进程，子进程的终止状态通过 wait() 返回 |                      |
 | execve(pathname, argv, envp) | 加载新程序，为新程序重新创建栈、数据段以及堆                                        | 会丢弃当前程序文本段 |
-
-`spawn` 将 `fork` 和 `execve` 合二为一。
+| spawn                        | fork() 与 execve() 合而为一                                                             |                      |
 
 *** fork
 
@@ -49,7 +48,7 @@ int main(int argc, char *argv[]) {
 }
 #+END_SRC
 
-从上面这个示例代码，我们可以看见，子进程在 `fork` 时获得自己的栈和数据段拷贝，对这些段变量的修改不会影响父进程。
+从上面这个示例代码，我们可以看见，子进程在 `fork` 时获得自己的栈和数据段拷贝， *对这些段变量的修改不会影响父进程。*
 
 **** 文件共享
 
@@ -58,7 +57,7 @@ int main(int argc, char *argv[]) {
 **** 内存语义
 
 1. 正文段只读；
-2. 写时复制；
+2. 对父进程数据段、堆段和栈段中的各页写时复制；
 
 *** vfork
 
