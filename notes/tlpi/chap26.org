@@ -3,3 +3,28 @@
 本章主要讨论 ~wait()~ 调用。
 
 *** 等待子进程
+
+**** wait()
+
+~pid_t wait(int *status)~ 所以说 c 语言真的挺麻烦的，需要一个整型指针来传递状态，然后通过一个 pid_t 值来指示那个子进程被返回了。
+
+1. 阻塞进程，直到有子进程返回；
+2. status 指示返回状态；
+3. 内核会将父进程下所有的子进程的运行量追加到父进程中；
+4. 将子进程 id 返回；
+
+errno 为 ~ECHILD~ 时，表示没有要等待的子进程。
+
+#+NAME: code-26.1
+#+BEGIN_SRC c
+while ((childPid = wait(NULL)) != -1)
+    continue;
+if (errno != ECHILD) 
+    errExit("wait");
+#+END_SRC
+
+上面的代码片段展示了父进程等待所有子进程退出，并检查是否有非正常退出的情况。
+
+**** waitpid()
+
+
