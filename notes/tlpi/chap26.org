@@ -49,3 +49,77 @@ options:
 | WCONTINUED | 返回那些因收到SIGCONT信号而恢复执行的已停止子进程的状态信息。 |
 | WHOHANG    | 如果参数pid所指定的子进程并未发生状态改变，则立即返回，而不会阻塞，亦即poll（轮询）。                                                              |
 
+**** 等待状态值
+
+有一系列的宏获取等待状态值，注意等待状态包含了调用 ~exit()~ 和 ~_exit()~ 退出的状态、子进程收到未处理信号终止、因为信号停止以及因为收到 SIGCONT 恢复。
+
+**** 从信号处理程序中终止进程
+
+这一节就绕了，回头看看信号处理再看。
+
+**** waitid()
+
+提供了更精细的控制，我就不重复摘抄了。包括它会把详细的信息通过 siginfo_t 结构返回。
+
+**** wait3() and wait4()
+
+#+BEGIN_QUOTE
+系统调用wait3()和wait4()执行与waitpid()类似的工作。主要的语义差别在于，wait3()和wait4()在参数rusage所指向的结构中返回终止子进程的资源使用情况。
+#+END_QUOTE
+
+想吐槽你们这设计那么多这么相似的系统调用，到底为了啥？
+
+*** 孤儿进程与僵尸进程
+
+父子进程的声明周期不同，引出了两个问题：
+
+1. 谁是孤儿进程的父进程？答： *init 进程会接管孤儿进程。*  非 init 创建的子进程可以通过父进程的 id 是否等于1判断是否孤儿进程。
+2. 父进程 wait() 之前，子进程就已经退出了，会发生什么？答： *系统允许父进程在之后某个时刻 wait()，以确定子进程是如何终止的。系统将子进程转为僵尸进程（释放大部分资源，只保留内核进程表中的记录——包含 pid 和终止状态以及资源使用数据等信息）。*
+
+僵尸进程是无法被信号杀死的（kill 不行）。
+
+#+BEGIN_QUOTE
+当父进程执行wait()后，由于不再需要子进程所剩余的最后信息，故而内核将删除僵尸进程。另一方面，如果父进程未执行wait()随即退出，那么init进程将接管子进程并自动调用wait()，从而从系统中移除僵尸进程。
+#+END_QUOTE
+
+#+BEGIN_SRC c
+#include <signal.h>
+#include <libgen.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#define CMD_SIZE 200
+
+int main(int argc, char *argv[]) {
+  char cmd[CMD_SIZE];
+  pid_t childPid;
+
+  setbuf(stdout, NULL);
+  printf("Parent PID=%ld\n", (long) getpid());
+
+  switch (childPid = fork()) {
+  case -1:
+    printf("error");
+    exit(-1);
+  case 0:
+    printf("Child (PID=%ld) exiting\n", (long) getpid());
+    _exit(0);
+  default:
+    sleep(3);
+    snprintf(cmd, CMD_SIZE, "ps aux| grep %s", basename(argv[0]));
+    cmd[CMD_SIZE-1] = '0';
+    system(cmd);
+
+    if (kill(childPid, SIGKILL) == -1) {
+      printf("error kill");
+      exit(-1);
+    }
+    sleep(3);
+    printf("After sending SIGKILL to zombie (PID=%ld):\n", (long) childPid);
+    system(cmd);
+    exit(0);
+  }
+}
+#+END_SRC
+
+上面这个示例展示了僵尸进程的产生和消除（等这个程序 sleep 完就结束了，因为 init 接管了僵尸进程并 wait 了，注意 ~ps aux~ 用 z+ 标识僵尸进程）。
