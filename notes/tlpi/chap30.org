@@ -17,3 +17,41 @@
 ~pthread_mutex_trylock()~ : 尝试加锁，如果互斥量已经上锁，返回 EBUSY 错误。
 
 ~pthread_mutex_timelock()~ ： 增加时间参数，如果指定时间内没有获得锁，返回 TIMEOUT 错误。
+
+**** 性能
+
+比文件锁和信号量好。
+
+**** 死锁
+
+*Q: 什么时候会发生死锁？*
+
+A: 当一个线程要访问多个由不同互斥量管理的共享资源时，就有可能死锁。
+
+*Q：如何解决死锁？*
+
+A：方案1 —— 按顺序获取锁。 方案2 ——  trylock 一下，失败就释放所有锁。
+
+**** 动态初始化互斥量
+
+需要使用 ~pthread_mutex_init()~ 来动态初始化。
+
+**** 互斥量属性
+
+**** 互斥量类型
+
+*** 条件变量
+
+通知其他线程，某个资源状态发生了改变（从例子来看，跟 pub/sub 联系比较紧密）。
+
+**** 静态分配的条件变量
+
+类似互斥量，有专门的初始化量。
+
+**** 通知和等待条件变量
+#+BEGIN_QUOTE
+函数pthread_cond_signal()和pthread_cond_broadcast()均可针对由参数cond所指定的条件变量而发送信号。pthread_cond_wait()函数将阻塞一线程，直至收到条件变量cond的通知。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 11694-11695). Kindle 版本. 
+#+END_QUOTE
+
