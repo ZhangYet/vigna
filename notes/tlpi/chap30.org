@@ -1,0 +1,19 @@
+** 线程：线程同步
+
+*** 互斥量
+
+首先是一个递增器的示例。
+
+**** 静态分配的互斥量
+
+~pthread_t mtx = PTHREAD_MUTEX_INITIALIZER~
+
+必须这样初始化。静态分配的话，需要先初始化。
+
+**** 加锁与解锁
+
+如果锁定某个互斥量，则 ~pthread_mutex_lock()~ 会一直阻塞，所以假如线程已经对某个 mutex 加锁之后再加锁，它可能会死锁，也可能会因为试图锁定已加锁的互斥量而失败。
+
+~pthread_mutex_trylock()~ : 尝试加锁，如果互斥量已经上锁，返回 EBUSY 错误。
+
+~pthread_mutex_timelock()~ ： 增加时间参数，如果指定时间内没有获得锁，返回 TIMEOUT 错误。
