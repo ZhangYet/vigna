@@ -15,5 +15,49 @@
 
 *** Pthreads API 背景
 
+线程数据类型，见表29.1，主要注意考虑到移植性，要避免对这类数据的依赖（比如不能用 == 比较）。
 
+errno 的处理：
+
+#+BEGIN_QUOTE
+将errno定义为一个宏，可展开为函数调用，该函数返回一个可修改的左值（lvalue），且为每个线程所独有。（因为左值可以修改，多线程程序依然能以errno=value的方式对errno赋值。）
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 11337-11339). Kindle 版本. 
+#+END_QUOTE
+
+Pthreads 函数的返回值：
+
+#+BEGIN_QUOTE
+从系统调用和库函数中返回状态，传统的做法是：返回0表示成功，返回1表示失败，并设置errno以标识错误原因。PthreadsAPI则反其道而行之。所有Pthreads函数均以返回0表示成功，返回一正值表示失败。这一失败时的返回值，与传统UNIX系统调用置于errno中的值含义相同。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 11344-11347). Kindle 版本. 
+#+END_QUOTE
+
+*** 创建线程
+
+*** 终止线程
+
+终止一个线程： ~pthread_exit()~ 。
+
+~exit()~ 会导致进程中所有线程终止
+
+*** 线程 ID
+
+可以通过 ~pthread_self()~  获取当前线程 ID。
+
+需要用 ~pthread_equal~ 比较两个线程 ID。
+
+*** 连接（join）已经终止的线程
+
+~int pthread_join(pthread_t thread, void **retval)~ 等待被 thread 标识的线程终结。如果没有 ~pthread_join()~, 会产生僵尸线程。
+
+*** 线程的分离（detach）
+
+当我们不关心线程的返回结果时，可以通过 detach 某个线程，让它在结束时自动清理并移除。但是一旦分离，就无法再次 join 了。注意 ~pthread_detach()~ 只是控制线程终止之后的事情，不会控制是否或如何终止。
+
+*** 线程属性
+
+*** 线程与进程
+
+其实线程也有上下文切换，所以下次就别说什么线程没有上下文切换了。
 
