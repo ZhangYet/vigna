@@ -1,0 +1,23 @@
+** 线程：线程取消
+
+*** 取消一个线程
+
+~int pthread_cancel(pthread_t thread);~ 取消指定的线程，但是这函数是「发射后不管的」。
+
+*** 取消状态及类型
+
+#+NAME: 取消状态
+#+OPTIONS: ^:nil
+|------------------------+--------------|
+| PTHREAD_CANCEL_DISABLE | 线程不可取消 |
+| PTHREAD_CANCEL_ENABLE  | 线程可取消   |
+
+#+NAME: 取消类型
+#+OPTIONS: ^:nil
+|-----------------------------+------------------------|
+| PTHREAD_CANCEL_ASYNCHRONOUS | 异步取消               |
+| PTHREAD_CANCEL_DEFERED      | 取消请求挂起直到取消点 |
+
+
+*** 取消点
+
