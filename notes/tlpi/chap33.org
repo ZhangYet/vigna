@@ -1,0 +1,13 @@
+** 线程：更多细节
+
+*** 线程栈
+
+#+BEGIN_QUOTE
+创建线程时，每个线程都有一个属于自己的线程栈，且大小固定。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 12226-12227). Kindle 版本. 
+#+END_QUOTE
+
+线程栈的大小可以设置。
+
+*** 线程与信号
