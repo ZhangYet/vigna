@@ -65,3 +65,18 @@
 **** Linux Threads
 
 没必要看了，这里主要是说 Linux Threads 跟标准不一致的地方。
+
+**** NPTL
+
+基本实现：
+
+1. 使用 ~clone()~ 创建，并且使用9个标志（至于是哪些，自己查吧）[fn:1]。
+2. 实现的内部使用前两个实时信号。
+3. NPTL 不需要管理线程。
+
+可以使用 ~getconf GNU_LIBPTHREAD_VERSION~ 查看具体的线程库版本。
+
+
+*** Footnotes
+
+[fn:1] 可以使用 ~ps -L~ 查看线程信息。
