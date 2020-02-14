@@ -1,0 +1,37 @@
+** 进程优先级和调度
+
+*** 进程优先级（nice值）
+
+#+BEGIN_QUOTE
+给一个进程赋一个低优先级（即高nice值）并不会导致它完全无法用到CPU，但会导致它使用CPU的时间变少。nice值对进程调度的影响程度则依据Linux内核版本的不同而不同，同时在不同UNIX系统之间也是不同的。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 13395-13397). Kindle 版本. 
+#+END_QUOTE
+
+特权进程可以随意调优先级。非特权进程可以调部分进程的优先级，不同系统的规则不一样。
+
+*** 实时进程的调度
+
+#+BEGIN_QUOTE
+POSIX实时进程调度API无法满足这些要求。特别是它没有为应用程序提供一种机制来确保处理输入的响应时间，而这种机制需要操作系统的提供相应的特性。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 13468-13470). Kindle 版本. 
+#+END_QUOTE
+
+Linux 2.6.18 之后支持硬实时的特性了。
+
+**** SCHED_RR 策略
+
+有时间片，会被高优先级的进程抢占。
+
+**** SCHED_FIFO
+
+没有时间片，会被高优先级的进程抢占。
+
+**** SCHED_BATCH 和 SCHED_IDLE
+
+*** 实时进程调用 API
+
+*** CPU 亲和力
+
+看看总结即可。
