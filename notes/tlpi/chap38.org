@@ -1,0 +1,37 @@
+** 编写安全的特权程序
+
+*** set-user-id 或 set-group-id
+
+笑死了。
+
+#+BEGIN_QUOTE
+有关编写setuserID和setgroupID程序的最佳建议中的一条就是尽量避免编写这种程序。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle位置14248). Kindle 版本. 
+#+END_QUOTE
+
+*** 以最小权限操作
+
+#+BEGIN_QUOTE
+永久删除权限是通过将所有进程用户（组）ID重置为真实（组）ID来完成的。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 14273-14274). Kindle 版本. 
+
+#+END_QUOTE
+
+*** 小心执行程序
+
+*** 避免暴露敏感信息
+
+这就真的很小心谨慎了：敏感信息一旦执行玩处理需要从内存中删除。
+
+因为：
+
+1. 虚拟内存页会被换出（除非上 mlock()）;
+2. coredump 可能会泄漏；
+
+针对第二点的实践就是：禁止 coredump，比如将 RLIMIT_CORE 设置成0。
+
+*** 确认进程边界
+
+
