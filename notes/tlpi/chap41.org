@@ -1,0 +1,36 @@
+** 共享库基础
+
+*** 静态库
+
+*** 共享库
+
+#+BEGIN_QUOTE
+虽然共享库的代码是由多个进程共享的，但其中的变量却不是的。每个使用库的进程会拥有自己的在库中定义的全局和静态变量的副本。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 15188-15189). Kindle 版本. 
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+ccfPIC选项指定编译器应该生成位置独立的代码，这会改变编译器生成执行特定操作的代码的方式，包括访问全局、静态和外部变量，访问字符串常量，以及获取函数的地址。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 15222-15224). Kindle 版本. 
+#+END_QUOTE
+
+*** 使用共享库的工具
+
+1. ldd： 现实程序所需的共享库
+2. objdump & readelf: 从可执行文件、编译后的 object 以及共享库
+3. nm: 列出库中定义的符号
+
+*** 共享库的符号问题
+
+1. 主程序中全局符号覆盖共享库中的链接符号；
+2. 多个共享库定义同一个全局符号，绑定到扫描到的第一个库中的全局符号；
+
+#+BEGIN_QUOTE
+–Bsymbolic链接器选项指定了共享库中对全局符号的引用应该优先被绑定到库中的相应定义上（如果存在的话）。（注意不管是否使用了这个选项，在主程序中调用xyz()总是会调用主程序中定义的xyz()。）
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 15538-15540). Kindle 版本. 
+#+END_QUOTE
+
+
