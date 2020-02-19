@@ -355,6 +355,7 @@
 #+INCLUDE: "./chap40.org" :minlevel 2
 #+INCLUDE: "./chap41.org" :minlevel 2
 #+INCLUDE: "./chap42.org" :minlevel 2
+#+INCLUDE: "./chap43.org" :minlevel 2
 
 ** Footnotes
 
