@@ -361,6 +361,7 @@
 *** System V IPC 介绍
 
 #+INCLUDE: "./chap46.org" :minlevel 2
+#+INCLUDE: "./chap47.org" :minlevel 2
 
 ** Footnotes
 
