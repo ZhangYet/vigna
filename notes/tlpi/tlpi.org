@@ -325,7 +325,6 @@
     编写一个程序，针对命令行参数所指定的目录，记录所有文件创建、删除和改名操作，要求监控指定目录下所有子目录的事件。
 
 ** 信号： 基本概念
-
 *** 概念与概述
 
     信号分为两大类：内核向进程通知事件（标准信号）。另一类为实时信号。
@@ -358,11 +357,44 @@
 #+INCLUDE: "./chap43.org" :minlevel 2
 #+INCLUDE: "./chap44.org" :minlevel 2
 
-*** System V IPC 介绍
+** System V IPC 介绍
 
 #+INCLUDE: "./chap46.org" :minlevel 2
 #+INCLUDE: "./chap47.org" :minlevel 2
 #+INCLUDE: "./chap48.org" :minlevel 2
+
+#+INCLUDE: "./chap49.org" :minlevel 2 
+#+INCLUDE: "./chap50.org" :minlevel 2
+
+** POSIX IPC 介绍
+
+#+BEGIN_QUOTE
+与打开文件一样，POSIXIPC对象也有引用计数——内核会维护对象上的打开引用计数。与SystemVIPC对象相比，这种方式使得应用程序能够更加容易地确定何时可以安全地删除一个对象。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle 位置 18737-18738). Kindle 版本. 
+
+……
+
+当一个对象被断开链接之后，指定同一个对象名的IPCopen调用将会引用一个新对象（在不指定O_CREAT时会失败）。
+
+[德]Michael Kerrisk. Linux/UNIX系统编程手册(上、下册) (Chinese Edition) (Kindle位置18743). Kindle 版本. 
+#+END_QUOTE
+
+可以用 ls 和 rm 来浏览/删除 POSIX IPC 对象。
+
+与 System V IPC 对比：
+
+1. 接口简单；
+2. POSIX IPC 模型与 Unix 文件模型更一致；
+3. 引用计数使删除更简单；
+
+缺点：
+
+1. 可移植性不如 System V IPC；
+2. 名字不够规范；
+3. 有些地方没有在 SUSv3 标准指定
+
+#+INCLUDE: "./chap52.org" :minlevel 2
 
 ** Footnotes
 
