@@ -1,0 +1,14 @@
+* Mysql
+
+** [[https://www.ibm.com/developerworks/cn/opensource/os-mysql-transaction-isolation-levels-and-locks/index.html][事务隔离级别和锁]]
+
+   - Note taken on [2020-03-02 一 01:05] \\
+     这篇文章没有说清楚行锁的算法。
+   - Note taken on [2020-03-02 一 01:04] \\
+     什么是「聚簇索引」？
+
+*** ACID
+
+*** 四种隔离级别
+
+*** 锁优化
