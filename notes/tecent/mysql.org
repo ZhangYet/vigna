@@ -3,12 +3,42 @@
 ** [[https://www.ibm.com/developerworks/cn/opensource/os-mysql-transaction-isolation-levels-and-locks/index.html][事务隔离级别和锁]]
 
    - Note taken on [2020-03-02 一 01:05] \\
-     这篇文章没有说清楚行锁的算法。
+     这篇文章没有说清楚行锁的算法。参考：[[*%5B%5Bhttps://dev.mysql.com/doc/refman/5.7/en/innodb-locking.html%5D%5Binnodb %E9%94%81%5D%5D][innodb 锁]]
    - Note taken on [2020-03-02 一 01:04] \\
-     什么是「聚簇索引」？
+     什么是「聚簇索引」？A: [[*%5B%5Bhttps://dev.mysql.com/doc/refman/5.7/en/innodb-index-types.html%5D%5B%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95%5D%5D][聚簇索引]]
 
 *** ACID
 
+A: 原子性；
+
+C: 一致性——事务前后一致性约束不被破坏；
+
+I：隔离性——不同事务对同一数据的操作互不影响；
+
+D：持久性；
+
 *** 四种隔离级别
 
+读未提交：会出现脏读，事务1的操作还没有完成的时候，事务2就能读到事务1中的修改。
+
+读提交：多次读取结果不同，事务1操作完成之前，事务2读到的是事务1完成之前的数据，事务1完成之后，事务2会读到提交之后的事务。
+
+可重复读：事务在开始之后，只会读到事务开始时候的数据。会出现幻读。
+
+序列化：事务1执行时，事务2会阻塞直到事务1完成。
+
 *** 锁优化
+
+
+** [[https://dev.mysql.com/doc/refman/5.7/en/innodb-index-types.html][聚簇索引]]
+
+竟然就是主键（大部分时间是）。
+
+** [[https://dev.mysql.com/doc/refman/5.7/en/innodb-locking.html][innodb 锁]]
+
+shared 和 exclusive 锁倒还好理解，但是 record 锁 gap 锁这种概念就很难理解了。先放着吧。
+
+
+** [[https://tech.meituan.com/2016/11/18/dianping-order-db-sharding.html][美团的分库分表经验]]
+
+所以其实我们只做了垂直分库，水平分表。
