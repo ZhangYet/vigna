@@ -1,0 +1,36 @@
+* redis
+
+** redis 分布式锁 
+
+单机版：
+
+#+BEGIN_SRC
+SET resource_name my_random_value NX PX 30000
+#+END_SRC
+
+要点：
+
+1. 当前 resource_name 不存在的时候才能 SET 成功；
+2. 有超时时间，防止锁不释放；
+3. 设置 my_random_value 防止其他线程误释放锁；
+
+集群版：
+
+1. 依次向多个节点申请锁，多数节点获得锁的时候成功获得锁；
+2. 后面的锁要减去获取锁的时间；
+3. 释放锁的时候要依次释放锁；
+4. 获取锁失败要释放成功节点上的锁；
+
+** redis 数据类型
+
+1. string
+2. hash: hget/hset/hmget/hmset/hvals 一系列函数
+3. list: lpush/lpop/lrange 一系列函数
+4. set: sadd/sismember/smembers/sdiff/smove 一系列函数
+5. sortedset: zadd 一系列函数
+6. pub/sub: subscribe/psubscribe/publish 注意如果有多个 pattern 匹配一条 message ，客户端会重复收到信息；
+
+
+
+
+
