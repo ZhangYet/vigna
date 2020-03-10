@@ -141,6 +141,40 @@ RC 总是读取记录的最新版本，如果该记录被锁住，则读取该�
 
 Gap lock 不包括记录本身，但是 Next-key lock 会，所以前者是以 id=5 为端点的两个开区间，后者是包括 id=5 的座开右闭区间。
 
+***** 插入意向锁
+
+只有在 INSERT 的时候才会有这个锁。
+
+***** 总结
+
+意向锁只跟 Next-key 锁和间隙锁冲突(如果其他事务加了间隙锁，那么意向锁会失败)，其他锁不跟意向锁冲突。
+
+其他锁的兼容矩阵：
+
+|          | RECORD | GAP | NEXT-KEY |
+|----------+--------+-----+----------|
+| RECORD   |        | yes |          |
+| GAP      | yes    | yes | yes      |
+| NEXT-KEY |        | yes |          |
+
+间隙锁不和其他锁（不包括插入意向锁）冲突；
+记录锁和记录锁冲突，Next-key 锁和 Next-key 锁冲突，记录锁和 Next-key 锁冲突；
+
+**** 悲观锁与乐观锁
+
+这是两种锁的思路。
+
+1. 悲观锁：每次拿数据都认为别人会修改，每次都上锁；
+2. 乐观锁：每次都不上锁，更新的时候判断一下别人有没有修改过，乐观锁可能会遇到 ABA 问题；
+
+*** [[https://www.aneasystone.com/archives/2017/12/solving-dead-locks-three.html][常见 SQL 语句的加锁分析]]
+
+太复杂了，跳过。
+
+*** [[https://www.aneasystone.com/archives/2018/04/solving-dead-locks-four.html][再见死锁]]
+
+
+
 ** Footnotes
 
 [fn:1]  网上对此有很多不一致的说法，其实也是因为 MySQL 的实现和 ANSI-SQL 标准之间的差异，在标准的传统实现中，RR 隔离级别是使用持续的 X 锁和持续的 S 锁来实现的（参看下面的 “隔离级别的实现” 一节），由于是持续的 S 锁，所以避免了其他事务有写操作，也就不存在提交覆盖问题。但是 MySQL 在 RR 隔离级别下，普通的 SELECT 语句只是快照读，没有任何的加锁，和标准的 RR 是不一样的。如果要让 MySQL 在 RR 隔离级别下不发生提交覆盖，可以使用 SELECT ... LOCK IN SHARE MODE 或者 SELECT ... FOR UPDATE 。作者原著。
