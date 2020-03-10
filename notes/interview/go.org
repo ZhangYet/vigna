@@ -1,0 +1,136 @@
+* go 相关面试题
+
+** [[https://reading.developerlearning.cn/interview/#][面试专题]]
+
+*** 面试题解析一
+
+**** defer 的问题
+
+#+BEGIN_SRC go
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    defer_call()
+}
+
+func defer_call() {
+    defer func() { fmt.Println("打印前") }()
+    defer func() { fmt.Println("打印中") }()
+    defer func() { fmt.Println("打印后") }()
+
+    panic("触发异常")
+}
+#+END_SRC
+
+defer 是后进先出的，所以后面的 defer 会先输出，最后才输出 panic 的内容。
+
+**** range 的问题
+
+#+BEGIN_SRC go
+import (
+	"fmt"
+)
+
+type student struct {
+	Name string
+	Age  int
+}
+
+func parse_student() map[string]*student{
+	m := make(map[string]*student)
+	stus := []student{
+		{Name: "zhou", Age: 24},
+		{Name: "li", Age: 23},
+		{Name: "wang", Age: 22},
+	}
+	for _, stu := range stus {
+		m[stu.Name] = &stu
+	}
+	return m
+}
+
+func main() {
+	m := parse_student()
+	for k, v := range m{
+		fmt.Printf("key: %s, Name %s: age: %d\n", k, v.Name, v.Age)
+	}
+}
+#+END_SRC
+
+上面代码的问题是 range 带来的，range 在处理遍历的时候，会把 value 赋值给一个临时变量，因为这中间存在了复制，所以所有指针都被复制成同一个了。把指针改成值就不会有这种烦恼了。
+
+#+BEGIN_QUOTE
+遇到这种同时遍历索引和元素的 range 循环时，Go 语言会额外创建一个新的 v2 变量存储切片中的元素，循环中使用的这个变量 v2 会在每一次迭代被重新赋值，在赋值时也发生了拷贝。
+
+[[https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-for-range/#heading-4][《go 语言设计与实现》]]
+#+END_QUOTE
+
+**** goroutine 闭包
+
+#+BEGIN_QUOTE go
+package main
+
+import (
+	"fmt"
+	"runtime"
+	"sync"
+)
+
+func main() {
+	runtime.GOMAXPROCS(1)
+	wg := sync.WaitGroup{}
+	wg.Add(20)
+	for i := 0; i < 10; i++ {
+		go func() {
+			fmt.Println("A: ", i)
+			wg.Done()
+		}()
+	}
+	for i := 0; i < 10; i++ {
+	        go func(i int) {
+			fmt.Println("B: ", i)
+			wg.Done()
+		}(i)
+	}
+	wg.Wait()
+}
+#+END_QUOTE
+
+A 会输出随机字符（虽然实际上测试了好几次都是10），主要是因为 go func 中 i 是外部 for 的一个变量，地址不变化，但是值都在改变。
+
+**** 组合继承
+
+#+BEGIN_SRC go
+package main
+
+import "fmt"
+
+type People struct{}
+
+func (p *People) ShowA() {
+	fmt.Println("showA")
+	p.ShowB()
+}
+func (p *People) ShowB() {
+	fmt.Println("showB")
+}
+
+type Teacher struct {
+	People
+}
+
+func (t *Teacher) ShowB() {
+	fmt.Println("teacher showB")
+}
+
+func main() {
+	t := Teacher{}
+	t.ShowA()
+}
+#+END_SRC
+
+输出 "showA\nshowB"。
