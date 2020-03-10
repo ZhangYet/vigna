@@ -2,11 +2,23 @@
 
 ** ack number 与 seq number
 
+
 ** 三次握手与四次挥手
 
 虽然已经问到烂了，但是还是要加强状态图。
 
 尤其是四次挥手要明白双方状态的转换。
+
+三次握手：
+
+#+CAPTION: 三次握手状态图
+#+NAMG: three-way handshake
+[[./figures/Three-way-Handshake-ex2.png]]
+
+四次挥手
+#+CAPTION: 四次挥手状态图
+#+NAME: four-way handshake
+[[./figures/tcp_close.png]]
 
 ** 与 UDP 相比的特点
 
