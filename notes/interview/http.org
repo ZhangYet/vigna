@@ -15,6 +15,10 @@
 11. 503 Service Unavailable
 
 
+** HTTPS 7次握手
 
+其实就是 TCP 三次握手的基础上加上 TLS 的四次握手：
 
+#+CAPTION: TLS 四次握手
+[[https://img.draveness.me/2020-02-26-15826852384264-tls-1-2-handshake.png]]
 
