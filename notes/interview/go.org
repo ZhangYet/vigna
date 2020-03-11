@@ -1,5 +1,7 @@
 * go 相关面试题
 
+** 如何优雅关闭 go channel
+
 ** [[https://reading.developerlearning.cn/interview/#][面试专题]]
 
 *** 面试题解析一

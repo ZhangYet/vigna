@@ -2,26 +2,61 @@
 
 ** ack number 与 seq number
 
-
 ** 三次握手与四次挥手
 
 虽然已经问到烂了，但是还是要加强状态图。
 
 尤其是四次挥手要明白双方状态的转换。
 
-三次握手：
+*** 三次握手：
 
-#+CAPTION: 三次握手状态图
-#+NAMG: three-way handshake
-[[./figures/Three-way-Handshake-ex2.png]]
+ #+CAPTION: 三次握手状态图
+ #+NAMG: three-way handshake
+ [[./figures/Three-way-Handshake-ex2.png]]
 
-四次挥手
-#+CAPTION: 四次挥手状态图
-#+NAME: four-way handshake
-[[./figures/tcp_close.png]]
+*** 为什么要有三次握手？
+
+1. 要保证双方连接正常，所以最少要两次；
+2. 如果一个请求延迟了，三次可以避免这种延迟了的非正常请求；
+
+*** 四次挥手
+
+ 四次挥手
+ #+CAPTION: 四次挥手状态图
+ #+NAME: four-way handshake
+ [[./figures/tcp_close.png]]
+
+*** 为什么要有四次挥手
+
+1. 全双工连接的可靠释放；
+2. 使得旧的数据包因为网络过期而失效，所以有 TIME_WAIT 状态要保持2MSL（最大报文生存时间）；
+
+#+BEGIN_QUOTE
+去向ACK消息最大存活时间（MSL) + 来向FIN消息的最大存活时间(MSL)。
+
+https://www.zhihu.com/question/67013338/answer/248375813
+#+END_QUOTE
+
+
 
 ** 与 UDP 相比的特点
 
+1. segment 有序
+2. 流控制 
+3. 拥堵控制
+4. error 检测
+
 ** 流控制
 
+滑动窗口协议：接收方通过 ack 告知发送方窗口大小，收到成功的 ack，发送方将窗口往前平移。
+
+
 ** 拥堵控制
+
+其实就是三个策略。假设当前窗口大小 cwnd，还有慢启动阈值 ssthresh，那么：
+
+1. 慢启动：每 RTT 将 cwnd 翻倍，直到 cwnd >= ssthresh，进入拥塞避免策略，如果掉包，重回慢启动策略；
+2. 拥塞避免策略：每 RTT 将 cwnd + 1，如果掉包，重新进入慢启动阶段，ssthresh = cwnd / 2 cwnd = 1, 如果收到三个重复的 ack，进入快重发快恢复阶段；
+3. 快重发快恢复：立刻重传包， ssthresh = cwnd / 2; cwnd = ssthresh, 进入拥塞避免策略
+
+[[https://juejin.im/post/5d9f14cff265da5b783f0574][参考资料]]
