@@ -30,7 +30,14 @@ n#+END_SRC
 5. sortedset: zadd 一系列函数
 6. pub/sub: subscribe/psubscribe/publish 注意如果有多个 pattern 匹配一条 message ，客户端会重复收到信息；
 
+** rehash 过程
 
+dictExpand 之后，会进入 rehash 状态（将 rehash_idx 置为0）。之后会渐进式 rehash。
 
+rehash 过程中，每次访问 key， 都会触发一次 step rehash，step rehash 会 rehash 至多一个 key。
 
+另外 databaseCron 每个周期也会 rehash 一批（最多100个）。
 
+写的时候，会直接写到 ht[1], 读和删的时候会先查 ht[0] 和 ht[1]。
+
+等 ht[0] 的 used 变成0，rehash 结束。
