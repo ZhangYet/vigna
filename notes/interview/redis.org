@@ -6,7 +6,7 @@
 
 #+BEGIN_SRC
 SET resource_name my_random_value NX PX 30000
-#+END_SRC
+n#+END_SRC
 
 要点：
 

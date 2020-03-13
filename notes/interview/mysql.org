@@ -43,6 +43,12 @@ shared 和 exclusive 锁倒还好理解，但是 record 锁 gap 锁这种概念�
 
 所以其实我们只做了垂直分库，水平分表。
 
+分表过程：
+
+1. 双写，查旧；
+2. 旧数据迁移完成之后，双写，查新；
+3. 只写新；
+
 ** InnoDB 知识点
 
 1. 支持行锁；
@@ -97,7 +103,7 @@ shared 和 exclusive 锁倒还好理解，但是 record 锁 gap 锁这种概念�
 #+BEGIN_QUOTE
 RC 总是读取记录的最新版本，如果该记录被锁住，则读取该记录最新的一次快照，而 RR 是读取该记录事务开始时的那个版本。虽然这两种读取方式不一样，但是它们读取的都是快照数据，并不会被写操作阻塞，所以这种读操作称为 快照读（Snapshot Read），有时候也叫做 非阻塞读
 
-除了 快照读 ，MySQL 还提供了另一种读取方式：当前读（Current Read），有时候又叫做 加锁读（Locking Read） 或者 阻塞读（Blocking Read），这种读操作读的不再是数据的快照版本，而是数据的最新版本，并会对数据加锁
+除了快照读 ，MySQL 还提供了另一种读取方式：当前读（Current Read），有时候又叫做 加锁读（Locking Read） 或者 阻塞读（Blocking Read），这种读操作读的不再是数据的快照版本，而是数据的最新版本，并会对数据加锁
 #+END_QUOTE
 
 **** 总结 
@@ -138,7 +144,7 @@ RC 总是读取记录的最新版本，如果该记录被锁住，则读取该�
 
 ***** Next-key lock
 
-Gap lock 不包括记录本身，但是 Next-key lock 会，所以前者是以 id=5 为端点的两个开区间，后者是包括 id=5 的座开右闭区间。
+Gap lock 不包括记录本身，但是 Next-key lock 会，所以前者是以 id=5 为端点的两个开区间，后者是包括 id=5 的左开右闭区间。
 
 ***** 插入意向锁
 
@@ -171,7 +177,6 @@ Gap lock 不包括记录本身，但是 Next-key lock 会，所以前者是以 i
 太复杂了，跳过。
 
 *** [[https://www.aneasystone.com/archives/2018/04/solving-dead-locks-four.html][再见死锁]]
-
 
 
 ** Footnotes
