@@ -37,9 +37,32 @@ P: a context for scheduling.
 
 ** go sync 锁的分类和原理
 
+Mutex: 正常态下新创建的 goroutine 会最快获得 routine，饥饿状态下，新创建的 goroutine 放在队尾，真正 FIFO。如果一个 Goroutine 获得了互斥锁并且它在队列的末尾或者它等待的时间少于 1ms，那么当前的互斥锁就会被切换回正常模式。
+
+RWMutex: 写锁其实就是一个 Mutex。
+
+其他内容见：https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-sync-primitives/
+
 ** go 内存垃圾回收
 
+*** 三色标记
+
+https://juejin.im/post/5c8525666fb9a049ea39c3e6
+
+*** 写屏障（1.8引入）
+
+https://github.com/golang/proposal/blob/master/design/17503-eliminate-rescan.md
+
+
 ** 什么是 interface
+
+首先 interface 是一种类型，从它的定义可以看出来用了 type 关键字，更准确的说 interface 是一种具有一组方法的类型，这些方法定义了 interface 的行为。
+
+** interface 的实现者的 receiver 
+如果是按 pointer 调用，go 会自动进行转换，因为有了指针总是能得到指针指向的值是什么，如果是 value 调用，go 将无从得知 value 的原始值是什么，因为 value 是份拷贝。go 会把指针进行隐式转换得到 value，但反过来则不行。
+
+** nil interface 问题
+https://golang.org/doc/faq#nil_error
 
 ** 如何优雅关闭 go channel
 
