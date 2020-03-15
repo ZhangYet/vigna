@@ -178,7 +178,6 @@ Gap lock 不包括记录本身，但是 Next-key lock 会，所以前者是以 i
 
 *** [[https://www.aneasystone.com/archives/2018/04/solving-dead-locks-four.html][再见死锁]]
 
-
 ** Footnotes
 
 [fn:1]  网上对此有很多不一致的说法，其实也是因为 MySQL 的实现和 ANSI-SQL 标准之间的差异，在标准的传统实现中，RR 隔离级别是使用持续的 X 锁和持续的 S 锁来实现的（参看下面的 “隔离级别的实现” 一节），由于是持续的 S 锁，所以避免了其他事务有写操作，也就不存在提交覆盖问题。但是 MySQL 在 RR 隔离级别下，普通的 SELECT 语句只是快照读，没有任何的加锁，和标准的 RR 是不一样的。如果要让 MySQL 在 RR 隔离级别下不发生提交覆盖，可以使用 SELECT ... LOCK IN SHARE MODE 或者 SELECT ... FOR UPDATE 。作者原著。

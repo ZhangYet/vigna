@@ -22,3 +22,11 @@
 #+CAPTION: TLS 四次握手
 [[https://img.draveness.me/2020-02-26-15826852384264-tls-1-2-handshake.png]]
 
+
+** [[https://lwn.net/SubscriberLink/814522/ab3bfaa8f75c60ce/][A QUIC look at HTTP/3]]
+
+*** HTTP1 和 HTTP2 的问题
+
+虽然 HTTP2 采用了 tcp 多路复用技术，可以在一个 桐城派链接上完成多个 http 请求，但是 tcp 层级上的 HOL 问题还没有解决（毕竟 tcp 也是有序的流传输，如果前面的包被卡住了，后面的包也会被阻塞）。
+
+*** 老骨头问题（天知道应该怎样翻译 protocol ossification）

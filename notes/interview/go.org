@@ -1,5 +1,7 @@
 * go 相关面试题
 
+** goroutine 是什么？
+
 ** 如何优雅关闭 go channel
 
 #+BEGIN_QUOTE

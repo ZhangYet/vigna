@@ -76,3 +76,21 @@ https://www.zhihu.com/question/67013338/answer/248375813
 
 [[https://juejin.im/post/5d9f14cff265da5b783f0574][参考资料]]
 
+** tcp 粘包/拆包问题
+
+原因：
+
+1. write 写入的字节数大于 socket 缓冲区大小（拆包）；
+2. MSS TCP 分段；
+3. 网卡将小于 socket 缓冲区的几个信息一起发；
+4. 接受方读取 socket 缓冲区不及时；
+
+解决方案：
+
+1. 定长信息（可能会浪费空间）；
+2. 带消息头的协议；
+3. 设置消息边界；
+
+** HOL blocking
+这是 http2 没有解决的问题。
+
