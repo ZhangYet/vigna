@@ -1,6 +1,45 @@
 * go 相关面试题
 
-** goroutine 是什么？
+** goroutine 是什么？与线程和进程有什么区别？
+
+与线程的区别在于：
+
+1. 初始分配的栈空间很小2k；
+2. goroutine 由 go runtime 调度，不需要系统调用（免去内核态和用户态的交互）；
+3. 上下文切换代价也更小；
+
+见： https://studygolang.com/articles/23191
+
+** GMP 模型简述
+
+见：http://morsmachine.dk/go-scheduler
+
+G: stack, the instruction pointer and other information important for scheduling goroutines 可以理解成实际要执行的程序。
+
+M: OS thread.
+
+P: a context for scheduling.
+
+每个 P 有独立的 G 队列，从队列中消耗 G，如果有一个 G 因为系统调用阻塞，这个 G 被移到一个空闲的（或者新的） M 上面，直到阻塞结束，再找一个 P 完成，空闲的 P 会从全局队列或者其他 P 的队列中抢 G。
+
+
+** go struct 能不能比较？
+
+不能，同struck 的实例可以比较。
+
+** go slice 内存管理
+
+明天要总结一下[[https://blog.golang.org/go-slices-usage-and-internals][这篇文章]]。
+
+** 为什么 channel 是线程安全的
+
+没啥好解答。
+
+** go sync 锁的分类和原理
+
+** go 内存垃圾回收
+
+** 什么是 interface
 
 ** 如何优雅关闭 go channel
 
@@ -164,5 +203,6 @@ func main() {
 **** map 并发问题
 
 并发读写的 map 的时候，可能会有 [[https://zhanghongtong.github.io/2018/07/04/golang-map%25E6%2595%25B0%25E6%258D%25AE%25E7%25BB%2593%25E6%259E%2584%25E4%25B8%258D%25E8%2583%25BD%25E5%25B9%25B6%25E5%258F%2591%25E8%25AF%25BB%25E5%2586%2599%25E9%2597%25AE%25E9%25A2%2598-fatal-error-concurrent-map-writes/][fatal error: concurrent map writes]]，解决办法大概就是 sync.Map.
+
 
 

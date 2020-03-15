@@ -21,7 +21,7 @@ n#+END_SRC
 3. 释放锁的时候要依次释放锁；
 4. 获取锁失败要释放成功节点上的锁；
 
-** redis 数据类型
+** redis 数据类型(以及对应的底层实现)
 
 1. string
 2. hash: hget/hset/hmget/hmset/hvals 一系列函数
