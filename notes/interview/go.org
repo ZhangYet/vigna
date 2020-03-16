@@ -22,7 +22,6 @@ P: a context for scheduling.
 
 每个 P 有独立的 G 队列，从队列中消耗 G，如果有一个 G 因为系统调用阻塞，这个 G 被移到一个空闲的（或者新的） M 上面，直到阻塞结束，再找一个 P 完成，空闲的 P 会从全局队列或者其他 P 的队列中抢 G。
 
-
 ** go struct 能不能比较？
 
 不能，同struck 的实例可以比较。
@@ -33,7 +32,10 @@ P: a context for scheduling.
 
 1. 定义 array 的方法： ~[4]int~ , go 的 array 是值，每次传递都是传一个 copy 过去。
 2. slice 的零值是 nil。
-3.slice 
+3. slice 每次切片都会创建新的 slice 实例。
+4. slice 底层其实有三个域：len, cap 和指向 array 的指针。
+5. 切片的时候，slice 创建一个新的 slice，只需要一个新的 len，一个新的 cap，和一个指向旧 array 一部分的指针。
+6. slice 并不会自动扩容，但是 append 会帮你把底层的 array 扩容，一般是原来的 cap 乘2。
 
 ** 为什么 channel 是线程安全的
 
@@ -84,7 +86,6 @@ https://github.com/golang/proposal/blob/master/design/17503-eliminate-rescan.md
 *** 写屏障
 
 1.8 引入一种优化的写屏障。
-
 
 ** 什么是 interface
 
