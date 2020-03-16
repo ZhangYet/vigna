@@ -23,12 +23,13 @@ n#+END_SRC
 
 ** redis 数据类型(以及对应的底层实现)
 
-1. string
-2. hash: hget/hset/hmget/hmset/hvals 一系列函数
-3. list: lpush/lpop/lrange 一系列函数
-4. set: sadd/sismember/smembers/sdiff/smove 一系列函数
-5. sortedset: zadd 一系列函数
-6. pub/sub: subscribe/psubscribe/publish 注意如果有多个 pattern 匹配一条 message ，客户端会重复收到信息；
+1. 字符串对象：int, raw and embstr;
+2. 列表对象： quick_list;
+3. hash 对象：ziplist 或者 hashtable；
+4. 集合对象：intset 或者 hashtable；
+5. 有序集合：ziplist 或者 skiplist;
+
+6. pub/sub: server 两个 dict 保存频道和模式匹配的客户端，一旦有消息发布就推送到对应的客户端。
 
 ** rehash 过程
 

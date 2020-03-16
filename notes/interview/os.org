@@ -38,5 +38,10 @@
 僵尸进程：父进程没有 wait 的子进程结束之后就会变成僵尸进程。因为系统进程表还有一个表项，所以看起来就像这个进程还活着一样。只要有进程 wait 一发即可。
 
 ** netstat
-
+~netstat -nat~: 列出所有 tcp 连接（不作DNS查询）。
 ** lsof
+~lsof -c [program]~: 查看 program 打开的文件
+~lsof -u [username]~: 查看 username 打开的文件
+~lsof -p [pid]~: 查看 pid 打开的文件
+~lsof -i tcp~: 列出所有 tcp 网络连接信息(还有程序名
+~lsof -i tcp:6379~: 列出谁在使用 tcp 6379 端口
