@@ -1,0 +1,13 @@
+* Go 语言设计与实现
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+
+主要是[[https://draveness.me/golang/][《go 语言设计与实现》]]的笔记
+
+#+INCLUDE: "./array.org" :minlevel 2
+#+INCLUDE: "./slice.org" :minlevel 2
+#+INCLUDE: "./map.org"   :minlevel 2
+#+INCLUDE: "./function.org" :minlevel 2
+#+INCLUDE: "./interface.org" :minlevel 2
+

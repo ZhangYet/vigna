@@ -1,0 +1,60 @@
+** map
+   :PROPERTIES:
+   :UNNUMBERED: t
+   :END:
+
+*** 数据结构
+
+#+BEGIN_SRC go
+type hmap struct {
+	count     int    // 当前元素的数量
+	flags     uint8
+	B         uint8  // buckets 的数量
+	noverflow uint16 
+	hash0     uint32 // 是哈希的种子，它能为哈希函数的结果引入随机性，这个值在创建哈希表时确定，并在调用哈希函数时作为参数传入；
+
+	buckets    unsafe.Pointer
+	oldbuckets unsafe.Pointer // 扩容前的 buckets
+	nevacuate  uintptr
+
+	extra *mapextra
+}
+#+END_SRC
+
+*** 初始化 
+
+**** 字面量
+相关代码在 ~cmd/compile/internal/gc.maplit~ 。
+
+**** 运行时
+如果使用 ~make~ 初始化，会调用 ~runtime.makemap~ 。
+
+*** 读写操作
+
+**** 读
+#+BEGIN_QUOTE
+在编译的类型检查期间，hash[key] 以及类似的操作都会被转换成对哈希的 OINDEXMAP 操作，中间代码生成阶段会在 cmd/compile/internal/gc.walkexpr 函数中将这些 OINDEXMAP 操作转换成如下的代码：
+#+END_QUOTE
+#+BEGIN_SRC go
+v     := hash[key] // => v     := *mapaccess1(maptype, hash, &key)
+v, ok := hash[key] // => v, ok := mapaccess2(maptype, hash, &key)
+#+END_SRC
+
+**** 写
+
+当形如 hash[k] 的表达式出现在赋值符号左侧时，该表达式也会在编译期间转换成调用 ~runtime.mapassign~ 函数。
+
+**** 扩容
+
+调用 ~runtime.mapassign~ 的时候，肯能会触发扩容，条件是：
+
+1. 装载因子已经超过 6.5；
+2. 哈希使用了太多溢出桶；
+
+扩容入口是 ~runtime.hashGrow~ 函数。
+
+**** 删除
+
+*** 总结
+底层实现是链表，有两种情况会触发扩容。
+

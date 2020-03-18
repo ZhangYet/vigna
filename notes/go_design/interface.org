@@ -1,0 +1,90 @@
+** interface
+   :PROPERTIES:
+   :UNNUMBERED: t
+   :END:
+
+*** 为什么使用结构体实现接口时，指针类型和结构体类型都会实现该接口？
+
+因为我们可以通过指针找到实例，但是无法从（复制的）实例中找到指针。[fn:1]
+
+*** nil and not-nil
+
+#+BEGIN_SRC go
+package main
+
+type TestStruct struct{}
+
+func NilOrNot(v interface{}) bool {
+	return v == nil
+}
+
+func main() {
+	var s *TestStruct
+	fmt.Println(s == nil)      // #=> true
+	fmt.Println(NilOrNot(s))   // #=> false
+}
+#+END_SRC
+
+#+BEGIN_QUOTE
+出现上述现象的原因是 —— 调用 NilOrNot 函数时发生了隐式的类型转换，除了向方法传入参数之外，变量的赋值也会触发隐式类型转换。在类型转换时，*TestStruct 类型会转换成 interface{} 类型，转换后的变量不仅包含转换前的变量，还包含变量的类型信息 TestStruct，所以转换后的变量与 nil 不相等。
+#+END_QUOTE
+
+所以结论还是一样： *interface 包含 type 和 value 两个域，两个域都是 nil 才等于 nil* 。 见[[*%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84][数据结构]]。
+
+*** 数据结构
+
+不包含任何方法的接口[fn:2]：
+#+BEGIN_SRC go
+type eface struct { // 16 bytes
+	_type *_type
+	data  unsafe.Pointer
+}
+#+END_SRC
+
+其中：
+
+#+BEGIN_SRC go
+type _type struct {
+        size       uintptr  // size 字段存储了类型占用的内存空间，为内存空间的分配提供信息；
+	ptrdata    uintptr
+	hash       uint32   // hash 字段能够帮助我们快速确定类型是否相等；
+	tflag      tflag
+	align      uint8
+	fieldAlign uint8
+	kind       uint8
+	equal      func(unsafe.Pointer, unsafe.Pointer) bool
+	gcdata     *byte
+	str        nameOff
+	ptrToThis  typeOff
+}
+#+END_SRC
+
+包含方法的接口：
+#+BEGIN_SRC go
+type iface struct { // 16 bytes
+	tab  *itab
+	data unsafe.Pointer
+}
+#+END_SRC
+
+其中：
+#+BEGIN_SRC go
+type itab struct { // 32 bytes
+	inter *interfacetype
+	_type *_type
+	hash  uint32
+	_     [4]byte
+	fun   [1]uintptr
+}
+#+END_SRC
+
+*** 动态派发
+
+从[[https://draveness.me/golang/docs/part2-foundation/ch04-basic/golang-interface/#425-][基准测试]]来看，动态派发还是慢一些（但是这基本没啥区别）。
+
+
+*** Footnotes
+
+[fn:2] 好奇怪，居然要分两种类型。 
+
+[fn:1] 看[[https://draveness.me/golang/docs/part2-foundation/ch04-basic/golang-interface/#heading-2][原文]]的例子会更清楚一点。

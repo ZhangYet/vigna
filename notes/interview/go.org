@@ -84,8 +84,42 @@ https://github.com/golang/proposal/blob/master/design/17503-eliminate-rescan.md
 #+END_QUOTE
 
 *** 写屏障
+基于[[https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-garbage-collector/][这篇文章]]。
 
-1.8 引入一种优化的写屏障。
+**** 插入写屏障
+
+ #+BEGIN_SRC c
+ writePointer(slot, ptr):
+     shade(ptr)
+     *field = ptr
+ #+END_SRC
+
+#+BEGIN_QUOTE
+上述插入写屏障的伪代码非常好理解，每当我们执行类似 *slot = ptr 的表达式时，我们会执行上述写屏障通过 shade 函数尝试改变指针的颜色。如果 ptr 指针是白色的，那么该函数会将该对象设置成灰色，其他情况则保持不变。
+#+END_QUOTE
+
+插入写屏障可以保证强三色不变性。
+
+****  Yuasa 删除写屏障
+
+#+BEGIN_SRC c
+writePointer(slot, ptr)
+    shade(*slot)
+    *slot = ptr
+#+END_SRC
+
+#+BEGIN_QUOTE
+上述代码会在老对象的引用被删除时，将白色的老对象涂成灰色，这样删除写屏障就可以保证弱三色不变性，老对象引用的下游对象一定可以被灰色对象引用。
+#+END_QUOTE
+
+**** 混合写屏障
+#+BEGIN_SRC c
+writePointer(slot, ptr):
+    shade(*slot)
+    if current stack is grey:
+        shade(ptr)
+    *slot = ptr
+#+END_SRC
 
 ** 什么是 interface
 
@@ -288,6 +322,7 @@ func main() {
 **** map 并发问题
 
 并发读写的 map 的时候，可能会有 [[https://zhanghongtong.github.io/2018/07/04/golang-map%25E6%2595%25B0%25E6%258D%25AE%25E7%25BB%2593%25E6%259E%2584%25E4%25B8%258D%25E8%2583%25BD%25E5%25B9%25B6%25E5%258F%2591%25E8%25AF%25BB%25E5%2586%2599%25E9%2597%25AE%25E9%25A2%2598-fatal-error-concurrent-map-writes/][fatal error: concurrent map writes]]，解决办法大概就是 sync.Map.
+
 
 
 

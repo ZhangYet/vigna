@@ -1,0 +1,55 @@
+** function
+   :PROPERTIES:
+   :UNNUMBERED: t
+   :END:
+
+*** 调用惯例
+C 使用寄存器和栈保存入参，使用寄存器保存返回值。
+
+Go 语言使用栈传递参数和接收返回值，所以它只需要在栈上多分配一些内存就可以返回多个值。所以 Go 可以轻松返回多个值。
+
+*** 参数传递
+
+1. 传值： 函数调用时会对参数进行拷贝，被调用方和调用方两者持有不相关的两份数据；
+2. 传引用： 函数调用时会传递参数的指针，被调用方和调用方两者持有相同的数据，任意一方做出的修改都会影响另一方。
+
+#+BEGIN_QUOTE
+Go 语言选择了传值的方式，无论是传递基本类型、结构体还是指针，都会对传递的参数进行拷贝。
+#+END_QUOTE
+
+结论：
+1. *Go 语言中对于整型和数组类型的参数都是值传递的* 。[fn:1]
+2. *将指针作为参数传入某一个函数时，在函数内部会对指针进行复制，也就是会同时出现两个指针指向原有的内存空间，所以 Go 语言中『传指针』也是传值。*
+
+slice 的情况：
+
+#+BEGIN_SRC go
+package main
+
+import (
+	"fmt"
+)
+
+func myFunction(t []int, s *[]int)  {
+	t[1] = 100
+	(*s)[1] = 100
+	fmt.Printf("in my_function - a=(%d, %p, %T) b=(%v, %p, %T)\n", t, &t, t, s, &s, s)
+}
+
+func main() {
+	a := []int{1, 2, 3, 4}
+	b := []int{1, 2, 3, 4}
+	fmt.Printf("before calling - a=(%d, %p) b=(%v, %p)\n", a, &a, b, &b)
+	myFunction(a, &b)
+	fmt.Printf("after calling  - a=(%d, %p) b=(%v, %p)\n", a, &a, b, &b)
+}
+
+// before calling - a=([1 2 3 4], 0xc00008a000) b=([1 2 3 4], 0xc00008a020)
+// in my_function - a=([1 100 3 4], 0xc00008a080, []int) b=(&[1 100 3 4], 0xc00007e018, *[]int)
+// after calling  - a=([1 100 3 4], 0xc00008a000) b=([1 100 3 4], 0xc00008a020)
+
+#+END_SRC
+
+*** Footnotes
+
+[fn:1] 但要记得是数组，不是 slice。 但是其实我还是不知道为什么 slice 传进去也是会被改变。

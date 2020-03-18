@@ -1,0 +1,48 @@
+** slice
+   :PROPERTIES:
+   :UNNUMBERED: t
+   :END:
+
+*** 相关源代码
+
+~cmd/compile/internal/types.NewSlice~ ，切片元素类型是在编译期确定的。
+
+*** 底层数据结构
+
+#+BEGIN_SRC go
+type SliceHeader struct {
+	Data uintptr
+	Len  int
+	Cap  int
+}
+#+END_SRC
+
+#+BEGIN_QUOTE
+我们可以将切片理解成一片连续的内存空间加上长度与容量的标识。
+#+END_QUOTE
+
+*** 初始化
+**** 初始化 slice 的三种方式
+ 1. 通过下标的方式获得数组或者切片的一部分；
+ 2. 使用字面量初始化新的切片，即形如 ~v := []int{1, 2, 3}~ 这种方式，相关代码见： ~cmd/compile/internal/gc.slicelit~ ；[fn:1]
+ 3. 使用关键字 make 创建切片：[fn:2]
+
+*** append
+
+**** 基本情况
+ 相关代码见： ~cmd/compile/internal/gc.state.append~ 。会根据是否覆盖原来的变量走两个不同的分支。
+
+ 如果在追加元素后切片的大小大于容量，那么就会调用 runtime.growslice 对切片进行扩容并将新的元素依次加入切片。
+
+**** growslice
+1. 如果期望容量大于当前容量的两倍就会使用期望容量；[fn:3]
+2. 如果当前切片容量小于 1024 就会将容量翻倍；
+3. 如果当前切片容量大于 1024 就会每次增加 25% 的容量，直到新容量大于期望容量；
+
+*** Footnotes
+
+[fn:3] 我疑心只有 append 一个长度为0的 slice 的时候会进入这个分支。 
+
+[fn:2] 这里提及 slice 很大或者逃逸的时候会在堆上初始化，如果不会发生逃逸且很小的话，则会在栈或者静态区域初始化。但显然，我并不了解什么是逃逸。 
+
+[fn:1] 但其实底层还是使用了切片。
