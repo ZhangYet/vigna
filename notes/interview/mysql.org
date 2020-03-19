@@ -226,6 +226,7 @@ Temporal values are stored in TIMESTAMP columns as UTC values, and values insert
 
 If there is a usable index, comparisons occur in UTC
 
+** mysql 上锁的 sql 语句
 
 ** Footnotes
 

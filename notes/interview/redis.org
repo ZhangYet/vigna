@@ -42,3 +42,26 @@ rehash 过程中，每次访问 key， 都会触发一次 step rehash，step reh
 写的时候，会直接写到 ht[1], 读和删的时候会先查 ht[0] 和 ht[1]。
 
 等 ht[0] 的 used 变成0，rehash 结束。
+
+** redis 持久化
+
+两种持久化方式：优先使用 AOF 文件载入，如果不存在 AOF，那么使用 RDB。
+
+*** RDB
+
+~SAVE()~ 会阻塞，而 ~BGSAVE()~ 会先 fork 出子进程，然后保存，保存的过程会拒绝其他 ~SAVE()~ 和 ~BGSAVE()~ 请求。
+
+自动的保存，会在 serverCron 中执行，配置文件可以配置多个自动保存的触发条件。
+
+*** AOF 
+
+按照命令请求协议格式保存一个文本文件。
+
+redis 有 aof_buffer，每个事件循环之后， ~flushAppendOnlyFile()~ 将 buffer 写入 AOF 文件中。
+
+载入的时候， redis 实例通过伪客户端将 AOF 文件中的命令写入。
+
+处理 AOF 重写的过程中，追加的命令： AOF 重写缓冲区，当 AOF 重写结束后，将 AOF 重写缓冲区的内容写入新的 AOF 文件，再把此 AOF 文件与旧的 AOF 文件原子替换。
+
+AOF重写是一个有歧义的名字，该功能是通过读取数据库中的键值对来实现的，程序无须对现有AOF文件进行任何读入、分析或者写入操作。
+

@@ -45,3 +45,4 @@
 ~lsof -p [pid]~: 查看 pid 打开的文件
 ~lsof -i tcp~: 列出所有 tcp 网络连接信息(还有程序名
 ~lsof -i tcp:6379~: 列出谁在使用 tcp 6379 端口
+** epoll 的原理
