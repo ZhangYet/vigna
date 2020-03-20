@@ -1,4 +1,8 @@
+#+OPTIONS: ^:nil
 * Mysql
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
 
 ** [[https://www.ibm.com/developerworks/cn/opensource/os-mysql-transaction-isolation-levels-and-locks/index.html][事务隔离级别和锁]]
 
@@ -227,6 +231,17 @@ Temporal values are stored in TIMESTAMP columns as UTC values, and values insert
 If there is a usable index, comparisons occur in UTC
 
 ** mysql 上锁的 sql 语句
+
+*** 表锁
+ #+BEGIN_SRC sql
+ lock table products read;
+ #+END_SRC
+
+*** 行锁
+但是到底加了什么锁，就不清楚了
+#+BEGIN_SRC sql
+select * from orders where order_id = 5 for update;
+#+END_SRC
 
 ** Footnotes
 
