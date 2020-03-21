@@ -1,17 +1,51 @@
-* go channel 实现
+** channel
+   :PROPERTIES:
+   :UNNUMBERED: t
+   :END:
 
-** channel 特点
+*** channel 特点
 
-1. FIFO
-2. 从某种程度上说，Channel 是一个用于同步和通信的有锁（循环）队列。
+ 1. FIFO
+ 2. 从某种程度上说，Channel 是一个用于同步和通信的有锁（循环）队列。
+
+*** 数据结构
+
+#+BEGIN_QUOTE go
+type hchan struct {
+	qcount   uint // Channel 中元素的个数
+	dataqsiz uint // 循环队列长度
+	buf      unsafe.Pointer
+	elemsize uint16
+	closed   uint32
+	elemtype *_type
+	sendx    uint  
+	recvx    uint
+	recvq    waitq
+	sendq    waitq
+
+	lock mutex
+}
+#+END_QUOTE
+
 
 ** 发送数据
 
-#+BEGIN_QUOTE
-发送数据时会调用 runtime.send，该函数的执行可以分成两个部分：
+1. 当存在等待的接收者时，通过 runtime.send 直接将数据发送给阻塞的接收者；
+2. 当缓冲区存在空余空间时，将发送的数据写入 Channel 的缓冲区；
+3. 当不存在缓冲区或者缓冲区已满时，等待其他 Goroutine 从 Channel 接收数据；
 
-1. 调用 runtime.sendDirect 函数将发送的数据直接拷贝到 x = <-c 表达式中变量 x 所在的内存地址上；
+发送数据时触发调度的时机：
 
-2. 调用 runtime.goready 将等待接收数据的 Goroutine 标记成可运行状态 Grunnable 并把该 Goroutine 放到发送方所在的处理器的 runnext 上等待执行，该处理器在下一次调度时就会立刻唤醒数据的接收方；
-#+END_QUOTE
+1. 发送数据时发现 Channel 上存在等待接收数据的 Goroutine，立刻设置处理器的 runnext 属性，但是并不会立刻触发调度；
+2. 发送数据时并没有找到接收方并且缓冲区已经满了，这时就会将自己加入 Channel 的 sendq 队列并调用 runtime.goparkunlock 触发 Goroutine 的调度让出处理器的使用权；
 
+** 接收数据
+
+1. 当存在等待的发送者时，通过 runtime.recv 直接从阻塞的发送者或者缓冲区中获取数据；
+2. 当缓冲区存在数据时，从 Channel 的缓冲区中接收数据；
+3. 当缓冲区中不存在数据时，等待其他 Goroutine 向 Channel 发送数据；
+
+触发调度的时机：
+
+1. 当 Channel 为空（无缓冲区）时，会挂起当前进程；
+2. 当缓冲区中不存在数据并且也不存在数据的发送者时，加入等待队列，并陷入休眠；

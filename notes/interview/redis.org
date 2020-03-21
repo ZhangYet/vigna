@@ -1,12 +1,16 @@
+#+OPTIONS: ^:nil
 * redis
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
 
 ** redis 分布式锁 
 
 单机版：
 
-#+BEGIN_SRC
+#+BEGIN_SRC 
 SET resource_name my_random_value NX PX 30000
-n#+END_SRC
+#+END_SRC
 
 要点：
 
