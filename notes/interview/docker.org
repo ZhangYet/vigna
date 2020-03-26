@@ -1,0 +1,41 @@
+#+TITLE: docker 小知识
+* docker 小知识
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+
+** Linux namespace
+
+#+BEGIN_QUOTE
+Linux Namespace是Linux提供的一种内核级别环境隔离的方法。
+
+--[[https://coolshell.cn/articles/17010.html][《DOCKER基础技术：LINUX NAMESPACE（上）》]]
+#+END_QUOTE
+
+1. UTS namespace（隔离了 hostname，或者还有更多，但是只先记住 hostname 即可）[fn:1]；
+2. IPC namespace（隔离了 IPC）；
+3. PID namespace ；
+4. mount namespace ;
+5. netspace namespace;
+
+** Linux cgroup
+
+cgroup 提供以下功能：
+
+#+BEGIN_QUOTE
+1. Resource limitation: 限制资源使用，比如内存使用上限以及文件系统的缓存限制[fn:2]。
+
+2. Prioritization: 优先级控制，比如：CPU利用和磁盘IO吞吐。
+
+3. Accounting: 一些审计或一些统计，主要目的是为了计费。
+
+4. Control: 挂起进程，恢复执行进程。
+
+—— [[https://coolshell.cn/articles/17049.html][《DOCKER基础技术：LINUX CGROUP》]]
+#+END_QUOTE
+
+** Footnotes
+
+[fn:2] 可以限制 CPU/内存/磁盘 IO，在 cgroup 下面对应的文件中设定即可。 
+
+[fn:1]  UTS(UNIX Timesharing System) Namespace 可以用来隔离 nodename 和 domainname 两个系统标识。在 UTS Namespace 中，每个 Namespace 可以有自己的 hostname。 见[[https://chuanleiguo.com/2018/08/05/Docker-Namespace-Cgroup/][此文]]。
