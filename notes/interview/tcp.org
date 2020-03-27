@@ -14,7 +14,7 @@
 
 尤其是四次挥手要明白双方状态的转换。
 
-*** 三次握手：
+*** 三次握手
 
  #+CAPTION: 三次握手状态图
  #+NAMG: three-way handshake

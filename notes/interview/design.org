@@ -8,6 +8,23 @@
 
 *** 缓存更新策略的优劣
 主要看[[https://coolshell.cn/articles/17416.html][这篇]]。
+
+**** cache aside
+1. 失效：优先从缓存读取,如果没有，从数据库获取然后更新内存；
+2. 命中；
+3. 更新，更新数据库，然后使缓存失效；
+
+**** read/write through 
+
+缓存自己在 read 或者 write 的时候更数据。
+
+1. write： Write Through 套路和Read Through相仿，不过是在更新数据时发生。当有数据更新的时候，如果没有命中缓存，直接更新数据库，然后返回。如果命中了缓存，则更新缓存，然后再由Cache自己更新数据库（这是一个同步操作）
+2. read：Read Through 套路就是在查询操作中更新缓存，也就是说，当缓存失效的时候（过期或LRU换出），Cache Aside是由调用方负责把数据加载入缓存，而Read Through则用缓存服务自己来加载，从而对应用方是透明的。
+
+**** write behide caching
+
+只更新缓存，直到一定时间再 flush 到后面的存储。
+
 *** 缓存需要考虑的问题
 
 1. 缓存时长；

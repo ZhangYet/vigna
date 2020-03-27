@@ -70,3 +70,10 @@ redis 有 aof_buffer，每个事件循环之后， ~flushAppendOnlyFile()~ 将 b
 
 AOF重写是一个有歧义的名字，该功能是通过读取数据库中的键值对来实现的，程序无须对现有AOF文件进行任何读入、分析或者写入操作。
 
+** redis lru 策略
+1. volatile-lru 从设置过期的 key 中按 lru 策略删除；
+2. volatile-ttl 从设置过期的 key 中优先删除更接近 ttl 的 key；
+3. volatile-random 随机删除设置过期的 key；
+4. allkeys-lru；
+5. allkeys-random；
+6. no-enviction 如果内存到达限制，那么报错，三种 volatile 策略在无 key 可删的情况与此类似；
