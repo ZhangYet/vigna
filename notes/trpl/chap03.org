@@ -36,3 +36,62 @@ fn main() {
 所以 rust 允许我们 shadow 一个名字相同但是其他性质完全不同的变量，非常幺蛾子。
 
 *** 数据类型
+
+rust 是静态类型的语言。
+
+四种基本类型：
+1. 整型；
+2. 浮点数；
+3. boolean；
+4. char；
+
+复合类型[fn:1]：
+1. Tuple；
+2. Array;
+
+*** 函数
+
+rust 的函数定义没啥特别的。
+
+*** 控制流
+
+`if` 条件部分不需要括号。因为 `if` 是表达式，所以可以这样写：
+
+#+BEGIN_SRC rust
+fn main() {
+    let condition = true;
+    let number = if condition {
+        5
+    } else {
+        6
+    };
+
+    println!("The value of number is: {}", number);
+}
+#+END_SRC
+但是记住，`if` 和 `else` 部分的类型要匹配。
+
+`loop` 无条件循环，但它也是可以返回值的！
+
+#+BEGIN_SRC rust
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {}", result);
+}
+#+END_SRC
+
+`while` 循环与 `for` 循环，这两个循环就比较中规中矩了， `for` 迭代的时候用的是 in。
+
+*** Footnotes
+
+[fn:1] 居然只有两种！
+ 
