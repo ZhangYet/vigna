@@ -1,0 +1,38 @@
+** Common Programming Concepts
+   :PROPERTIES:
+   :UNNUMBERED: t
+   :END:
+
+*** 变量与可变性
+
+rust 中的变量默认是不可变的（这跟变量这个名字其实矛盾跟了），除非声明的时候加上 `mut` 如下：
+
+#+BEGIN_SRC rust
+let mut number = 6;
+#+END_SRC
+
+不可变变量跟常量是有区别的：
+
+1. 常量是绝对不可变的。
+2. 常量可以定义在任意 scope。
+3. 常量只接受常量表达式。
+
+*shadowing*
+
+#+BEGIN_SRC rust
+fn main() {
+    let x = 5;
+
+    let x = x + 1;
+
+    let x = x * 2;
+
+    println!("The value of x is: {}", x);
+}
+#+END_SRC
+
+上面这个例子，x 并没有被改变，它 shadowed 了，其实后面的 x 是新的 x（因为前面有 `let` 关键词啊）。
+
+所以 rust 允许我们 shadow 一个名字相同但是其他性质完全不同的变量，非常幺蛾子。
+
+*** 数据类型
