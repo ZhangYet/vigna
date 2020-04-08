@@ -3,4 +3,12 @@
    :UNNUMBERED: t
    :END:
 
-*** 定义
+*** 简单概括
+
+简单来说，如果一个 ownership out of scope 那么对应的值就会被回收，再传入传出的时候，ownership 也会转移。因为 ownership 会被 move 所以 rust 可以确保只有一个 ownership 从而只需要回收一个即可。
+
+但是不方便函数传参数。所以可以传入引用，就不会有 ownership 转移，但是会有 borrow。要记住可变的变量只能有一个可变引用。
+
+slice 总会返回引用。
+
+
