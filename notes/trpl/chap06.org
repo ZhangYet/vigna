@@ -40,4 +40,6 @@ enum 还能像 struct 那样定义 method。
 
 *** the ~match~ control flow
 
+没啥特别的。
 
+简化版本的 ~match~ 是 ~if let~, 它只匹配 enum 的一种值，其余的按照默认值处理。
