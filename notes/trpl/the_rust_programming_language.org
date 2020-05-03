@@ -1,7 +1,5 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 #+HTML_HEAD: <style> #content{max-width:1800px;}</style>
-#+HTML_HEAD: <style> p{max-width:800px;}</style>
-#+HTML_HEAD: <style> li{max-width:800px;}</style
 #+TITLE: the rust programming language
 #+OPTIONS: num:nil
 #+OPTIONS: ^:nil
@@ -11,3 +9,4 @@
 
 #+INCLUDE: "./chap06.org" :minlevel 2
 #+INCLUDE: "./chap07.org" :minlevel 2
+#+INCLUDE: "./chap08.org" :minlevel 2

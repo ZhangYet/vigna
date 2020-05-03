@@ -1,0 +1,22 @@
+** Common Collections
+   :PROPERTIES:
+   :UNNUMBERED: t
+   :END:
+
+本章主要的难点在于 ownership .
+
+*** vector
+
+vector 的创建和 update 都不难（注意只有 mut 的 vector 才能 update），读的时候注意用 ~.get~ 方法可以安全越界（不会 panic，而是返回 option）。另外注意在特定条件下，可以用 vector 存 enum 从而达到用 vector 存储不同类型数据的目的（尽管也不怎么实用）。
+
+*** string
+挺复杂的。
+
+1. string type(core) 跟 ~String~ type(标准库实现) 还不是同一个东西。
+
+#+BEGIN_QUOTE
+The ~String~ type, which is provided by Rust’s standard library rather than coded into the core language, is a growable, mutable, owned, UTF-8 encoded string type. 
+#+END_QUOTE
+
+*** hash map
+
