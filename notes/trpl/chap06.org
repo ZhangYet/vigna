@@ -37,3 +37,7 @@ fn main() {
 enum 还能像 struct 那样定义 method。
 
 ~Option~ 是标准库定义的 enum。
+
+*** the ~match~ control flow
+
+
