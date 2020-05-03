@@ -1,0 +1,39 @@
+** Enums and Pattern Matching
+   :PROPERTIES:
+   :UNNUMBERED: t
+   :END:
+
+*** 定义 enum
+
+rust 的 enum 可以啊，可以直接定义变量。
+
+#+BEGIN_SRC rust
+fn main() {
+    enum IpAddr {
+        V4(String),
+        V6(String),
+    }
+
+    let home = IpAddr::V4(String::from("127.0.0.1"));
+
+    let loopback = IpAddr::V6(String::from("::1"));
+}
+#+END_SRC
+
+还能将不同类型定义为 enum :
+#+BEGIN_SRC rust
+fn main() {
+    enum IpAddr {
+        V4(u8, u8, u8, u8),
+        V6(String),
+    }
+
+    let home = IpAddr::V4(127, 0, 0, 1);
+
+    let loopback = IpAddr::V6(String::from("::1"));
+}
+#+END_SRC
+
+enum 还能像 struct 那样定义 method。
+
+~Option~ 是标准库定义的 enum。
