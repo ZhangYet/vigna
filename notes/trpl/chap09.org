@@ -1,0 +1,10 @@
+** Error Handling
+   :PROPERTIES:
+   :UNNUMBERED: t
+   :END:
+
+*** Unrecoverable Error with ~panic!~
+
+很像 go 的 ~panic~ 。 ~panic!~ 默认会做清理工作，不过也可以设置直接 abort （在 Cargo.toml 中）。
+
+*** Recoverable Error with ~Result~
