@@ -8,3 +8,7 @@
 很像 go 的 ~panic~ 。 ~panic!~ 默认会做清理工作，不过也可以设置直接 abort （在 Cargo.toml 中）。
 
 *** Recoverable Error with ~Result~
+
+主要是 ~?~ 的使用：它可以替代 ~Result<T, E>~ 。
+
+*** To panic! or not to panic!
