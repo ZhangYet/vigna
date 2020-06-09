@@ -9,3 +9,4 @@
 主要是看框架做了什么，没有做什么，从而推断「为什么这样做」，如果难以推断，可以跟别的框架比较，我选择了 [[https://github.com/gin-gonic/gin][gin]] （虽然它是一个 http 框架）。
 * 阅读笔记
 ** Serve
+** RegisterService
