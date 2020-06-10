@@ -10,3 +10,6 @@
 * 阅读笔记
 ** Serve
 ** RegisterService
+没啥出奇的，就是 reflect 的操作比较娴熟。
+** channelz
+看[[https://grpc.io/blog/a-short-introduction-to-channelz/][这里]]。
