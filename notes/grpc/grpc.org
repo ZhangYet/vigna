@@ -8,6 +8,30 @@
 
 主要是看框架做了什么，没有做什么，从而推断「为什么这样做」，如果难以推断，可以跟别的框架比较，我选择了 [[https://github.com/gin-gonic/gin][gin]] （虽然它是一个 http 框架）。
 * 阅读笔记
+** 补充的基础知识
+*** http/2
+
+http/2 通过 frames 传递信息。总的来说就是把 request 化整为零了，这样多个 request 并发的时候，小的 request 不会被大的 request 阻塞（几个 request 按大小分成不同数量的 frame 然后轮换发送 frame，这样小请求会先发完）。
+
+流控制为每个 stream 留下配额，防止某个 steam 发太多把 tcp buffer 打爆。
+
+还有更智能的 proxy，总的来说就是新增的 request 不需要新增对应数量的连接，并且 http/2 保证使用 stream 更均匀地分布在 connection 中。
+*** grpc 如何利用 http/2
+
+引入的新概念：
+
+1. channel
+2. remote procedure call(rpc)
+3. message
+
+每个 channel 有多个 rpc，每个 rpc 有多个 message。
+
+这三个概念跟 http/2 的关系：
+
+1. channel 是虚拟的 connection，一个 channel 背后可能有许多个 http/2 connections。 
+2. RPC 其实对应 http/2 stream。
+3. message 是 http/2 frame 之上的概念，可能多个 message 构成一个 http/2 frame，可能一个 message 分割成多个 http/2 frame.
+
 ** Serve
 ** RegisterService
 没啥出奇的，就是 reflect 的操作比较娴熟。
