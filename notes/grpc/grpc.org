@@ -1,6 +1,7 @@
 #+OPTIONS: ^:nil
-#+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
+#+HTML_HEAD: <link rel="stylesheet" href="/Users/dantezhang/Repos/latex-css/style.css">
 #+TITLE: grpc-go 源代码阅读笔记
+
 * 为什么读？
 
 因为无聊。
@@ -32,8 +33,65 @@ http/2 通过 frames 传递信息。总的来说就是把 request 化整为零�
 2. RPC 其实对应 http/2 stream。
 3. message 是 http/2 frame 之上的概念，可能多个 message 构成一个 http/2 frame，可能一个 message 分割成多个 http/2 frame.
 
+gRPC 连接管理的原则：如果 connection 失败了，那么 lb 会尝试用已知的地址中重连，resolver 会重新解析地址，更新可用地址列表。
+
+失败 connection 的鉴别，失败分两种，一种是通过 FIN handshake 的 clean failure， 这种情况下， http/2 和 gRPC 都不用干什么。
+
+如果是 endpoint 挂掉或者阻塞，导致不断重试的情况，gRPC 不会收到 FIN，所以，如果配置了 KeepAlive，gRPC 通过周期性发送 http/2 PING frame 判断 endpoint 的存活性（确保了 connection 的健康）。
+** attributes
+
+就是一个 key value 存储，没啥特别的，都不知道为什么要搞这个东西。
+** backoff
+
+定义了重试的方案，见[[https://github.com/grpc/grpc/blob/master/doc/connection-backoff.md][这个文档]]。
+
+backoff 其实用来生成重试的 deadline （这个时间也是下一轮重试的时间）。
+
+没一轮的 backoff 会乘一个因子（直到到达 MAX_BACKOFF）,下一轮的 deadline 会在 [(1 - JITTER) * current_backoff, (1 + JITTER) * current_backoff] 之间生成（当然也有一个上限）。
+
+收到 SETTINGS frames 的时候，重设 backoff.
+
+然而代码只是定义了一些变量而已。
+** balancer
+
+实验性质的内容，所以暂时跳过了。其实跟上面 http/2 那两篇 blog 有更紧密的联系。
+** benchmark
+看不出这是外部用的还是内部用的。
+** binlog
+这是一个 pb，但是不知道生成的 proto，暂时不知道用处。
+** channelz
+这是一个收集统计数据的功能，但是好好奇只有 get 的接口。
+** cmd
+跳过。
+** codes
+定义了各种错误码。
+** connectivity
+定义了一组关于连接状态的常量和 Reporter 接口（谁在调？）。
+** credentials
+鉴权不想看。
+** encoding
+跳过。
+** examples
+*** auth
+*** cancelation
+主要学到了 context.WithTimeout (顺带一提，它其实是通过 WithDeadline 来实现的) 的用法——它会返回一个 Context 和一个 Cancel 函数，调用该 Cancel 函数，所有与该 Context 相关的资源都应该被释放。
+
+顺着这里，我去看了 context 的文档。但我依然不明白为什么要这样设计 context。
+
+而且有了一个新问题：为什么在 client 端 cancel，可以影响到 server 端？我觉得是很秒的设计。
+*** compression
+这里的奇妙之处在于只需要 client 端处理，但是 server 端是不需要加特殊的设置的，一切尽在 options 中。所以重要的其实在 invoke 函数中。
+
 ** Serve
 ** RegisterService
 没啥出奇的，就是 reflect 的操作比较娴熟。
 ** channelz
 看[[https://grpc.io/blog/a-short-introduction-to-channelz/][这里]]。
+** Invoke
+
+~Invoke~ 实际上负责调用函数。
+
+#+CAPTION: Invoke 的函数签名
+#+BEGIN_SRC go
+func (cc *ClientConn) Invoke(ctx context.Context, method string, args, reply interface{}, opts ...CallOption) error
+#+END_SRC
