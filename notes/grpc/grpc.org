@@ -78,7 +78,7 @@ backoff 其实用来生成重试的 deadline （这个时间也是下一轮重�
 
 顺着这里，我去看了 context 的文档。但我依然不明白为什么要这样设计 context。
 
-而且有了一个新问题：为什么在 client 端 cancel，可以影响到 server 端？我觉得是很秒的设计。
+而且有了一个新问题：为什么在 client 端 cancel，可以影响到 server 端？我觉得是很秒的设计。这个问题将我引向 Invoke。
 *** compression
 这里的奇妙之处在于只需要 client 端处理，但是 server 端是不需要加特殊的设置的，一切尽在 options 中。所以重要的其实在 invoke 函数中。
 
