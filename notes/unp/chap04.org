@@ -1,0 +1,50 @@
+#+TITLE: 基本 TCP 套接字编程
+** 概述
+** socket 函数
+
+#+CAPTION: TCP C/S 流程图
+#+BEGIN_EXAMPLE
+server: socket() -> bind() -> listen() -> accept() -(阻塞)------------> read() ----(处理请求)----> write() -> read() -> close()
+                                                           ^             ^                           |         ^
+                                                           |             |                           |         |
+                                                           |             |                           v         |
+client:                                   socket() -> connect() -----> write() ------------------> read() -> close()
+                                                                         |                           |
+						                         ^---------------------------v
+
+#+END_EXAMPLE
+** connect 函数
+~connect()~ 会选择一个随机的源端口，调用 ~connect()~ 将会进行三次握手。
+
+三种错误：
+
+1. client 没有收到 server 的 SYN；
+2. client 收到 server 的 RST （比如 server 对应的端口根本没有开）；
+3. client 或者 server 之间某个路由器表示目标不可到达（依然是软错误）；
+
+~connect()~ 将 TCP 状态从 CLOSED 转移到 SYN_SENT，如果成功，再转移到 ESTABLISHED。切记，如果 ~connect()~ 失败，就要重新创建 socket （调用 ~socket()~ ）。
+** bind 函数
+#+BEGIN_QUOTE
+bind函数把一个本地协议地址赋予一个套接字。
+#+END_QUOTE
+
+TIL RPC 就是为 socket 选择临时端口，并把临时端口写到注册服务里面的。
+** listen 函数
+~listen()~ 函数将 socket 从主动套接字转换成一个被动套接字，内核应接受指向该套接字的连接请求。 ~listen()~ 将 TCP 的状态从 CLOSED 转换成 LISTEN 状态。
+
+~listen()~ 函数的第二个参数决定监听套接字的队列（未完成连接队列和已完成队列）之和的上限[fn:1]。
+
+接收到客户端的 SYN 的时候，服务端在未完成队列里面创建一项，然后返回 ACK+SYN，当收到客户端的 ACK 后，三次握手完成，将该项从未完成队列移动到已完成队列的队列尾。 ~accept()~ 会将已完成队列的队头返回给进程。
+** accept 函数
+
+#+BEGIN_QUOTE
+如果accept成功，那么其返回值是由内核自动生成的一个全新描述符，代表与所返回客户的TCP连接。在讨论accept函数时，我们称它的第一个参数为监听套接字(listening socket)描述符(由socket创建，随后用作bind和listen的第一个参数的描述符)，
+称它的返回值为已连接套接字(connected socket)描述符。区分这两个套接字非常重要。一个服务器通常仅仅创建一个监听套接字，它在该服务器的生命期内一直存在。
+内核为每个由服务器进程接受的客户连接创建一个已连接套接字(也就是说对于它的TCP三路握手过程已经完成)。当服务器完成对某个给定客户的服务时，相应的已连接套接字就被关闭。
+#+END_QUOTE
+
+重点：listening socket 的生命周期跟服务器进程一样，connected socket 服务完就被关闭。
+
+** Footnotes
+
+[fn:1] 因为不同版本的实现不同这个数值不一定是和的上限。
