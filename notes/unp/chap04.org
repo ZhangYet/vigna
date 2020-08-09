@@ -44,6 +44,23 @@ TIL RPC 就是为 socket 选择临时端口，并把临时端口写到注册服�
 #+END_QUOTE
 
 重点：listening socket 的生命周期跟服务器进程一样，connected socket 服务完就被关闭。
+** fork 和 exec 函数
+
+#+BEGIN_EXAMPLE
+如果你以前从未接触过该函数，那么理解fork最困难之处在于调用它一次，它却返回两次。它在调用进程(称为父进程)中返回一次，返回值是新派生进程(称为子进程)的进程ID号;在子进程又返回一次，返回值为0。因此，返回值本身告知当前进程是子进程还是父进程。
+#+END_EXAMPLE
+** 并发服务器
+#+BEGIN_QUOTE
+当一个连接建立时，accept返回，服务器接着调用fork，然后由子进程服务客户(通过已连接套接字connfd)，父进程则等待另一个连接(通过监听套接字listenfd)。既然新的客户由子进程提供服务，父进程就关闭已连接套接字。
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+当该函数返回时，我们在子进程中显式地关闭已连接套接字。这一点并非必需，因为下一个语句就是调用exit，而进程终止处理的部分工作就是关闭所有由内核打开的描述符。是否显式调用close只和个人编程风格有关。
+#+END_QUOTE
+
+通过引用计数维护 listening socket 和 connected socket 的生存（引用计数为0的时候才真正关闭）。
+** close 函数
+** getsockname 和 getpeername 函数
 
 ** Footnotes
 
