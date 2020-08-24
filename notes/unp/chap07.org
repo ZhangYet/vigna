@@ -1,0 +1,55 @@
+#+TITLE: 套接字选项
+
+* 套接字选项
+
+** 概述
+
+** getsockopt 和 setsocketopt 函数
+
+#+CAPTION: 函数签名
+#+BEGIN_SRC c
+#include <sys/socket.h>
+int getsockopt(int sockfd, int level, int optname, void *optval, socklen_t *optlen);
+int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen);
+#+END_SRC
+
+用 optval 存放指向某变量的指针，从 optlen 获取 *optval 的大小。
+
+套接字选项粗分：
+
+1. 标志选项；
+2. 值选项；
+
+标志选项用非零值表示打开，用零值表示禁止。
+
+** 检查选项是否受支持并获取默认值
+
+展示了一段示例代码。
+
+** 套接字状态
+
+** 通用套接字选项
+
+*** SO_BROADCAST 
+开启或禁止发送广播信息。只有数据报套接字支持广播。
+
+*** SO_DEBUG 
+仅 TCP 支持，内核会为 TCP 在该套接字发送和接收所有分组保留详细跟踪信息。
+
+*** SO_DONTROUTE 
+绕过底层协议的正常路由机制。
+
+#+BEGIN_QUOTE
+路由守护进程(routed和gated)经常使用本选项来绕过路由表(路由表不正确的情况下)， 以强制将分组从特定接口送出。
+#+END_QUOTE
+
+*** SO_ERROR
+发生错误的时候将 so_error 设置为错误值，通过 SO_ERROR 选项获取之后， so_error 由内核复位为0。可以获取但不能设置。
+
+*** SO_KEEPALIVE
+如果设置了该选项，将会在长时间（2小时）没有数据交换的情况下，想对端发送一个保持存活探针(keep-alive probe)判断对端存活情况。
+
+*** SO_LINGER
+#+BEGIN_QUOTE
+本选项指定close函数对面向连接的协议(例如TCP和SCTP，但不是UDP)如何操作。默 认操作是close立即返回，但是如果有数据残留在套接字发送缓冲区中，系统将试着把这些数 据发送给对端。
+#+END_QUOTE
