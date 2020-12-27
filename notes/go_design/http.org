@@ -1,0 +1,47 @@
+#+TITLE: http 实现
+
+[[https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-net-http/][Go 语言 HTTP 标准库的实现原理]]
+* 层级结构
+
+
+#+TITLE: RoundTripper 接口，client 实现
+#+BEGIN_SRC go
+type RoundTripper interface {
+    RoundTrip(*Request) (*Response, error)
+}
+#+END_SRC
+
+#+TITLE: Handler 接口，server 实现
+#+BEGIN_SRC go
+type Handler interface {
+    ServeHTTP(ResponseWriter, *Request)
+}
+
+type ResponseWriter interface {
+	Header() Header
+	Write([]byte) (int, error)
+	WriteHeader(statusCode int)
+}
+#+END_SRC
+* client 实现
+** 以 client.Get 为例
+*** 构建请求 ~NewRequest
+
+#+BEGIN_QUOTE
+~ioutil.NopCloser~ 这个函数的作用我就没看懂。
+#+END_QUOTE~
+
+default client 用的是 Http 1.1
+*** 开启事务
+
+1. net/http.Client.Do
+2. net/http.Client.do
+3. net/http.Client.send
+4. net/http.send
+5. net/http.Transport.RoundTrip
+
+~net/http.Client.do~ 里面有一个大循环是用来处理重定向的。
+*** 等待请求
+
+一旦我们获得了 conn，我们并发地发送请求并等待返回，这是通过两个 goroutine 在两个不同的 channel 上操作完成的。
+* server 实现
