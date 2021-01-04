@@ -12,6 +12,7 @@
    - Note taken on [2020-03-02 一 01:04] \\
      什么是「聚簇索引」？A: [[*%5B%5Bhttps://dev.mysql.com/doc/refman/5.7/en/innodb-index-types.html%5D%5B%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95%5D%5D][聚簇索引]]
 
+
 *** ACID
 
 A: 原子性；
