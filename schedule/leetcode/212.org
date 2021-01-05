@@ -1,6 +1,0 @@
-* Word Search II
-
-** Problem
-
-   [[https://leetcode.com/problems/word-search-ii/][212. Word Search II]]
-
