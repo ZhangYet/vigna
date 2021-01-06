@@ -1,4 +1,6 @@
 #+TITLE: 逍遥游
+#+OPTIONS: ^:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
 * 道别
 「一零，我已经死了，我的丧礼在标准时12月7日零点开始，如果你有空就过来参加吧。」张一零的母亲坐在客厅的红木沙发上对着不存在的摄像头说。如果仔细听，可以听到厨房里面，小时候的他正和父亲一起做菜。
 
