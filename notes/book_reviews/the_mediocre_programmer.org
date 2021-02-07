@@ -1,0 +1,21 @@
+#+TITLE: A book review of The Mediocre Programmer
+#+OPTIONS: ^:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
+* 01 Journey of The Mediocre Programmer
+No matters how someone becomes a programmer, he/she feels stuck at some time. he/she feels there are gaps in his/her knowledge that must be filled.
+
+The gap in the book is the distance between programmers' abilities and where they think they should be. Change is one of the biggest creator of gaps in programming career. It comes from everywhere: technology, priorities, and community, leading to stress. Programmers need resource and time to adapt changes, so that they can close the gap.
+
+There is no way to close all of the gaps. One may struggle hard but still feels like he/she haven't closed the gap.
+
+There are three options for who want to close the gap:
+
+1. Not to try.
+2. Try to do everything at once.
+3. Start small with small tasks and work one's way toward the goal.
+
+The third option makes the most sense. One may also get the wisdom that he/she doesn't need to close all of the gaps with measured and gradual approach.
+
+The secret to moving forward in our journey as programmers and developers is realizing that each step we take along that path is valuable and worthy of our attention.
+* 02 Travaling Companions
+
