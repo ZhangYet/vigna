@@ -18,4 +18,8 @@ The third option makes the most sense. One may also get the wisdom that he/she d
 
 The secret to moving forward in our journey as programmers and developers is realizing that each step we take along that path is valuable and worthy of our attention.
 * 02 Travaling Companions
+There are a lot of great programmers and celebrity programmers in communities. A mediocre programmer's work may not match measure up to their work.
+
+Comparing oneself with others is like comparison between one's backstage with other's performance, which leads to stress.
+
 
