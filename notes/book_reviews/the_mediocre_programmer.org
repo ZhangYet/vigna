@@ -20,6 +20,8 @@ The secret to moving forward in our journey as programmers and developers is rea
 * 02 Travaling Companions
 There are a lot of great programmers and celebrity programmers in communities. A mediocre programmer's work may not match measure up to their work.
 
-Comparing oneself with others is like comparison between one's backstage with other's performance, which leads to stress.
+Comparing oneself with others is like a comparison between one's backstage with another's performance, which leads to stress.
 
+Reading a post-mortem may have benefits but do remember it doesn't help to clarify one's current work.
 
+There is no no standard for ranking programmers. The ranking system is based on one set of criteria. The ranking is not helpfut but leads one into self-punishing.
