@@ -1,0 +1,24 @@
+#+TITLE: gunicorn 源码阅读笔记
+#+OPTIONS: ^:nil
+#+OPTIONS: num:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
+* 核心问题
+1. 当我们运行 ~gunicorn xxx.wsgi -c config.py~ 的时候，发生了什么？
+2. gunicorn 是怎样处理每个请求的？
+* 当我们运行 ~gunicorn xxx.wsgi -c config.py~ 的时候，发生了什么？
+
+gunicorn 命令行入口在 gunicorn/app/wsgiapp.py 的 ~run()~ 函数。
+
+这个函数其实就是创建了一个 ~gunicorn.app.wsgiapp.WSGIApplication~ 实例，执行它的 ~run()~ 方法。 
+
+#+BEGIN_SRC
+def run():
+    """\
+    The ``gunicorn`` command line runner for launching Gunicorn with
+    generic WSGI applications.
+    """
+    from gunicorn.app.wsgiapp import WSGIApplication
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+#+END_SRC
+
+问题是，这一段代码里面，到底做了什么，才把入参整理成 ~WSGIApplication~ 类的入参？
