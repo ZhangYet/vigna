@@ -5,7 +5,9 @@
 * 核心问题
 1. 当我们运行 ~gunicorn xxx.wsgi -c config.py~ 的时候，发生了什么？
 2. gunicorn 是怎样处理每个请求的？
-* 当我们运行 ~gunicorn xxx.wsgi -c config.py~ 的时候，发生了什么？
+* 当我们启动 gunicorn 服务时发生了什么？
+
+以 ~gunicorn --workers=2 --worker-class=gevent test:app~ 为例。
 
 gunicorn 命令行入口在 gunicorn/app/wsgiapp.py 的 ~run()~ 函数。
 
@@ -22,3 +24,26 @@ def run():
 #+END_SRC
 
 问题是，这一段代码里面，到底做了什么，才把入参整理成 ~WSGIApplication~ 类的入参？
+
+整理一下整个 app 运行起来的过程：
+** WSGIApplication 初始化
+~__init__()~ 在基类 BaseApplication 中定义。[fn:1]
+
+初始化主要的逻辑在 ~BaseApplication.do_load_config()~: 
+
+1. ~load_default_config~: 用一个 ~Config~ 对象初始化 ~BaseApplication~ 对象的 ~cfg~ 属性。
+2. ~load_config~: 这个函数由 ~BaseApplication~ 的衍生类 ~Application~ 类实现：
+   1. 从 ~cfg~ 中取得 parser 里面定义了命令行参数。
+   2. 调用 ~init~ 方法，这个方法由 ~WSGIApplication~ 衍生类实现。在我们这个实例里面，args 只有一个 test:app(这同时还是 app_uri)。
+** run()
+其实就是调用 ~Arbiter(self).run()~ [fn:2]。所以我们去看看 ~Arbiter~ 类。
+*** Arbiter 类
+这个类的初始化，其实就是把相关的参数写进 ~START_CTX~ 字典中。其中 args 第一个参数是 python 可执行文件的绝对路径，第二个是 ~gunicorn.app.wsgiapp.py~ 的绝对路径。剩下的都是 gunicorn 命令的参数。以我们的实例为例，就是 ~['--workers=2', '--work-class=gevent', 'test:app']~ 。
+*** Arbiter.run()
+
+
+* Footnotes
+
+[fn:2] Arbiter 是啥意思啊？ 
+
+[fn:1] usage 和 prog 指的是什么？ 
