@@ -41,6 +41,7 @@ def run():
 这个类的初始化，其实就是把相关的参数写进 ~START_CTX~ 字典中。其中 args 第一个参数是 python 可执行文件的绝对路径，第二个是 ~gunicorn.app.wsgiapp.py~ 的绝对路径。剩下的都是 gunicorn 命令的参数。以我们的实例为例，就是 ~['--workers=2', '--work-class=gevent', 'test:app']~ 。
 *** Arbiter.run()
 manager 很简单，就是不断循环，处理 signal，如果没有 signal 就执行 ~manage_workers()~ 将 worker 数量保持在 num_workers 上。
+*** start 大致搞清楚了，要看看信号怎样传给子进程的，这一点可以熟悉进程 fork 的内容。
 
 * Footnotes
 
