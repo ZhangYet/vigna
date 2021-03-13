@@ -2,49 +2,21 @@
 #+OPTIONS: ^:nil
 #+OPTIONS: num:nil
 #+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
-* 核心问题
-1. 当我们运行 ~gunicorn xxx.wsgi -c config.py~ 的时候，发生了什么？
-2. gunicorn 是怎样处理每个请求的？
-* 当我们启动 gunicorn 服务时发生了什么？
+源码阅读最重要的就是搞清楚「我希望在阅读过程中解决什么问题」。
+* gunicorn 在初始化的时候做了什么？
+当我们执行诸如 ~gunicorn --workers=3 --worker-class=gevent test:app~ 这样的命令时， gunicorn 的入口是 ~wsgiapp.run()~, 它初始化了 ~WSGIApplication~ 类并运行它的 ~run()~ 方法。
+** WSGIApplication 类的初始化
 
-以 ~gunicorn --workers=2 --worker-class=gevent test:app~ 为例。
+ ~WSGIApplication~ 类继承 ~Application~ 类， 重载了 ~init()~, ~load_config()~ 和 ~load()~ 方法。 ~Application~ 类继承了 ~BaseApplication~ 类，重载了 ~load_config()~ 和 ~run()~ 方法。
 
-gunicorn 命令行入口在 gunicorn/app/wsgiapp.py 的 ~run()~ 函数。
+ 初始化 ~WSGIApplication~ 类就是执行 ~BaseApplication~ 类的 ~__init__()~ 方法。这个方法初始化了类属性，并调用 ~do_load_config()~ 方法。
 
-这个函数其实就是创建了一个 ~gunicorn.app.wsgiapp.WSGIApplication~ 实例，执行它的 ~run()~ 方法。 
+ ~do_load_config()~ 方法会先调用 ~load_default_config()~ 方法初始化一个 ~Config~ 类实例。然后调用 ~load_config()~ 方法——因为类继承的关系，这里的调用的是 ~WSGIApplication~ 类的 ~load_config()~ 方法（这个方法会通过 ~super()~ 调用 ~BaseApplication~ 类中的 ~load_config()~ ）。
 
-#+BEGIN_SRC
-def run():
-    """\
-    The ``gunicorn`` command line runner for launching Gunicorn with
-    generic WSGI applications.
-    """
-    from gunicorn.app.wsgiapp import WSGIApplication
-    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
-#+END_SRC
-
-问题是，这一段代码里面，到底做了什么，才把入参整理成 ~WSGIApplication~ 类的入参？
-
-整理一下整个 app 运行起来的过程：
-** WSGIApplication 初始化
-~__init__()~ 在基类 BaseApplication 中定义。[fn:1]
-
-初始化主要的逻辑在 ~BaseApplication.do_load_config()~: 
-
-1. ~load_default_config~: 用一个 ~Config~ 对象初始化 ~BaseApplication~ 对象的 ~cfg~ 属性。
-2. ~load_config~: 这个函数由 ~BaseApplication~ 的衍生类 ~Application~ 类实现：
-   1. 从 ~cfg~ 中取得 parser 里面定义了命令行参数。
-   2. 调用 ~init~ 方法，这个方法由 ~WSGIApplication~ 衍生类实现。在我们这个实例里面，args 只有一个 test:app(这同时还是 app_uri)。
+至此，初始化的工作完成，注意到此时我们需要 serve 的 app 还没有实际载入。这个初始化过程没有太多复杂的逻辑，显得绕是因为有两层继承关系。
 ** run()
-其实就是调用 ~Arbiter(self).run()~ [fn:2]。所以我们去看看 ~Arbiter~ 类。
-*** Arbiter 类
-这个类的初始化，其实就是把相关的参数写进 ~START_CTX~ 字典中。其中 args 第一个参数是 python 可执行文件的绝对路径，第二个是 ~gunicorn.app.wsgiapp.py~ 的绝对路径。剩下的都是 gunicorn 命令的参数。以我们的实例为例，就是 ~['--workers=2', '--work-class=gevent', 'test:app']~ 。
-*** Arbiter.run()
-manager 很简单，就是不断循环，处理 signal，如果没有 signal 就执行 ~manage_workers()~ 将 worker 数量保持在 num_workers 上。
-*** start 大致搞清楚了，要看看信号怎样传给子进程的，这一点可以熟悉进程 fork 的内容。
+初始化完策划那个的 ~WSGIApplication~ 实例会执行 ~Application~ 的 ~run()~ 方法（因为没有重载），如果设置了 ~--print-config~ 或者 ~--check-config~ ，那么实例会执行 ~load()~ 方法，然后退出。此外还有 daemonize 的相应逻辑，重点在 ~BaseApplication~ 类的 ~run()~ 方法。
 
-* Footnotes
+在 ~BaseApplication~ 的 ~run()~ 方法中， ~BaseApplication~ 会把实例本身作为参数初始化 ~Arbiter~ 类，并执行 ~Arbiter~ 类的 ~run()~ 方法。 ~Arbiter~ 类是整个 gunicorn 的核心。
+*** Arbiter 类的初始化
 
-[fn:2] Arbiter 是啥意思啊？ 
-
-[fn:1] usage 和 prog 指的是什么？ 
