@@ -19,6 +19,8 @@
 
 在 ~BaseApplication~ 的 ~run()~ 方法中， ~BaseApplication~ 会把实例本身作为参数初始化 ~Arbiter~ 类，并执行 ~Arbiter~ 类的 ~run()~ 方法。 ~Arbiter~ 类是整个 gunicorn 的核心。
 
+~Arbiter~ 类初始化只是做了一点成员赋值的工作，里面的 ~setup()~ 逻辑会将传入的 ~BaseApplication~ 类实例赋值给 ~Arbiter.app~ 属性。此外会确定工作目录，以及使用的 python 解释器路径。如果配置中有 preload_app 配置，那么调用 ~Application.wsgi()~ 方法，载入实际的 application 。
+
 
 *** Arbiter 类的初始化
 
