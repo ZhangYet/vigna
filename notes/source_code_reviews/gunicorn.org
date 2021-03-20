@@ -18,5 +18,7 @@
 初始化完策划那个的 ~WSGIApplication~ 实例会执行 ~Application~ 的 ~run()~ 方法（因为没有重载），如果设置了 ~--print-config~ 或者 ~--check-config~ ，那么实例会执行 ~load()~ 方法，然后退出。此外还有 daemonize 的相应逻辑，重点在 ~BaseApplication~ 类的 ~run()~ 方法。
 
 在 ~BaseApplication~ 的 ~run()~ 方法中， ~BaseApplication~ 会把实例本身作为参数初始化 ~Arbiter~ 类，并执行 ~Arbiter~ 类的 ~run()~ 方法。 ~Arbiter~ 类是整个 gunicorn 的核心。
+
+
 *** Arbiter 类的初始化
 
