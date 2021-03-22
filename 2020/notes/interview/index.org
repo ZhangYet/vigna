@@ -1,0 +1,11 @@
+#+TITLE: Dante 的面试小抄（去年之后就没有更新过）
+#+INCLUDE: "./design.org" :minlevel 2
+#+INCLUDE: "./docker.org" :minlevel 2
+#+INCLUDE: "./go.org" :minlevel 2
+#+INCLUDE: "./http.org" :minlevel 2
+#+INCLUDE: "./interview_experience.org" :minlevel 2
+#+INCLUDE: "./mysql.org" :minlevel 2
+#+INCLUDE: "./os.org" :minlevel 2
+#+INCLUDE: "./redis.org" :minlevel 2
+#+INCLUDE: "./tcp.org" :minlevel 2
+#+INCLUDE: "./work_experience.org" :minlevel 2
