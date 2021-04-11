@@ -21,6 +21,32 @@
 
 ~Arbiter~ 类初始化只是做了一点成员赋值的工作，里面的 ~setup()~ 逻辑会将传入的 ~BaseApplication~ 类实例赋值给 ~Arbiter.app~ 属性。此外会确定工作目录，以及使用的 python 解释器路径。如果配置中有 preload_app 配置，那么调用 ~Application.wsgi()~ 方法，载入实际的 application 。
 
+~Arbiter~ 类的 ~run()~ 方法实现了整个事件循环。
+*** Arbiter.run()
+**** start()
+~Arbiter~ 的 ~start()~ 方法先取 pid（如果配置了 pidfile，创建 pidfile[fn:1]），随后执行 ~on_starting~ hook。
+
+然后执行 ~init_signals()~ 方法。这个方法会创建一个 PIPE （ ~self.PIPE~ ）[fn:2]， ~self.PIPE~ 会用于进程间通信[fn:3]。 然后实例会为关注的信号注册对应的信号方法[fn:4]。SIGCHLD 有单独的处理函数（其他的处理函数只需要 ~wakeup()~ 而 SIGCHLD 的会先 ~reap_workers()~ ）。
+
+之后处理 self.LISTENERS[fn:5]。无论如何都会调用 ~systemd.sd_notify()~ 方法。
+
+最后调用 ~when_ready~ hook。
+**** 事件循环
+
+* gunicorn 信号处理
+* gunicorn 是如何处理请求的
 
 *** Arbiter 类的初始化
 
+* Footnotes
+
+[fn:5] 这个属性我不知道干什么用的，这一段逻辑应该跟 [[https://docs.gunicorn.org/en/stable/deploy.html][systemd 部署 gunicorn]] 有关。 
+
+[fn:4] 注册信号的写法其实挺风骚的： ~SIGNALS = [getattr(signal, "SIG%s" % x) for x in "HUP QUIT INT TERM TTIN TTOU USR1 USR2 WINCH".split()]~  ，而且我也不知道为什么要处理 SIGWINCH , gunicorn 在 deamon 状态下， 收到 SIGWINCH 会优雅关闭 workder 进程，并把 worker 进程数设置为0。查了一下， Nginx 也会这样梳理 SIGWINCH 不知道为什么。
+
+[fn:3] 这里的说法其实有问题，在写到这里的时候，我还不知道这个 PIPE 的作用。 
+
+[fn:2] 这里有一处写法我不明白，为什么要先关掉 ~self.PIPE~ 里面的两个 fd？我不明白的地方是：按道理这里 ~self.PIPE~ 应该是空的，想不到为什么要 close 一下。
+
+[fn:1] 为什么要有 pidfile ？
+ 
