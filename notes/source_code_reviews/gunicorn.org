@@ -31,14 +31,25 @@
 之后处理 self.LISTENERS[fn:5]。无论如何都会调用 ~systemd.sd_notify()~ 方法。
 
 最后调用 ~when_ready~ hook。
-**** 事件循环
+**** 循环
+~start()~ 之后，程序主要做两件事：
+1. 创建 worker 进程；
+2. 进入一个死循环，在这个死循环里面等待信号；
+***** ~manage()~
+~manage()~ 其实只做了一件事：保证 worker 进程数量跟配置要求的数量一致，少了，fork 几个出来，多了，杀掉最老的那些[fn:6]。
 
+~manage()~ 方法通过 ~spawn()~ 方法创建 worker 进程。 ~spawn()~ 每次调用之间，进程会随机睡眠一段时间（0.1s 乘一个(0, 1) 的随机数）。每次调用 ~spawn()~ 函数， ~Arbiter~ 类实例的 worker_age 属性都会加一，这也是 worker 进程的 age。在调用 ~os.fork()~ 之前，实例会调用 ~pre_fork()~ hook。
+
+~os.fork()~ 之后，父进程以子进程的 pid 为 key，将子进程记录在 ~self.WORKER~ 这个字典中，子进程继续执行，它会关闭因为 fork 而看见的其他 worker 的 temporary file，执行 ~post_fork~ hook 之后，执行 ~Worker~ 类的 ~init_process~ 方法——这是 ~Worker~ 类的主循环。
+***** 等待信号的循环
 * gunicorn 信号处理
 * gunicorn 是如何处理请求的
 
 *** Arbiter 类的初始化
 
 * Footnotes
+
+[fn:6] 这里很搞笑，worker 进程有个 age 属性，再实现上，越早创建的 worker 进程 age 越小，然后要杀掉最老的进程其实是杀掉 age 最小的进程。不过其实杀老人还是杀小孩都不是很道德就是了。 
 
 [fn:5] 这个属性我不知道干什么用的，这一段逻辑应该跟 [[https://docs.gunicorn.org/en/stable/deploy.html][systemd 部署 gunicorn]] 有关。 
 
