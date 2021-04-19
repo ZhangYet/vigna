@@ -44,9 +44,10 @@
 ***** 等待信号的循环
 * gunicorn 信号处理
 * gunicorn 是如何处理请求的
+** 还在看
+~handle()~ 和 ~handle_request()~
 
-*** Arbiter 类的初始化
-
+感觉 gunicorn 就是把一切都交给系统了。去查一下多个线程处理一个 fd 的情况。
 * Footnotes
 
 [fn:6] 这里很搞笑，worker 进程有个 age 属性，再实现上，越早创建的 worker 进程 age 越小，然后要杀掉最老的进程其实是杀掉 age 最小的进程。不过其实杀老人还是杀小孩都不是很道德就是了。 
