@@ -1,0 +1,4 @@
+* pycharm
+** 需要增加的快捷键
+*** 跳到 import 出增加 import
+*** 跳到修改处
