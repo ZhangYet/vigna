@@ -5,6 +5,6 @@
 
 #+INCLUDE: "./intro.org" :minlevel 1
 #+INCLUDE: "./preface.org" :minlevel 1
-
+#+INCLUDE: "./examples.org" :minlevel 1
 
 
