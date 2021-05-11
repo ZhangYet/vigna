@@ -1,0 +1,4 @@
+* emacs
+** 切换 TODO 状态的时候可以自动 clock in clock out
+   - Note taken on [2021-05-11 二 11:03] \\
+     https://orgmode.org/worg/doc.html 看 org-after-todo-state-change-hook 即可
