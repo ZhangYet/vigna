@@ -1,5 +1,6 @@
 #+TITLE: 《编程与类型系统》笔记
 #+OPTIONS: ^:nil
+#+OPTIONS: num:nil
 #+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
 * chap10 泛型算法和迭代器
 ** 10.1
@@ -37,3 +38,30 @@
 #+BEGIN_QUOTE
 双向迭代器：在前向迭代器的基础上，增加向后移动的能力。
 #+END_QUOTE
+
+#+BEGIN_QUOTE
+随机访问迭代器：能够以常量时间向前和向后跳过任意多个元素。
+#+END_QUOTE
+** 10.5
+实现自适应的算法，一个例子是 elementAt 算法：如果是随机访问迭代器，可以用常量时间访问，如果只是前向迭代器，那就只能一步一步向前了。
+* chap11 高阶类型及其他
+** 11.1
+考虑将 ~map~ 实现到 ~Option<T>~ 上（考虑 typescript 支持和类型，所以实现到 ~T|undefined~ 即可）。
+
+#+BEGIN_QUOTE
+函子：接受一个泛型类型和一个从类型到类型的函数，返回一个泛型类型的函数。
+
+如： ~map(v: Box<T>, func: (value: T) => U): Box<U>~ 则 ~map~ 是一个函子。
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+高阶类型：泛型类型是具有类型参数的类型，高阶类型代表具有另外一个类型参数的来性参数，如 ~Box<T<U>>~ 和 ~T<U>~
+#+END_QUOTE
+
+这一章是怎样从普通的 ~map~ 扩展到函子的呢？
+
+函数的函子：给定一个有任意实参且返回类型 ~T~ 的函数，我们可以 *映射* 一个函数，该函数接受 ~T~ 作为实参，返回一个 ~U~ ，组合出来的函数就是从任意实参到 ~U~ 的一个函数。这个 *映射* 就是函数的函子[fn:1]。
+
+* Footnotes
+
+[fn:1] 这个定义是我概括的，另外有个问题是：这不就是数学里面的组合函数么？ 
