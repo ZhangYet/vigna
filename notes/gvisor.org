@@ -1,0 +1,16 @@
+#+TITLE: gVisor 文档阅读笔记
+#+OPTIONS: ^:nil
+#+OPTIONS: num:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
+* What is gVisor
+** [[https://github.com/opencontainers/runtime-spec/blob/master/spec.md][OCI Runtime Spec]]
+*** 五原则
+*** Filesystem Bundle
+#+BEGIN_EXAMPLE
+a filesystem bundle - a set of files organized in a certain way, and containing all the necessary data and metadata for any compliant runtime to perform all standard operations against it
+#+END_EXAMPLE
+
+1. [[https://github.com/opencontainers/runtime-spec/blob/master/config.md][config.json]] *必须* 有且 *必须* 命名为 config.json ， *必须* 位于 bundle 的根目录。
+2. container's root filesystem: 其实就是 config.json 里面 `root.path` 指定的 dir。
+*** [[https://github.com/opencontainers/runtime-spec/blob/master/runtime.md][Runtime and lifecycle]]
+
