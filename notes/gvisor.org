@@ -13,4 +13,21 @@ a filesystem bundle - a set of files organized in a certain way, and containing 
 1. [[https://github.com/opencontainers/runtime-spec/blob/master/config.md][config.json]] *必须* 有且 *必须* 命名为 config.json ， *必须* 位于 bundle 的根目录。
 2. container's root filesystem: 其实就是 config.json 里面 `root.path` 指定的 dir。
 *** [[https://github.com/opencontainers/runtime-spec/blob/master/runtime.md][Runtime and lifecycle]]
+runtime *必须* 能执行标准 operation，它需要维护一个在标准 operation 下转移的状态机。
+**** state 
+每个 runtime 的 state 包含如下字段
 
+| property    | value             | desc                            | required       |
+| ociVersion  | string            | 就是 OCI runtime spec 的版本号  | Y              |
+| id          | string            | 在当前 host 上唯一的 id         | Y              |
+| status      | enum string[fn:1] | 后面 lifecycle 章节，这个是重点 | Y              |
+| pid         | int               | 进程号                          | 依赖平台和状态 |
+| bundle      | string            | bundle dir                      | Y              |
+| annotations | string            |                                 | N              | 
+
+可以增加其他字段。
+**** lifecycle
+
+* Footnotes
+
+[fn:1] 可选值包括 creating, created, running, stopped 可以增加更多的状态，但是不能跟已有状态重合。 
