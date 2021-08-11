@@ -27,7 +27,17 @@ runtime *必须* 能执行标准 operation，它需要维护一个在标准 oper
 
 可以增加其他字段。
 **** lifecycle
+定义了标准的 opertion 以及整个流程（opertion 调用的次序以及错误处理，有若干个 opertion 出错只需要 warning 即可，另外还有调用 hook 的时机）。
 *** config
+**** ociVersion
+版本号没啥好说的。
+**** root
+指定 root filesystem, 大部分平台都是 required。 可以是绝对路径也可以是相对路径。
+**** mounts
+array。runtime *必须* 按列表次序挂载。更多细节见[[https://man7.org/linux/man-pages/man2/mount.2.html][ mount(2)]] 和 [[https://man7.org/linux/man-pages/man8/mount.8.html][mount(8)]].
+**** process
+***** apparmorProfile
+见 [[https://wiki.ubuntu.com/AppArmor][AppArmor 文档]]，这是一门 MAC 技术，具体来说，它支持配置程序对哪些目录有哪些权限。
 * Footnotes
 
 [fn:1] 可选值包括 creating, created, running, stopped 可以增加更多的状态，但是不能跟已有状态重合。 
