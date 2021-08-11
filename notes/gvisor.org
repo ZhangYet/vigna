@@ -27,7 +27,7 @@ runtime *必须* 能执行标准 operation，它需要维护一个在标准 oper
 
 可以增加其他字段。
 **** lifecycle
-
+*** config
 * Footnotes
 
 [fn:1] 可选值包括 creating, created, running, stopped 可以增加更多的状态，但是不能跟已有状态重合。 
