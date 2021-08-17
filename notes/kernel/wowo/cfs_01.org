@@ -1,0 +1,78 @@
+* [[http://www.wowotech.net/process_management/447.html][CFS 调度器 01 基本原理]]
+** 调度类
+调度类关注如何从 runqueue 中选择最合适的 task。
+
+#+CAPTION: 调度器类型表
+| 调度类           | 描述                | 调度策略                  |
+| dl_sched_class   | deadline调度器      | SCHED_DEADLINE            |
+| rt_sched_class   | 实时调度器          | SCHED_FIFO、SCHED_RR      |
+| fair_sched_class | 完全公平调度器(CFS) | SCHED_NORMAL、SCHED_BATCH |
+| idle_sched_class | idle task           | SCHED_IDLE                |
+
+调度器优先级为 dl > rt > fair > idle.
+** 优先级
+首先 CPU 不再区分时间片，而是分配进程使用时间的比例。但是对于优先级比较高的进程，调度器保证它们有更多的运行时间。
+
+#+BEGIN_QUOTE
+分配给进程的时间 = 总的cpu时间 * 进程的权重/就绪队列（runqueue）所有进程权重之和
+#+END_QUOTE
+
+为了方便计算，引入 nice 值，nice 是[-20, 19] 之间的一个整形值，越小权重越高。
+
+#+BEGIN_QUOTE
+weight = 1024 / 1.25 ^ nice
+
+1024权重对应nice值为0，其权重被称为NICE_0_LOAD。默认情况下，大部分进程的权重基本都是NICE_0_LOAD。
+#+END_QUOTE
+** 调度延迟
+#+BEGIN_QUOTE
+调度延迟就是保证每一个可运行进程都至少运行一次的时间间隔。
+#+END_QUOTE
+
+CFS 调度器在就绪进程数低于阈值前，保证调度延迟是一个常数（默认6ms），高于这个阈值，CFS 保证进程可以运行最小粒度时间（默认0.75ms）。
+** 虚拟时间
+虚拟时间就是实际运行时间乘以 NICE_0_LOAD 与权重的比值。
+** 就绪队列
+CFS 就绪队列（runqueue）维护了一个红黑树。
+
+#+BEGIN_SRC c++
+struct rq {
+        struct cfs_rq cfs;
+	struct rt_rq rt;
+	struct dl_rq dl;
+};
+ 
+struct rb_root_cached {
+	struct rb_root rb_root;
+	struct rb_node *rb_leftmost;
+};
+ 
+struct cfs_rq {
+	struct load_weight load; //1. load：就绪队列权重，就绪队列管理的所有调度实体权重之和。
+	unsigned int nr_running; //2. nr_running：就绪队列上调度实体的个数。
+	u64 min_vruntime; //3. min_vruntime：跟踪就绪队列上所有调度实体的最小虚拟时间。
+	struct rb_root_cached tasks_timeline; //4. tasks_timeline：用于跟踪调度实体按虚拟时间大小排序的红黑树的信息（包含红黑树的根以及红黑树中最左边节点）。
+}; 
+#+END_SRC
+
+每个 CPU 上维护一个 rq 结构体，rq 中有每种调度策略对应的 rq 队列。
+
+
+管理就绪态的 struct sched_entity 调度实体会通过 ~pick_next_task~ 从就绪队列中选择最合适的任务。
+
+#+BEGIN_SRC c++
+struct sched_entity {
+	struct load_weight	load; //1. 权重信息，在计算虚拟时间的时候会用到inv_weight成员。
+	struct rb_node		run_node; //2. CFS调度器的每个就绪队列维护了一颗红黑树，上面挂满了就绪等待执行的task，run_node就是挂载点。
+	unsigned int		on_rq; //3. 调度实体se加入就绪队列后，on_rq置1。从就绪队列删除后，on_rq置0。
+	u64			sum_exec_runtime; //4.调度实体已经运行实际时间总和。
+	u64			vruntime; //5. 调度实体已经运行的虚拟时间总和。
+}; 
+#+END_SRC
+
+#+BEGIN_QUOTE
+CFS维护了一个按照虚拟时间排序的红黑树，所有可运行的调度实体按照p->se.vruntime排序插入红黑树。如下图所示。
+#+END_QUOTE
+
+#+CAPTION: 调度类关系图
+[[http://www.wowotech.net/content/uploadfile/201810/8bb51538905306.png]]
