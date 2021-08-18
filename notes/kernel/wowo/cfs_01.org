@@ -35,7 +35,7 @@ CFS 调度器在就绪进程数低于阈值前，保证调度延迟是一个常�
 ** 就绪队列
 CFS 就绪队列（runqueue）维护了一个红黑树。
 
-#+BEGIN_SRC c++
+#+BEGIN_SRC c
 struct rq {
         struct cfs_rq cfs;
 	struct rt_rq rt;
@@ -66,7 +66,7 @@ struct cfs_rq {
 
 管理就绪态的 struct sched_entity 调度实体会通过 ~pick_next_task~ 从就绪队列中选择最合适的任务。
 
-#+BEGIN_SRC c++
+#+BEGIN_SRC c
 struct sched_entity {
         //1. 权重信息，在计算虚拟时间的时候会用到inv_weight成员。
 	struct load_weight	load; 

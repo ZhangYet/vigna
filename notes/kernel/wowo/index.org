@@ -2,5 +2,7 @@
 #+OPTIONS: ^:nil
 #+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
 
+
 #+INCLUDE: "./cfs_01.org" :minlevel 1
+#+INCLUDE: "./cfs_02.org" :minlevel 1
 

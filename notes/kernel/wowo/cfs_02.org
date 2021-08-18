@@ -1,0 +1,43 @@
+* [[http://www.wowotech.net/process_management/448.html][CFS 调度器 02 源代码解析]]
+
+** 进程的创建
+调用链路如下：
+
+`do_fork()`---->`_do_fork()`---->`copy_process()`---->`sched_fork()`
+
+`task_fork_fair()` 的简化实现：
+
+#+BEGIN_SRC c :export code
+static void task_fork_fair(struct task_struct *p)
+{
+	struct cfs_rq *cfs_rq;
+	struct sched_entity *se = &p->se, *curr;
+	struct rq *rq = this_rq();
+	struct rq_flags rf;
+ 
+	rq_lock(rq, &rf);
+	update_rq_clock(rq);
+ 
+	cfs_rq = task_cfs_rq(current);
+	// cfs_rq是CFS调度器就绪队列，
+	// curr指向当前正在cpu上运行的task的调度实体。
+	curr = cfs_rq->curr;                     
+	if (curr) {
+	// 更新当前正在运行的调度实体的运行时间信息。
+		update_curr(cfs_rq);                 
+		// 初始化当前创建的新进程的虚拟时间。
+		se->vruntime = curr->vruntime;       
+	}
+	// place_entity()函数在进程创建以及唤醒的时候都会调用，
+	// 创建进程的时候传递参数initial=1。
+	// 主要目的是更新调度实体得到虚拟时间（se->vruntime成员）。
+	// 要和cfs_rq->min_vruntime的值保持差别不大，
+	// 如果非常小的话，有可能疯狂占用cpu运行。
+	place_entity(cfs_rq, se, 1);             
+ 
+	se->vruntime -= cfs_rq->min_vruntime;    
+	rq_unlock(rq, &rf);
+}
+#+END_SRC
+
+我们需要理解调度器就绪队列和调度实体之间的关系，需要重新整理[[file:cfs_01.org::*%5B%5Bhttp://www.wowotech.net/process_management/447.html%5D%5BCFS%20%E8%B0%83%E5%BA%A6%E5%99%A8%2001%20%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%5D%5D][CFS 调度器 01 基本原理]]里面的内容。
