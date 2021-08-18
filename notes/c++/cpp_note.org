@@ -1,0 +1,28 @@
+#+TITLE: Dante 的 C++ 学习笔记
+#+OPTIONS: ^:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
+* pragma once
+关于 pragma 见[[https://docs.microsoft.com/en-us/cpp/preprocessor/pragma-directives-and-the-pragma-keyword?view=msvc-160][微软的文档]]，它用来指定编译器特性。
+
+`#pragma once` 跟 the include guard idiom （就是 ifndef define endif 那一套）作用相似，保证只会被 include 一次。
+* C++ 的类继承
+#+BEGIN_QUOTE
+public公有继承：基类的非私有成员的访问属性在派生类中保持不变，派生类可以防问基类公有的和保护的部份
+
+private私有继承：基类的非私有成员的访问属性在派生类变成私有成员，私有继承一般使用较少
+
+protected保护继承：基类的非私有成员的访问属性在派生类变成保护成员
+#+END_QUOTE
+
+*不管如何继承基类，基类中的私有成员都是无法访问。*
+* using keyword
+C++ 11 里面，可以用 `using` 做 type alias, 见 [[https://en.cppreference.com/w/cpp/language/type_alias][cppreference]].
+* explicit keyword
+用在构造函数里面，则该构造函数无法隐式转换，也无法 copy-initialization, 见 [[https://en.cppreference.com/w/cpp/language/explicit][cppreference]].
+* 使用 socket 的标准流程
+* 使用 epoll 的标准流程
+三步走：
+
+1. create: 创建 epoll 实例；
+2. 将需要关注的 fd 加到 epoll 列表里面；
+3. wait 到有 fd 就绪；

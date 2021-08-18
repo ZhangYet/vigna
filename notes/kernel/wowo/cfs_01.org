@@ -48,10 +48,16 @@ struct rb_root_cached {
 };
  
 struct cfs_rq {
-	struct load_weight load; //1. load：就绪队列权重，就绪队列管理的所有调度实体权重之和。
-	unsigned int nr_running; //2. nr_running：就绪队列上调度实体的个数。
-	u64 min_vruntime; //3. min_vruntime：跟踪就绪队列上所有调度实体的最小虚拟时间。
-	struct rb_root_cached tasks_timeline; //4. tasks_timeline：用于跟踪调度实体按虚拟时间大小排序的红黑树的信息（包含红黑树的根以及红黑树中最左边节点）。
+        //1. load：就绪队列权重，就绪队列管理的所有调度实体权重之和。
+	struct load_weight load; 
+        //2. nr_running：就绪队列上调度实体的个数。
+	unsigned int nr_running; 
+        //3. min_vruntime：跟踪就绪队列上所有调度实体的最小虚拟时间。
+	u64 min_vruntime; 
+        //4. tasks_timeline：
+        //   用于跟踪调度实体按虚拟时间大小排序的红黑树的信息
+        //   （包含红黑树的根以及红黑树中最左边节点）。
+	struct rb_root_cached tasks_timeline; 
 }; 
 #+END_SRC
 
@@ -62,11 +68,18 @@ struct cfs_rq {
 
 #+BEGIN_SRC c++
 struct sched_entity {
-	struct load_weight	load; //1. 权重信息，在计算虚拟时间的时候会用到inv_weight成员。
-	struct rb_node		run_node; //2. CFS调度器的每个就绪队列维护了一颗红黑树，上面挂满了就绪等待执行的task，run_node就是挂载点。
-	unsigned int		on_rq; //3. 调度实体se加入就绪队列后，on_rq置1。从就绪队列删除后，on_rq置0。
-	u64			sum_exec_runtime; //4.调度实体已经运行实际时间总和。
-	u64			vruntime; //5. 调度实体已经运行的虚拟时间总和。
+        //1. 权重信息，在计算虚拟时间的时候会用到inv_weight成员。
+	struct load_weight	load; 
+        //2. CFS调度器的每个就绪队列维护了一颗红黑树，
+        //   上面挂满了就绪等待执行的task，run_node就是挂载点。
+	struct rb_node		run_node; 
+        //3. 调度实体se加入就绪队列后，on_rq置1。
+        //   从就绪队列删除后，on_rq置0。
+	unsigned int		on_rq; 
+        //4.调度实体已经运行实际时间总和。
+	u64			sum_exec_runtime; 
+        //5. 调度实体已经运行的虚拟时间总和。
+	u64			vruntime; 
 }; 
 #+END_SRC
 
