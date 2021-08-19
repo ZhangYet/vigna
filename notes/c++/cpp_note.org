@@ -26,3 +26,7 @@ C++ 11 里面，可以用 `using` 做 type alias, 见 [[https://en.cppreference.
 1. create: 创建 epoll 实例；
 2. 将需要关注的 fd 加到 epoll 列表里面；
 3. wait 到有 fd 就绪；
+
+感觉只需要关注 accept 之后的 fd 就行了？
+* gtest 使用入门
+见[[http://senlinzhan.github.io/2017/10/08/gtest/][这篇博文]]。
