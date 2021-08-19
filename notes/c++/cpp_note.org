@@ -28,5 +28,9 @@ C++ 11 里面，可以用 `using` 做 type alias, 见 [[https://en.cppreference.
 3. wait 到有 fd 就绪；
 
 感觉只需要关注 accept 之后的 fd 就行了？
+
+看了[[https://github.com/NerDante/epollServer][这个例子]]，并不需要创建多个 tcp socket
+
+感觉我们就假设 client 只需要每次上传的时候连一次 server 就行了。
 * gtest 使用入门
 见[[http://senlinzhan.github.io/2017/10/08/gtest/][这篇博文]]。
