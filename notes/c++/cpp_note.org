@@ -38,3 +38,25 @@ C++ 11 里面，可以用 `using` 做 type alias, 见 [[https://en.cppreference.
 见[[http://senlinzhan.github.io/2017/10/08/gtest/][这篇博文]]。
 * std::move
 生成右值引用，这样可以省下复制。
+* std::bind
+跟 python 的 partial 差不多。
+* share_from_this()
+see also: [[https://en.cppreference.com/w/cpp/memory/enable_shared_from_this/shared_from_this][doc]]
+* CppNet 笔记
+~SendFile~ 类有一个 ~CppNet~ 实例，所有的发送都通过这个实例实现。初始化的时候，状态是 ~hello~, 收到 Server 的 "OK" 之后，转为 ~sending~ 再次收到 "OK" 转为成功。
+
+猜测一下，就是先 ~OnConnect~ 发送 header，然后等 ~OnRecv~ 被调用。
+** Client 
+*** 创建 CppNet 实例
+没啥好说的。
+*** 用 CppNet 实例初始化 SendFile 实例
+也没啥好说的。
+*** net 实例初始化
+这里会创建一个 CppNetBase （一个 shared_ptr）.
+
+然后 CppNetBase 会按照 thread 数目初始化 Dispatcher (其实就是用 [[*share_from_this()][share_from_this()]] 创建 dispatcher 指针然后保存进一个 vector 里面，之后可以随机选 dispater).
+*** set callback
+除了 [[*std::bind][std::bind]] 没啥好说的。
+*** Connetion
+其实是 CppNetBase 会做 ~Connection~. 这其实就是随机找一个 Dispatcher 让它做 connection。Dispatcher 会让 sock 来做连接，这里关于线程的一些内容不太懂。
+
