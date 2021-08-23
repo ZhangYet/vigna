@@ -42,6 +42,7 @@ C++ 11 里面，可以用 `using` 做 type alias, 见 [[https://en.cppreference.
 跟 python 的 partial 差不多。
 * share_from_this()
 see also: [[https://en.cppreference.com/w/cpp/memory/enable_shared_from_this/shared_from_this][doc]]
+* 原来虚函数并不一定需要被重载
 * CppNet 笔记
 ~SendFile~ 类有一个 ~CppNet~ 实例，所有的发送都通过这个实例实现。初始化的时候，状态是 ~hello~, 收到 Server 的 "OK" 之后，转为 ~sending~ 再次收到 "OK" 转为成功。
 
@@ -60,3 +61,9 @@ see also: [[https://en.cppreference.com/w/cpp/memory/enable_shared_from_this/sha
 *** Connetion
 其实是 CppNetBase 会做 ~Connection~. 这其实就是随机找一个 Dispatcher 让它做 connection。Dispatcher 会让 sock 来做连接，这里关于线程的一些内容不太懂。
 
+线程这里看懂了，Dispater 本身是一个线程。为什么需要识别线程这个，可以后面自己写的时候再理会。 *现在有个问题是为什么需要 wakeup。*
+*** Join 
+也是选择 Dispatcher 去 join，但居然不重载也没有事？不懂。而且还没有看到连接之后，怎样发送。
+** Server
+*** ListenAndAccept
+郁闷啊，不知道事件是怎样产生的。
