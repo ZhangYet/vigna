@@ -41,3 +41,9 @@ static void task_fork_fair(struct task_struct *p)
 #+END_SRC
 
 我们需要理解调度器就绪队列和调度实体之间的关系，需要重新整理[[file:cfs_01.org::*%5B%5Bhttp://www.wowotech.net/process_management/447.html%5D%5BCFS%20%E8%B0%83%E5%BA%A6%E5%99%A8%2001%20%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%5D%5D][CFS 调度器 01 基本原理]]里面的内容。
+
+~task_fork_fair~ 这里的注释说得我一头雾水，主要是 vtime 的先减后加这里没有说清楚。 ~update_curr()~ 里面有一个 ~update_min_vtime()~ 的操作，会用到 rb tree 的最左节点。
+
+这部分真的看不懂。主要不懂的地方在于虚拟时间的计算。
+
+** 新进程加入队列
