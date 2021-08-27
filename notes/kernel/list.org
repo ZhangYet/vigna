@@ -1,0 +1,6 @@
+* [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/al2-live-patching.html][kpatch]]
+* [[https://cloud.tencent.com/developer/article/1519558][腾讯混排]]
+* [[https://kernel.dk/io_uring.pdf][io_uring]]
+* [[https://www.kernel.org/doc/html/latest/filesystems/fuse.html][fuse]]
+* [[https://www.alibabacloud.com/blog/evolution-of-alibaba-large-scale-colocation-technology_594172][ali 混排]]
+* [[https://blog.csdn.net/yunxiao6/article/details/118020171][腾讯云原生]]
