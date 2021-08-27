@@ -1,0 +1,11 @@
+#+TITLE: cgroupv2 笔记
+#+OPTIONS: ^:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
+但其实应该先把 [[https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v1/cgroups.html][cgroupv1]] 看了。
+* Introduction
+
+Q: 什么是 cgroup ？
+
+A: 一种资源管理机制，有层级。cgroup 主要分两部分， core 负责分层组织进程，控制器负责沿层级分配特定类型的资源。每个进程从属唯一的 cgroup ，但是可以迁移。
+* 基本操作
+** mounting
