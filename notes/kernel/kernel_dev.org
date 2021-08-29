@@ -1,0 +1,16 @@
+#+TITLE: kernel 开发笔记
+#+OPTIONS: ^:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
+* [[https://www.youtube.com/watch?v=WiZ05pnHZqM][Linux Kernel Programming 01: Compile and Boot]]
+下载源码安装依赖都是正常式，关键是 config，作者推荐从 /proc/config 抄过来。然后 ~make menuconfig~ .
+
+~make oldconfig~ 可以升级配置文件（作者的例子就是用5.11的配置去编译5.14的内核）。
+
+然后就是 make 和 make module_install 了。
+
+然后进入 ~/boot/~ 文件夹干点活（找 vmlinux）.
+
+接着，修改 ~/boot/grub/grub.cfg~ 为了防止被 ~update-grub~ 覆盖，实际会修改 ~/etc/grub.d/40_custom~ .
+
+啊，所以这哥们是直接编译了一个新内核，然后让 grub 指向这个新内核，再用这个新内核去启动操作系统。
+* [[https://ops.tips/notes/booting-linux-on-qemu/][booting a fresh linux kernel on qemu]]
