@@ -14,3 +14,61 @@
 
 啊，所以这哥们是直接编译了一个新内核，然后让 grub 指向这个新内核，再用这个新内核去启动操作系统。
 * [[https://ops.tips/notes/booting-linux-on-qemu/][booting a fresh linux kernel on qemu]]
+* [[https://lwn.net/Articles/861251/][core scheduling]]
+在 SMT 场景下， 一个 CPU 被虚拟成一组 sibling CPU，这样一旦一个 sibling CPU 等待，另外的线程可以插进来用别的 sibling CPU，等于提供了更细粒度的 CPU 资源。
+
+因为在 SMT 场景下， sibling 共享大部分硬件资源，所以需要保障安全性[fn:1]。core scheduling 可以保证跑在同一套 sibling CPU 上的进程都是受信的。
+
+方案就是提供一个 "cookie" 同 cookie 的进程可以跑在同一套 sibling 中。
+
+core scheduling 提供了 ~prctl~ 系统调用。
+
+#+BEGIN_SRC c
+int prctl(PR_SCHED_CORE, int cs_command, pid_t pid, enum pid_type type,
+	      unsigned long *cookie);
+#+END_SRC
+* Footnotes
+
+cs_command 现在有几种：
+
+1. ~PR_SCHED_CORE_CREATE~: 为给定 pid 分配 cookie， pid_type 可以选择只给给定 pid 还是给给定 pid 同组线程都给下发 cookie;
+2. ~PR_SCHED_CORE_GET~: 获取 pid 的 cookie 值；
+3. ~PR_SCHED_CORE_SHARE_TO~: 将调用方的 cookie 发给 pid；
+4. ~PR_SCHED_CORE_SHARE_FROM~: 取来 pid_t 的 cookie;
+* 尝试编译 5.14 内核
+git 地址： https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/?h=v5.14
+
+依赖工具：https://www.kernel.org/doc/html/v5.0/process/changes.html
+
+| Program             | Minimal version | desc                                  | check    |
+| GNU C               |             4.6 |                                       | done     |
+| GNU make            |            3.81 |                                       | done     |
+| binutils            |            2.20 | 提供 linker(ld)                       | done     |
+| flex                |          2.5.35 |                                       | done     |
+| bison               |             2.0 |                                       | done     |
+| util-linux          |           2.10o | mounting 和磁盘分区以及硬件时钟工具   | done     |
+| kmod                |              13 | module-init-tools                     | done     |
+| e2fsprogs           |          1.41.4 | ext2/ext3/ext3 文件系统工具           | done     |
+| jfsutils            |           1.1.3 | to use JFS system from IBM            | done     |
+| reiserfsprogs       |           3.6.3 | to use ReiserFS filesystem            | done     |
+| xfsprogs            |           2.6.0 | to use XFS filesystem                 | done     |
+| squashfs-tools      |             4.0 |                                       | done     |
+| btrfs-progs         |            0.18 |                                       | done     |
+| pcmciautils         |             004 |                                       | done     |
+| quota-tools         |            3.09 | use quota functionality of the kernel | done     |
+| PPP                 |           2.4.0 |                                       | done     |
+| isdn4k-utils        |         3.1pre1 |                                       | done     |
+| nfs-utils           |           1.0.5 |                                       | done     |
+| procps              |           3.2.0 | ps                                    | done     |
+| oprofile            |             0.9 |                                       | not done |
+| udev                |             081 |                                       | not done |
+| grub                |            0.93 |                                       | done     |
+| mcelog              |             0.6 |                                       | not done |
+| iptables            |           1.4.2 |                                       | done     |
+| openssl & libcrypto |           1.0.0 |                                       | done     |
+| bc                  |         1.06.95 |                                       | not done |
+| Sphinx[1]           |             1.3 |                                       | not done |
+
+算了，先做到这里吧，来高 config
+
+[fn:1] 它们共享了哪些资源？ 
