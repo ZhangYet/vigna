@@ -712,3 +712,35 @@ struct task_struct *__curr(void)
 }
 #+END_SRC
 * 进程创建
+
+~_do_fork()~ 在 ~kernel/fork.c~ 里面。
+** ~copy_process()~
+
+1. flag 的检查；注意只有 ~CAP_SYS_ADMIN~ 才允许 ~CLONE_NEWUSER~;
+2. 处理多进程信号（这部分没有看懂）；
+3. [[*dup_task_struck()][dup_task_struck()]];
+4. init ~pi_lock~;
+5. 检查用户进程数量没有超出限额；
+6. 复制 credentials;
+7. init 新描述符里面的成员；
+8. ~cgroup_fork()~;
+9. ~sched_fork()~ 这个时候会把 task 状态设置成 ~TASK_NEW~,此外还会设置优先级和 ~sched_class~ ;
+10. 其他的 init;
+11. 分配 pid；
+12. 扫尾工作；
+13. 返回 pid；
+
+*** dup_task_struck()
+首先调用 ~kmem_cache_alloc_node()~ 分配一个新的进程描述服，关于 ~kmem_cache_alloc_node~ 见 LKD 12.6.2；
+
+调用 ~alloc_thread_stack_node()~ 申请一个栈；
+
+然后 ~arch_dup_task_struct()~ 复制一下 task struck；
+
+再把 ~alloc_thread_stack_node()~ 申请的栈地址赋予 tsk->stack (tsk 就是要返回的 task struck);
+
+复制 thread_stack；
+
+** 有个 ~add_latent_entropy()~ 函数，不知道干嘛的
+
+** 唤醒子进程
