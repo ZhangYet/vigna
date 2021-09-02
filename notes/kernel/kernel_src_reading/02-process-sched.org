@@ -1,0 +1,125 @@
+* 公平调度器
+
+** update_curr
+ #+BEGIN_SRC c
+ static void update_curr(struct cfs_rq *cfs_rq)
+ {
+	 struct sched_entity *curr = cfs_rq->curr;
+	 // 返回 clock_task (什么是 clock_task)？这里会确保持锁（什么锁？）以及 clock_task 已经被更新
+	 u64 now = rq_clock_task(rq_of(cfs_rq));
+	 u64 delta_exec;
+
+	 if (unlikely(!curr))
+		 return;
+		
+	 delta_exec = now - curr->exec_start;
+	 if (unlikely((s64)delta_exec <= 0))
+		 return;
+
+	 curr->exec_start = now;
+
+	 // 更新 exec_max 值
+	 schedstat_set(curr->statistics.exec_max,
+		       max(delta_exec, curr->statistics.exec_max));
+         // 更新 sum_exec_runtime		      
+	 curr->sum_exec_runtime += delta_exec;
+	 // 更新 exec_clock
+	 schedstat_add(cfs_rq->exec_clock, delta_exec);
+
+	 // 其实就是通过除以 weight_nice_0 跟 weight_nice 的比值来换算虚拟时间
+	 curr->vruntime += calc_delta_fair(delta_exec, curr);
+	 // 更新就绪队列的最小虚拟时间（有三种情况）
+	 // 见 http://www.wowotech.net/process_management/448.html
+	 update_min_vruntime(cfs_rq);
+
+	 if (entity_is_task(curr)) {
+		 struct task_struct *curtask = task_of(curr);
+
+		 trace_sched_stat_runtime(curtask, delta_exec, curr->vruntime);
+		 cgroup_account_cputime(curtask, delta_exec);
+		 account_group_exec_runtime(curtask, delta_exec);
+	 }
+	 // 最终会调用 resched_curr
+	 // 见 http://www.wowotech.net/process_management/451.html
+	 account_cfs_rq_runtime(cfs_rq, delta_exec);
+ }
+ #+END_SRC
+
+ throttle: 限制运行。这与组控制的逻辑有关。
+
+Q: *~update_curr()~ 更新了什么 field？*
+
+A: 
+
+** enqueue_task
+~enqueue_task_fair()~ 负责将 task 加入 ~cfs_rq~ 的队列中。它被包在 ~kernel/sched/core.c~ 的 ~enqueue_task()~ 里面。
+
+~fork()~ 的调用链路是： ~_do_fork()~ -- ~wake_up_new_task()~ -- ~activate_task()~ -- ~enqueue_task()~ 。其余的情况我迷失在复杂的调用迷宫里面。
+
+** 将进程加入 rbtree 中
+
+#+BEGIN_SRC c
+static void
+enqueue_entity(struct cfs_rq *cfs_rq, struct sched_entity *se, int flags)
+{
+	bool renorm = !(flags & ENQUEUE_WAKEUP) || (flags & ENQUEUE_MIGRATED);
+	bool curr = cfs_rq->curr == se;
+
+	/*
+	 * If we're the current task, we must renormalise before calling
+	 * update_curr().
+	 */
+	if (renorm && curr)
+		se->vruntime += cfs_rq->min_vruntime;
+
+	update_curr(cfs_rq);
+
+	/*
+	 * Otherwise, renormalise after, such that we're placed at the current
+	 * moment in time, instead of some random moment in the past. Being
+	 * placed in the past could significantly boost this task to the
+	 * fairness detriment of existing tasks.
+	 */
+	if (renorm && !curr)
+		se->vruntime += cfs_rq->min_vruntime;
+
+	/*
+	 * When enqueuing a sched_entity, we must:
+	 *   - Update loads to have both entity and cfs_rq synced with now.
+	 *   - Add its load to cfs_rq->runnable_avg
+	 *   - For group_entity, update its weight to reflect the new share of
+	 *     its group cfs_rq
+	 *   - Add its new weight to cfs_rq->load.weight
+	 */
+	update_load_avg(cfs_rq, se, UPDATE_TG | DO_ATTACH);
+	update_cfs_group(se);
+	enqueue_runnable_load_avg(cfs_rq, se);
+	// update cfs_rq->load
+	// update cfs_rs->nr_running ++
+	account_entity_enqueue(cfs_rq, se);
+
+	if (flags & ENQUEUE_WAKEUP)
+	// 处理 se 的 vruntime 保证它不会太小
+	// 免得新创建的进程可以疯狂抢到 CPU 
+	// 另外要给睡眠的时间一点补偿：减一半 runtime 
+		place_entity(cfs_rq, se, 0);
+
+	check_schedstat_required();
+	update_stats_enqueue(cfs_rq, se, flags);
+	check_spread(cfs_rq, se);
+	if (!curr)
+		__enqueue_entity(cfs_rq, se);
+	se->on_rq = 1;
+
+	/*
+	 * When bandwidth control is enabled, cfs might have been removed
+	 * because of a parent been throttled but cfs->nr_running > 1. Try to
+	 * add it unconditionnally.
+	 */
+	if (cfs_rq->nr_running == 1 || cfs_bandwidth_used())
+		list_add_leaf_cfs_rq(cfs_rq);
+
+	if (cfs_rq->nr_running == 1)
+		check_enqueue_throttle(cfs_rq);
+}
+#+END_SRC
