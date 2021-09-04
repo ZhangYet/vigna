@@ -3,3 +3,5 @@
 #+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
 
 #+INCLUDE "./01-process-management.org" :minlevel 1
+#+INCLUDE "./02-process-sched.org" :minlevel 1
+#+INCLUDE "./03-linux-test-project.org" :minlevel 1

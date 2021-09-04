@@ -197,3 +197,59 @@ dequeue_entity(struct cfs_rq *cfs_rq, struct sched_entity *se, int flags)
 ~context_switch()~
 
 查一下书中所说的 ~schedule()~ 函数到底在哪？
+
+** rt_rq
+要理解这个结构体，可以看这个 [[https://stackoverflow.com/questions/13080766/understanding-the-use-of-data-members-in-rt-rqreal-time-runqueue-kernel/13243957][stack overflow 问答]]。
+#+BEGIN_SRC c
+struct rt_rq {
+        // 一个优先级列表，里面还有一个 MAX_RT_PROIO+1 长的 bitmap（表示某个优先级有 task_struct 了）
+	struct rt_prio_array	active;
+	// running 状态的 RT task 计数
+	unsigned int		rt_nr_running;
+	// fifo_nr_running = rt_nr_running - rr_nr_running
+	unsigned int		rr_nr_running;
+#if defined CONFIG_SMP || defined CONFIG_RT_GROUP_SCHED
+	struct {
+		int		curr; /* highest queued rt task prio */
+#ifdef CONFIG_SMP
+		int		next; /* next highest */
+#endif
+	} highest_prio;
+#endif
+#ifdef CONFIG_SMP
+        // We introduce a per-rq variable to count the number of migratable tasks 
+	// that are currently running.
+	// see https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=73fe6aae84400e2b475e2a1dc4e8592cd3ed6e69
+	unsigned long		rt_nr_migratory;
+	// 这应该实际 migrate 的 task 数目？
+	unsigned long		rt_nr_total;
+	//  
+	int			overloaded;
+	struct plist_head	pushable_tasks;
+
+#endif /* CONFIG_SMP */
+	int			rt_queued;
+
+	int			rt_throttled;
+	// exec time? 这不是跟 sum_exec_runtime 重复了么？
+	u64			rt_time;
+	u64			rt_runtime;
+	/* Nests inside the rq lock: */
+	raw_spinlock_t		rt_runtime_lock;
+
+#ifdef CONFIG_RT_GROUP_SCHED
+	unsigned long		rt_nr_boosted;
+
+	struct rq		*rq;
+	struct task_group	*tg;
+#endif
+};
+#+END_SRC
+
+一些字段：
+
+#+BEGIN_SRC c
+rq->nr_running; // 当前队列总共有多少个可运行的任务（包括所有 sched class）
+rq->curr; // 指向当前正在运行的进程描述符
+
+#+END_SRC
