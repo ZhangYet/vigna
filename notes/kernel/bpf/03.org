@@ -1,0 +1,23 @@
+* Performance Analysis
+
+** Overview
+
+** Performance Methodologies
+
+*** Workload Characterization
+
+#+BEGIN_QUOTE
+Suggested steps for performing workload characterization:
+
+1. Who is causing the load(e.g., PID, process name)?
+
+2. Why is the load called?
+
+3. What is the load(IOPS, throughput, type)?
+
+4. How is the load changing overtime?
+#+END_QUOTE
+
+*** Drill-Down Analysis
+
+Decompose a metric and find the largest component.
