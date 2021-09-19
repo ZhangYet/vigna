@@ -1,0 +1,32 @@
+* livepatching 笔记
+本笔记基于 [[https://www.kernel.org/doc/html/latest/livepatch/livepatch.html][linux livepatch 文档]]。
+
+** motivation
+提供不停机更新的机制。
+
+** Kprobes, Ftrace, Livepatching
+内核提供了三种运行重定向的支持，这是 livepatching 的基础：
+
+1. [[https://www.kernel.org/doc/html/latest/trace/kprobes.html][kprobe]] : 允许在 kernel routine 里面插入断点，然后在里面执行指定的 handler。基本原理是注册一个 kprobe 然后通过一个断点，转移控制权，实际上等于给某个内核函数加一个装饰器。
+2. [[https://www.kernel.org/doc/html/v5.0/trace/ftrace.html][ftrace]] : 这部分技术我没有细看，可以再看这篇[[https://lwn.net/Articles/370423/#:~:text=Probably%2520the%2520most%2520powerful%2520tracer,flow%2520of%2520the%2520Linux%2520kernel.][文章]]。
+3. Livepatching typically needs to redirect the code at the very beginning of the function entry before the function parameters or the stack are in any way modified.
+
+#+BEGIN_QUOTE
+Most of these problems are solved by using the dynamic ftrace framework as a base. A Kprobe is registered as a ftrace handler when the function entry is probed, see CONFIG_KPROBES_ON_FTRACE. Also an alternative function from a live patch is called with the help of a custom ftrace handler.
+#+END_QUOTE
+
+这里提及到 CONFIG_KPROBES_ON_FTRACE: 这是 kprobes 优化 ftrace 用的，见[[https://cateee.net/lkddb/web-lkddb/KPROBES_ON_FTRACE.html][参考文档]]。
+
+** Consistency model
+
+Consistency model 要求保证更新函数之后，系统保持一致（最起码函数的语义不能变，但即使语义不变，也是非常麻烦的一件事，比如说更新前后的函数涉及多个锁，怎样保证锁的顺序正确？）。
+
+#+BEGIN_QUOTE
+Livepatch has a consistency model which is a hybrid of kGraft and kpatch: it uses kGraft’s per-task consistency and syscall barrier switching combined with kpatch’s stack trace switching. There are also a number of fallback options which make it quite flexible.
+
+
+#+END_QUOTE
+
+[[https://en.wikipedia.org/wiki/KGraft][kGraft 文档]]。
+
+[[https://www.youtube.com/watch?v=juyQ5TsJRTA][kpatch 展示视频]]
