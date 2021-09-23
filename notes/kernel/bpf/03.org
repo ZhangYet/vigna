@@ -21,3 +21,46 @@ Suggested steps for performing workload characterization:
 *** Drill-Down Analysis
 
 Decompose a metric and find the largest component.
+
+*** USE Method 
+1. Utilization
+2. Saturation
+3. Errors
+
+*** Checklist
+
+** Linux 60-seconds Analysis
+
+*** uptime
+
+*** dmesg | tail
+
+*** vmstat 1
+
+Prints 1-second summaries of the virtual memory statistics.
+
+1. r: the number of process.
+2. free: free memory, in Kbytes.
+3. si and so: swap in and swap out.
+4. us, sy, id, wa and st: user time, system time, idle, wait I/O and stolen time.
+
+*** mpstat -P ALL 1
+Prints  per-CPU time broken down into states.
+
+*** pidstat 1
+Prints CPU usage per process every second.
+
+*** iostat -xz 1
+
+*** free -m
+Prints available memory in Mbytes.
+
+*** sar -n DEV 1
+Check interface throughput rxkB/s and txkB/s.
+
+*** sar -n TCP, ETCP 1
+
+*** top
+
+** BCC Tool Checklist
+
