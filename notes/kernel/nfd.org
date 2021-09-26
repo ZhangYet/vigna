@@ -1,0 +1,28 @@
+#+TITLE: Node feature discovery
+#+OPTIONS: ^:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
+看的是 [[https://github.com/kubernetes-sigs/node-feature-discovery][k8s 的 repo]]。
+* memery
+** NUMA
+对于 NUMA 可以看看[[https://zhuanlan.zhihu.com/p/67558970][这篇简介]]，简单来说就是为 CPU core 划分不同的内存访问区域，访问 local 内存区域的成本更低，速度更快。
+
+NFD 探测 NUMA 的方法就是读 ~/sys/devices/system/node/online~ 看里面有没有 online 的 node。
+** NVDIMM
+[[https://en.wikipedia.org/wiki/NVDIMM][NVDIMM]] 断电都能保持内存的技术。中文材料可以看看[[https://www.sdnlab.com/23054.html][这篇]]。
+
+通过读 ~/sys/class/nd~ 检查是否有 NVDIMM 内存。
+
+读 ~/sys/bus/nd/devices~ 里面的 device ，看有没有 DAX-configured region。
+* CPU 
+** Hyper-threading
+[[https://en.wikipedia.org/wiki/Hyper-threading][Hyper-threading]] 把物理 core 分成 logic core 使用的技术。
+
+看 ~/sys/bus/cpu/devices/cpu9/topology/thread_siblings_list~ 判断。
+一个典型的示例：
+#+BEGIN_EXAMPLE
+cat /sys/bus/cpu/devices/cpu9/topology/thread_siblings_list
+
+9,41
+#+END_EXAMPLE
+** SST-BF
+[[https://www.kernel.org/doc/html/latest/admin-guide/pm/intel-speed-select.html][Intel speed select]]。 
