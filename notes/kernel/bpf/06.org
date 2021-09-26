@@ -1,0 +1,31 @@
+* CPUs
+** Background
+*** CPU Fundamentals
+**** Strategy
+#+BEGIN_QUOTE
+1. Ensure that a CPU workload is running.(using mpstat).
+
+2. Confirm that the workload is CPU bound.
+
+   a. Look for high CPU utilization system-wide or on a single CPU(using mpstat).
+
+   b. Look for high run queue latency(using BCC runqlat).
+
+3. Quentify CPU usage as percent utilization system-wide and then broken down by process, CPU mode, and CPU ID.
+
+   a. For high system time, frequency-count system calls by process and call type.
+
+4. Use a profiler to sample stack trace(e.g. flame graph).
+
+5. Write cunstom tools to show more context.
+
+6. Measure time in hardware interrupts.
+
+7. Other tools.
+
+8. Measure CPU instructions per cycle.
+#+END_QUOTE
+** Traditional Tools
+skip 
+** BPF tools
+*** execsnoop
