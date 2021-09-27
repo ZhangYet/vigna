@@ -1,0 +1,5 @@
+#+INCLUDE: "./daily2019winter.org.gpg" :minlevel 1
+#+INCLUDE: "./daily2020spring.org.gpg" :minlevel 1
+#+INCLUDE: "./daily2020summer.org.gpg" :minlevel 1
+#+INCLUDE: "./daily2020winter.org.gpg" :minlevel 1
+
