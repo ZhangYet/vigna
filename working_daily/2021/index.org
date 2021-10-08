@@ -12,3 +12,4 @@
 #+INCLUDE: "./07.org.gpg" :minlevel 1
 #+INCLUDE: "./08.org.gpg" :minlevel 1
 #+INCLUDE: "./09.org.gpg" :minlevel 1
+#+INCLUDE: "./10.org.gpg" :minlevel 1
