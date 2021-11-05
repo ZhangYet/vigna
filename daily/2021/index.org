@@ -12,3 +12,4 @@
 #+INCLUDE: "./202108.org.gpg" :minlevel 1
 #+INCLUDE: "./202109.org.gpg" :minlevel 1
 #+INCLUDE: "./202110.org.gpg" :minlevel 1
+#+INCLUDE: "./202111.org.gpg" :minlevel 1
