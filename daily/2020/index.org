@@ -1,3 +1,7 @@
+#+TITLE: 日记2019-2020
+#+OPTIONS: ^:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
+
 #+INCLUDE: "./daily2019winter.org.gpg" :minlevel 1
 #+INCLUDE: "./daily2020spring.org.gpg" :minlevel 1
 #+INCLUDE: "./daily2020summer.org.gpg" :minlevel 1
